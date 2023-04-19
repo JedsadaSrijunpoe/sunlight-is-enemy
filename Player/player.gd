@@ -8,6 +8,8 @@ enum {
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var bat_collision_shape = $BatCollisionShape
 @onready var humanoid_collision_shape = $HumanoidCollisionShape
+@onready var bat_hurtbox = $BatHurtbox
+@onready var human_hurtbox = $HumanHurtbox
 
 var state = HUMANOID
 
@@ -49,7 +51,9 @@ func bat_state(delta):
 	if Input.is_action_just_pressed("toggle"):
 		state = HUMANOID
 		bat_collision_shape.disabled = true
+		bat_hurtbox.get_node("CollisionShape2D").disabled = true
 		humanoid_collision_shape.disabled = false
+		human_hurtbox.get_node("CollisionShape2D").disabled = false
 		
 # Handle movement in human form
 func humanoid_state(delta):
@@ -77,14 +81,15 @@ func humanoid_state(delta):
 	if Input.is_action_just_pressed("toggle"):
 		state = BAT
 		bat_collision_shape.disabled = false
+		bat_hurtbox.get_node("CollisionShape2D").disabled = false
 		humanoid_collision_shape.disabled = true
+		human_hurtbox.get_node("CollisionShape2D").disabled = true
 
-# How the player react to hurtbox collision
-func _on_hurtbox_area_entered(area):
-	# Kill the player if the player is in the light while in bat form.
-	if area.IS_LIGHT :
-		if state == BAT :
-			queue_free()
-	# Kill the player
-	else :
+# How the player react to hurtbox collision in bat form
+func _on_bathurtbox_area_entered(_area):
+	queue_free()
+
+# How the player react to hurtbox collision in humanoid form
+func _on_humanhurtbox_area_entered(area):
+	if not area.IS_LIGHT:
 		queue_free()
