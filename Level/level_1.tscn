@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://buhroafmnptvy"]
+[gd_scene load_steps=12 format=3 uid="uid://buhroafmnptvy"]
 
 [ext_resource type="PackedScene" uid="uid://dshcq4y4i7jbj" path="res://Camera/camera_with_limit.tscn" id="1_gid3i"]
 [ext_resource type="PackedScene" uid="uid://kiu6g4gkywwq" path="res://Player/player.tscn" id="1_np07d"]
@@ -7,8 +7,13 @@
 [ext_resource type="PackedScene" uid="uid://coq2wpfjr3ppr" path="res://World/crate.tscn" id="3_5571h"]
 [ext_resource type="Texture2D" uid="uid://ccfkmu68ntij2" path="res://World/window.png" id="4_oobcy"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_gy1j7"]
-size = Vector2(128, 160)
+[sub_resource type="Gradient" id="Gradient_7643q"]
+colors = PackedColorArray(1, 1, 1, 0.705882, 1, 1, 1, 0.352941)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_rm4wx"]
+gradient = SubResource("Gradient_7643q")
+fill_from = Vector2(0.5, 0)
+fill_to = Vector2(0.5, 1)
 
 [sub_resource type="Gradient" id="Gradient_iuo6q"]
 colors = PackedColorArray(0.36601, 0.12483, 0.0196051, 1, 1, 1, 1, 1)
@@ -36,9 +41,13 @@ texture = ExtResource("4_oobcy")
 [node name="Hitbox" parent="Window" instance=ExtResource("2_4ubfn")]
 collision_layer = 4
 
-[node name="CollisionShape2D" parent="Window/Hitbox" index="0"]
-position = Vector2(0, 16)
-shape = SubResource("RectangleShape2D_gy1j7")
+[node name="CollisionPolygon2D" parent="Window/Hitbox" index="0"]
+polygon = PackedVector2Array(-63, 96, -63, 96, -63, -30, -57, -43, -42, -54, -25, -60, 0, -63, 25, -60, 42, -54, 57, -43, 63, -30, 63, 96)
+
+[node name="Sprite2D" type="Sprite2D" parent="Window/Hitbox"]
+position = Vector2(0, 90)
+scale = Vector2(1.94564, 0.820404)
+texture = SubResource("GradientTexture2D_rm4wx")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
