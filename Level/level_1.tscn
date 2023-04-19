@@ -1,0 +1,72 @@
+[gd_scene load_steps=11 format=3 uid="uid://buhroafmnptvy"]
+
+[ext_resource type="PackedScene" uid="uid://dshcq4y4i7jbj" path="res://Camera/camera_with_limit.tscn" id="1_gid3i"]
+[ext_resource type="PackedScene" uid="uid://kiu6g4gkywwq" path="res://Player/player.tscn" id="1_np07d"]
+[ext_resource type="Texture2D" uid="uid://cqoqimwucxhic" path="res://World/wallpaper3.png" id="1_voict"]
+[ext_resource type="PackedScene" uid="uid://bki1tq2g2gv5o" path="res://Overlap/hitbox.tscn" id="2_4ubfn"]
+[ext_resource type="PackedScene" uid="uid://coq2wpfjr3ppr" path="res://World/crate.tscn" id="3_5571h"]
+[ext_resource type="Texture2D" uid="uid://ccfkmu68ntij2" path="res://World/window.png" id="4_oobcy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gy1j7"]
+size = Vector2(128, 160)
+
+[sub_resource type="Gradient" id="Gradient_iuo6q"]
+colors = PackedColorArray(0.36601, 0.12483, 0.0196051, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_pt182"]
+gradient = SubResource("Gradient_iuo6q")
+fill_to = Vector2(0, 0)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6ule5"]
+size = Vector2(610.375, 20)
+
+[node name="Level1" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+texture_repeat = 2
+position = Vector2(301, 90)
+texture = ExtResource("1_voict")
+region_enabled = true
+region_rect = Rect2(-1, -1, 600, 180)
+
+[node name="Window" type="Sprite2D" parent="."]
+position = Vector2(291, 74)
+texture = ExtResource("4_oobcy")
+
+[node name="Hitbox" parent="Window" instance=ExtResource("2_4ubfn")]
+collision_layer = 4
+
+[node name="CollisionShape2D" parent="Window/Hitbox" index="0"]
+position = Vector2(0, 16)
+shape = SubResource("RectangleShape2D_gy1j7")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(300, 180)
+scale = Vector2(9.35494, -0.322828)
+texture = SubResource("GradientTexture2D_pt182")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(300, 180)
+scale = Vector2(0.983002, 1)
+shape = SubResource("RectangleShape2D_6ule5")
+
+[node name="Camera2D" parent="." instance=ExtResource("1_gid3i")]
+position = Vector2(12, 154)
+
+[node name="BottomRight" parent="Camera2D/Node" index="0"]
+position = Vector2(600, 180)
+
+[node name="Player" parent="." instance=ExtResource("1_np07d")]
+position = Vector2(12, 154)
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
+remote_path = NodePath("../../Camera2D")
+
+[node name="Crate" parent="." instance=ExtResource("3_5571h")]
+position = Vector2(291, 162)
+scale = Vector2(0.5, 0.5)
+
+[editable path="Window/Hitbox"]
+[editable path="Camera2D"]

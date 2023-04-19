@@ -1,0 +1,68 @@
+[gd_scene load_steps=9 format=3 uid="uid://kiu6g4gkywwq"]
+
+[ext_resource type="Script" path="res://Player/player.gd" id="1_laxjk"]
+[ext_resource type="Texture2D" uid="uid://bx8ua8cc4mllp" path="res://Player/bat.png" id="2_dw5jy"]
+[ext_resource type="Texture2D" uid="uid://oyvey8bmu4nr" path="res://Player/humanoid.png" id="3_10154"]
+[ext_resource type="PackedScene" uid="uid://n1y0uqxv68mg" path="res://Overlap/hurtbox.tscn" id="4_xc2u5"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lsqfs"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_dw5jy")
+}],
+"loop": true,
+"name": &"Bat",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_10154")
+}],
+"loop": true,
+"name": &"Humanoid",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1cuho"]
+radius = 4.0
+height = 14.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8qxx5"]
+size = Vector2(27.8773, 4.95712)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_v3xiy"]
+radius = 6.70761
+height = 22.6288
+
+[node name="Player" type="CharacterBody2D"]
+slide_on_ceiling = false
+script = ExtResource("1_laxjk")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_lsqfs")
+animation = &"Humanoid"
+
+[node name="BatCollisionShape" type="CollisionShape2D" parent="."]
+rotation = -1.5708
+shape = SubResource("CapsuleShape2D_1cuho")
+disabled = true
+
+[node name="HumanoidCollisionShape" type="CollisionShape2D" parent="."]
+position = Vector2(-0.500032, 4.5)
+rotation = -1.5708
+scale = Vector2(0.825044, 1.81557)
+shape = SubResource("RectangleShape2D_8qxx5")
+
+[node name="Hurtbox" parent="." instance=ExtResource("4_xc2u5")]
+collision_mask = 4
+monitorable = false
+
+[node name="CollisionShape2D" parent="Hurtbox" index="0"]
+rotation = 1.5708
+scale = Vector2(0.596338, -0.618682)
+shape = SubResource("CapsuleShape2D_v3xiy")
+
+[connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]
+
+[editable path="Hurtbox"]
