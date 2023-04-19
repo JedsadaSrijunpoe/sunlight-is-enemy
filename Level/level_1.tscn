@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://dshcq4y4i7jbj" path="res://Camera/camera_with_limit.tscn" id="1_gid3i"]
 [ext_resource type="PackedScene" uid="uid://kiu6g4gkywwq" path="res://Player/player.tscn" id="1_np07d"]
 [ext_resource type="Texture2D" uid="uid://cqoqimwucxhic" path="res://World/wallpaper3.png" id="1_voict"]
-[ext_resource type="PackedScene" uid="uid://yer47awfaqsm" path="res://Hazard/window.tscn" id="2_5jm23"]
+[ext_resource type="PackedScene" uid="uid://55uh4xtx1ylx" path="res://Hazard/window.tscn" id="2_5jm23"]
 [ext_resource type="PackedScene" uid="uid://coq2wpfjr3ppr" path="res://World/crate.tscn" id="3_5571h"]
 
 [sub_resource type="Gradient" id="Gradient_iuo6q"]
@@ -55,4 +55,6 @@ position = Vector2(12, 154)
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
 remote_path = NodePath("../../Camera2D")
 
+[editable path="Window"]
+[editable path="Window/Hitbox"]
 [editable path="Camera2D"]

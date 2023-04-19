@@ -1,6 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://yer47awfaqsm"]
+[gd_scene load_steps=5 format=3 uid="uid://55uh4xtx1ylx"]
 
-[ext_resource type="Texture2D" uid="uid://ccfkmu68ntij2" path="res://World/window.png" id="1_ntgdi"]
+[ext_resource type="Texture2D" uid="uid://ccfkmu68ntij2" path="res://Hazard/window.png" id="1_k1byu"]
 [ext_resource type="PackedScene" uid="uid://bki1tq2g2gv5o" path="res://Overlap/hitbox.tscn" id="2_lwxyv"]
 
 [sub_resource type="Gradient" id="Gradient_7643q"]
@@ -13,10 +13,11 @@ fill_to = Vector2(0.5, 1)
 
 [node name="Window" type="Sprite2D"]
 position = Vector2(291, 74)
-texture = ExtResource("1_ntgdi")
+texture = ExtResource("1_k1byu")
 
 [node name="Hitbox" parent="." instance=ExtResource("2_lwxyv")]
 collision_layer = 4
+IS_LIGHT = true
 
 [node name="CollisionPolygon2D" parent="Hitbox" index="0"]
 polygon = PackedVector2Array(-63, 96, -63, 96, -63, -30, -57, -43, -42, -54, -25, -60, 0, -63, 25, -60, 42, -54, 57, -43, 63, -30, 63, 96)
