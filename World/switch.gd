@@ -1,6 +1,8 @@
 extends Area2D
 
+# entered will be true when player enter switch area.
 var entered = false
+
 var activated = false
 signal switch_state_changed(activated)
 
