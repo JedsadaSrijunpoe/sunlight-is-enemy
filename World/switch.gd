@@ -2,9 +2,9 @@ extends Area2D
 
 var entered = false
 var activated = false
-signal switch_state_changed(state)
+signal switch_state_changed(activated)
 
-func _process(delta):
+func _process(_delta):
 	# Toggle the switch
 	if entered and Input.is_action_just_pressed("interact"):
 		activated = not activated
