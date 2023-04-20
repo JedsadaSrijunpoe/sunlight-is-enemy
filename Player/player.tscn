@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://kiu6g4gkywwq"]
+[gd_scene load_steps=11 format=3 uid="uid://kiu6g4gkywwq"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_laxjk"]
 [ext_resource type="Texture2D" uid="uid://bx8ua8cc4mllp" path="res://Player/bat.png" id="2_dw5jy"]
@@ -37,6 +37,9 @@ height = 22.6288
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hictw"]
 size = Vector2(38.5687, 14.5471)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l5ns7"]
+size = Vector2(8.71702, 14.3487)
 
 [node name="Player" type="CharacterBody2D"]
 slide_on_ceiling = false
@@ -77,8 +80,19 @@ rotation = 1.5708
 scale = Vector2(0.596338, -0.618682)
 shape = SubResource("RectangleShape2D_hictw")
 
+[node name="Switchbox" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Switchbox"]
+position = Vector2(-0.5, 4.54834)
+scale = Vector2(1.03246, 1.60967)
+shape = SubResource("RectangleShape2D_l5ns7")
+
 [connection signal="area_entered" from="BatHurtbox" to="." method="_on_bathurtbox_area_entered"]
 [connection signal="area_entered" from="HumanHurtbox" to="." method="_on_humanhurtbox_area_entered"]
+[connection signal="area_entered" from="Switchbox" to="." method="_on_switchbox_area_entered"]
+[connection signal="area_exited" from="Switchbox" to="." method="_on_switchbox_area_exited"]
 
 [editable path="BatHurtbox"]
 [editable path="HumanHurtbox"]

@@ -93,3 +93,9 @@ func _on_bathurtbox_area_entered(_area):
 func _on_humanhurtbox_area_entered(area):
 	if not area.IS_LIGHT:
 		queue_free()
+
+func _on_switchbox_area_entered(switch):
+	switch.entered = true
+	
+func _on_switchbox_area_exited(switch):
+	switch.entered = false

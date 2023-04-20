@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://cxqt7udetk2iw"]
+
+[ext_resource type="Script" path="res://World/switch.gd" id="1_vanye"]
+[ext_resource type="Texture2D" uid="uid://bfcrp654mxqk5" path="res://Hazard/spiketrap.png" id="2_nqams"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mi0aw"]
+
+[node name="Switch" type="Area2D"]
+collision_layer = 16
+collision_mask = 0
+script = ExtResource("1_vanye")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_nqams")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_mi0aw")

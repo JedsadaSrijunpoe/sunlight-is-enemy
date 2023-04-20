@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://buhroafmnptvy"]
+[gd_scene load_steps=11 format=3 uid="uid://buhroafmnptvy"]
 
 [ext_resource type="PackedScene" uid="uid://dshcq4y4i7jbj" path="res://Camera/camera_with_limit.tscn" id="1_gid3i"]
 [ext_resource type="PackedScene" uid="uid://kiu6g4gkywwq" path="res://Player/player.tscn" id="1_np07d"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://55uh4xtx1ylx" path="res://Hazard/window.tscn" id="2_5jm23"]
 [ext_resource type="PackedScene" uid="uid://coq2wpfjr3ppr" path="res://World/crate.tscn" id="3_5571h"]
 [ext_resource type="PackedScene" uid="uid://bw878r7c0fvro" path="res://Hazard/spike_trap.tscn" id="6_mpf2n"]
+[ext_resource type="PackedScene" uid="uid://cxqt7udetk2iw" path="res://World/switch.tscn" id="7_kwgax"]
 
 [sub_resource type="Gradient" id="Gradient_iuo6q"]
 colors = PackedColorArray(0.36601, 0.12483, 0.0196051, 1, 1, 1, 1, 1)
@@ -58,6 +59,9 @@ remote_path = NodePath("../../Camera2D")
 
 [node name="SpikeTrap" parent="." instance=ExtResource("6_mpf2n")]
 position = Vector2(92, 162)
+
+[node name="Switch" parent="." instance=ExtResource("7_kwgax")]
+position = Vector2(53, 161)
 
 [editable path="Window"]
 [editable path="Window/Hitbox"]
