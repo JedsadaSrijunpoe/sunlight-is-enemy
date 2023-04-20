@@ -1,0 +1,48 @@
+[gd_scene load_steps=7 format=3 uid="uid://1bd5qm2rxjur"]
+
+[ext_resource type="Script" path="res://Hazard/knight_enemy.gd" id="1_sb83j"]
+[ext_resource type="Texture2D" uid="uid://726ad0fcokky" path="res://Hazard/kinghtenemy.png" id="1_tcxht"]
+[ext_resource type="PackedScene" uid="uid://bki1tq2g2gv5o" path="res://Overlap/hitbox.tscn" id="3_214pw"]
+[ext_resource type="PackedScene" uid="uid://n1y0uqxv68mg" path="res://Overlap/hurtbox.tscn" id="4_dk3re"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_np4d4"]
+size = Vector2(10, 29)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pm26p"]
+size = Vector2(11.8611, 29)
+
+[node name="KnightEnemy" type="CharacterBody2D"]
+script = ExtResource("1_sb83j")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_tcxht")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1.5)
+shape = SubResource("RectangleShape2D_np4d4")
+
+[node name="Hitbox" parent="." instance=ExtResource("3_214pw")]
+collision_layer = 8
+
+[node name="CollisionPolygon2D" parent="Hitbox" index="0"]
+position = Vector2(2, 0)
+polygon = PackedVector2Array(-6, 16, -8, -10, -6, -12, 2, -12, 4, -10, 9, -10, 9, 9, 3, 9, 2, 16)
+
+[node name="Hurtbox" parent="." instance=ExtResource("4_dk3re")]
+collision_mask = 36
+
+[node name="CollisionShape2D" parent="Hurtbox" index="0"]
+position = Vector2(0, 1.5)
+scale = Vector2(1.18033, 1)
+shape = SubResource("RectangleShape2D_pm26p")
+
+[node name="Node" type="Node" parent="."]
+
+[node name="Start" type="Marker2D" parent="Node"]
+
+[node name="Destination" type="Marker2D" parent="Node"]
+
+[connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]
+
+[editable path="Hitbox"]
+[editable path="Hurtbox"]
