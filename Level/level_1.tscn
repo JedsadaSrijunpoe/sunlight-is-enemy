@@ -69,6 +69,8 @@ position = Vector2(54, 162)
 position = Vector2(151, 138)
 script = ExtResource("9_503hg")
 
+[connection signal="switch_state_changed" from="Switch" to="Door" method="_on_switch_switch_state_changed"]
+
 [editable path="Window"]
 [editable path="Window/Hitbox"]
 [editable path="Camera2D"]
