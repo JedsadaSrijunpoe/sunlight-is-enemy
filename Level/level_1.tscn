@@ -7,8 +7,8 @@
 [ext_resource type="Script" path="res://Hazard/close_window_with_switch.gd" id="3_6rxrb"]
 [ext_resource type="PackedScene" uid="uid://coq2wpfjr3ppr" path="res://World/crate.tscn" id="3_5571h"]
 [ext_resource type="PackedScene" uid="uid://bw878r7c0fvro" path="res://Hazard/spike_trap.tscn" id="6_mpf2n"]
-[ext_resource type="PackedScene" uid="uid://cxqt7udetk2iw" path="res://World/switch.tscn" id="7_kwgax"]
-[ext_resource type="PackedScene" uid="uid://dsh4lmynpchsw" path="res://World/door.tscn" id="8_04nre"]
+[ext_resource type="PackedScene" uid="uid://ktp63v7u7ltf" path="res://World/switch.tscn" id="7_kwgax"]
+[ext_resource type="PackedScene" path="res://World/door.tscn" id="8_04nre"]
 [ext_resource type="Script" path="res://World/door.gd" id="9_503hg"]
 
 [sub_resource type="Gradient" id="Gradient_iuo6q"]
