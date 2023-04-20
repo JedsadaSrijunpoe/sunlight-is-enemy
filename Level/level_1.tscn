@@ -61,7 +61,7 @@ remote_path = NodePath("../../Camera2D")
 position = Vector2(92, 162)
 
 [node name="Switch" parent="." instance=ExtResource("7_kwgax")]
-position = Vector2(53, 161)
+position = Vector2(54, 162)
 
 [editable path="Window"]
 [editable path="Window/Hitbox"]

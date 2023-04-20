@@ -1,16 +1,17 @@
 extends Area2D
 
 var entered = false
+var activated = false
+signal switch_state_changed(state)
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	# Toggle the switch
 	if entered and Input.is_action_just_pressed("interact"):
-		print("interact")
-
-func activate():
-	print("Switch activated")
+		activated = not activated
+		switch_state_changed.emit(activated)
+	
+	# Flip the switch sprite
+	if activated:
+		$Sprite2D.flip_h = true
+	else:
+		$Sprite2D.flip_h = false
