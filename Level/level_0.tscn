@@ -5,7 +5,7 @@
 [ext_resource type="TileSet" uid="uid://c44gq1ueufkne" path="res://TileMap/dungeon_platformer_tile_set.tres" id="2_kt071"]
 [ext_resource type="PackedScene" uid="uid://55uh4xtx1ylx" path="res://Hazard/window.tscn" id="4_8r8oy"]
 [ext_resource type="Script" path="res://Hazard/close_window_with_switch.gd" id="4_iwu4c"]
-[ext_resource type="PackedScene" uid="uid://ktp63v7u7ltf" path="res://World/switch.tscn" id="5_xa5ox"]
+[ext_resource type="PackedScene" uid="uid://cxqt7udetk2iw" path="res://World/switch.tscn" id="5_xa5ox"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_66vce"]
 size = Vector2(399, 16)
