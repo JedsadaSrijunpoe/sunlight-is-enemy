@@ -36,6 +36,12 @@ position = Vector2(0, 1.5)
 scale = Vector2(1.18033, 1)
 shape = SubResource("RectangleShape2D_pm26p")
 
+[node name="Node" type="Node" parent="."]
+
+[node name="Start" type="Marker2D" parent="Node"]
+
+[node name="Destination" type="Marker2D" parent="Node"]
+
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]
 
 [editable path="Hitbox"]
