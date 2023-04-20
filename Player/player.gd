@@ -38,15 +38,23 @@ func _physics_process(delta):
 # Handle movement in bat form.
 func bat_state(delta):
 	var input_vector = Vector2.ZERO
-	input_vector.x = Input.get_axis("move_left", "move_right")
-	input_vector.y = Input.get_axis("move_up", "move_down")
-	velocity = input_vector.normalized() * FLYING_SPEED
-	move_and_slide()
+	var direction_x = Input.get_axis("move_left", "move_right")
+#	input_vector.x = Input.get_axis("move_left", "move_right")
+#	input_vector.y = Input.get_axis("move_up", "move_down")
+	#velocity = input_vector.normalized() * FLYING_SPEED
+	velocity.x = direction_x* WALKING_SPEED
 	
 	# Flip the sprite horizontally if the direction point to left side.
+	if not is_on_floor():
+		velocity.y += gravity * 0.125*delta
+		
+	if Input.is_action_just_pressed("jump"):
+		velocity.y  = 0.4*JUMP_VELOCITY
+		
 	if velocity.x :
 		animated_sprite.flip_h = velocity.x < 0
 		
+	move_and_slide()
 	# Toggle to humanoid state
 	if Input.is_action_just_pressed("toggle"):
 		state = HUMANOID
