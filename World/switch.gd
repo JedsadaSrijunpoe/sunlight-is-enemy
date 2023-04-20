@@ -9,8 +9,8 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if entered and Input.is_action_just_pressed("jump"):
-		print("jump")
+	if entered and Input.is_action_just_pressed("interact"):
+		print("interact")
 
 func activate():
 	print("Switch activated")
