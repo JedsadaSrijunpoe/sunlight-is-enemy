@@ -6,8 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://55uh4xtx1ylx" path="res://Hazard/window.tscn" id="2_5jm23"]
 [ext_resource type="PackedScene" uid="uid://coq2wpfjr3ppr" path="res://World/crate.tscn" id="3_5571h"]
 [ext_resource type="PackedScene" uid="uid://bw878r7c0fvro" path="res://Hazard/spike_trap.tscn" id="6_mpf2n"]
-[ext_resource type="PackedScene" uid="uid://cxqt7udetk2iw" path="res://World/switch.tscn" id="7_kwgax"]
-[ext_resource type="PackedScene" uid="uid://dsh4lmynpchsw" path="res://World/door.tscn" id="8_04nre"]
+[ext_resource type="PackedScene" uid="uid://ktp63v7u7ltf" path="res://World/switch.tscn" id="7_kwgax"]
+[ext_resource type="PackedScene" path="res://World/door.tscn" id="8_04nre"]
 [ext_resource type="Script" path="res://World/door.gd" id="9_503hg"]
 
 [sub_resource type="Gradient" id="Gradient_iuo6q"]
@@ -68,8 +68,6 @@ position = Vector2(54, 162)
 [node name="Door" parent="." instance=ExtResource("8_04nre")]
 position = Vector2(151, 138)
 script = ExtResource("9_503hg")
-
-[connection signal="switch_state_changed" from="Switch" to="Door" method="_on_switch_switch_state_changed"]
 
 [editable path="Window"]
 [editable path="Window/Hitbox"]
