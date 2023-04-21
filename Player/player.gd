@@ -11,6 +11,7 @@ enum {
 @onready var bat_hurtbox = $BatHurtbox
 @onready var human_hurtbox = $HumanHurtbox
 @onready var hitbox = $Hitbox
+@onready var switch_hitbox = $Switchbox
 
 var state = HUMANOID
 
@@ -64,6 +65,7 @@ func bat_state(delta):
 		humanoid_collision_shape.disabled = false
 		human_hurtbox.get_node("CollisionShape2D").disabled = false
 		hitbox.get_node("CollisionPolygon2D").disabled = false
+		switch_hitbox.get_node("CollisionShape2D").disabled = false
 		
 # Handle movement in human form
 func humanoid_state(delta):
@@ -95,6 +97,7 @@ func humanoid_state(delta):
 		humanoid_collision_shape.disabled = true
 		human_hurtbox.get_node("CollisionShape2D").disabled = true
 		hitbox.get_node("CollisionPolygon2D").disabled = true
+		switch_hitbox.get_node("CollisionShape2D").disabled = true
 
 # How the player react to hurtbox collision in bat form
 func _on_bathurtbox_area_entered(_area):
