@@ -22,7 +22,9 @@ var state = HUMANOID
 ## The maximum gravity force that can effect the player in humanoid form.
 @export var MAX_GRAVITY : float = 100.0
 ## The vertical velocity gained from jumping.
-@export var JUMP_VELOCITY : float = -200.0
+@export var JUMP_VELOCITY : float = -275.0
+## The vertical velocity gained from flapping. (jumping in bat form)
+@export var FLAP_VELOCITY : float = -80.0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -51,7 +53,7 @@ func bat_state(delta):
 		velocity.y += gravity * 0.125*delta
 		
 	if Input.is_action_just_pressed("jump"):
-		velocity.y  = 0.4 * JUMP_VELOCITY
+		velocity.y  = FLAP_VELOCITY
 		
 	if velocity.x :
 		animated_sprite.flip_h = velocity.x < 0

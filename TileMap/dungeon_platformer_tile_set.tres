@@ -2,8 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://bmglxkv2erqys" path="res://TileMap/Dungeon Tile Set.png" id="1_d2wau"]
 [ext_resource type="PackedScene" uid="uid://bw878r7c0fvro" path="res://Hazard/spike_trap.tscn" id="2_eqkuk"]
-[ext_resource type="PackedScene" uid="uid://07jxicydicfp" path="res://Hazard/spike_trap_wall_left.tscn" id="3_xymwl"]
-[ext_resource type="PackedScene" uid="uid://c3am3e8wn6m2i" path="res://Hazard/spike_trap_wall_down.tscn" id="4_cpp0v"]
+[ext_resource type="PackedScene" path="res://Hazard/spike_trap_wall_left.tscn" id="3_xymwl"]
+[ext_resource type="PackedScene" path="res://Hazard/spike_trap_wall_down.tscn" id="4_cpp0v"]
 [ext_resource type="PackedScene" uid="uid://jrppygrn8l5b" path="res://Hazard/spike_trap_wall_right.tscn" id="4_nmenr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_oda74"]
@@ -20,7 +20,7 @@ texture = ExtResource("1_d2wau")
 5:1/0 = 0
 5:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 5:1/0/physics_layer_0/angular_velocity = 0.0
-5:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(2, -8, 8, -8, 8, 8, -8, 8, -8, 2, -3, 2, -3, -3, 2, -3)
+5:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(2, -8, 2, -3, -3, -3, -3, 2, -8, 2, -8, 8, 8, 8, 8, -8)
 6:1/0 = 0
 6:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 6:1/0/physics_layer_0/angular_velocity = 0.0
@@ -134,12 +134,14 @@ texture = ExtResource("1_d2wau")
 1:5/0 = 0
 1:5/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:5/0/physics_layer_0/angular_velocity = 0.0
+1:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 2:5/0 = 0
 2:5/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 2:5/0/physics_layer_0/angular_velocity = 0.0
 3:5/0 = 0
 3:5/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 3:5/0/physics_layer_0/angular_velocity = 0.0
+3:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 5:5/0 = 0
 5:5/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 5:5/0/physics_layer_0/angular_velocity = 0.0
@@ -196,12 +198,14 @@ texture = ExtResource("1_d2wau")
 1:7/0 = 0
 1:7/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:7/0/physics_layer_0/angular_velocity = 0.0
+1:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 2:7/0 = 0
 2:7/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 2:7/0/physics_layer_0/angular_velocity = 0.0
 3:7/0 = 0
 3:7/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 3:7/0/physics_layer_0/angular_velocity = 0.0
+3:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 6:7/0 = 0
 6:7/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 6:7/0/physics_layer_0/angular_velocity = 0.0

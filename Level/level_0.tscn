@@ -3,8 +3,8 @@
 [ext_resource type="TileSet" uid="uid://c44gq1ueufkne" path="res://TileMap/dungeon_platformer_tile_set.tres" id="1_x2mkr"]
 [ext_resource type="PackedScene" uid="uid://kiu6g4gkywwq" path="res://Player/player.tscn" id="2_d2qev"]
 [ext_resource type="PackedScene" uid="uid://dshcq4y4i7jbj" path="res://Camera/camera_with_limit.tscn" id="3_p0rdy"]
+[ext_resource type="PackedScene" uid="uid://dq1cd0v330j4s" path="res://Hazard/tall_knight_enemy.tscn" id="4_lbotf"]
 [ext_resource type="PackedScene" uid="uid://55uh4xtx1ylx" path="res://Hazard/window.tscn" id="4_nshwd"]
-[ext_resource type="PackedScene" uid="uid://1bd5qm2rxjur" path="res://Hazard/knight_enemy.tscn" id="5_tgj5p"]
 [ext_resource type="PackedScene" uid="uid://clkcgs3nrgfvg" path="res://World/next_level_area.tscn" id="6_ks6f4"]
 [ext_resource type="PackedScene" uid="uid://buhroafmnptvy" path="res://Level/level_1.tscn" id="7_0bre3"]
 
@@ -30,6 +30,7 @@ size = Vector2(224, 16)
 font_size = 12
 
 [node name="Level0" type="Node2D"]
+metadata/_edit_horizontal_guides_ = [8.0]
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource("1_x2mkr")
@@ -84,6 +85,15 @@ position = Vector2(21, 159)
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
 remote_path = NodePath("../../Camera2D")
 
+[node name="TallKnightEnemy" parent="." instance=ExtResource("4_lbotf")]
+position = Vector2(526, 8)
+
+[node name="Start" parent="TallKnightEnemy/Node" index="0"]
+position = Vector2(526, 8)
+
+[node name="Destination" parent="TallKnightEnemy/Node" index="1"]
+position = Vector2(758, 8)
+
 [node name="Camera2D" parent="." instance=ExtResource("3_p0rdy")]
 position = Vector2(21, 159)
 
@@ -92,15 +102,6 @@ position = Vector2(808, 184)
 
 [node name="TopLeft" parent="Camera2D/Node" index="1"]
 position = Vector2(-7, -152)
-
-[node name="KnightEnemy" parent="." instance=ExtResource("5_tgj5p")]
-position = Vector2(530, 16)
-
-[node name="Start" parent="KnightEnemy/Node" index="0"]
-position = Vector2(530, 16)
-
-[node name="Destination" parent="KnightEnemy/Node" index="1"]
-position = Vector2(762, 16)
 
 [node name="NextLevelArea" parent="." instance=ExtResource("6_ks6f4")]
 position = Vector2(792, -57)
@@ -149,8 +150,8 @@ vertical_alignment = 1
 
 [editable path="Window"]
 [editable path="Window/Hitbox"]
+[editable path="TallKnightEnemy"]
+[editable path="TallKnightEnemy/Hitbox"]
+[editable path="TallKnightEnemy/Hurtbox"]
+[editable path="TallKnightEnemy/StompHurtbox"]
 [editable path="Camera2D"]
-[editable path="KnightEnemy"]
-[editable path="KnightEnemy/Hitbox"]
-[editable path="KnightEnemy/Hurtbox"]
-[editable path="KnightEnemy/StompHurtbox"]

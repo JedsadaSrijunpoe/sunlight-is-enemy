@@ -1,0 +1,62 @@
+[gd_scene load_steps=8 format=3 uid="uid://dq1cd0v330j4s"]
+
+[ext_resource type="Script" path="res://Hazard/knight_enemy.gd" id="1_o4sht"]
+[ext_resource type="Texture2D" uid="uid://dxsq2fnaakcn" path="res://Hazard/tallenemyknight.png" id="2_mdnmq"]
+[ext_resource type="PackedScene" uid="uid://bki1tq2g2gv5o" path="res://Overlap/hitbox.tscn" id="3_kbiux"]
+[ext_resource type="PackedScene" uid="uid://n1y0uqxv68mg" path="res://Overlap/hurtbox.tscn" id="4_w8wou"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_np4d4"]
+size = Vector2(14, 46)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pm26p"]
+size = Vector2(11.8611, 46)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_33ube"]
+size = Vector2(14, 2.25)
+
+[node name="TallKnightEnemy" type="CharacterBody2D"]
+collision_layer = 32
+collision_mask = 2
+script = ExtResource("1_o4sht")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_mdnmq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_np4d4")
+
+[node name="Hitbox" parent="." instance=ExtResource("3_kbiux")]
+collision_layer = 8
+
+[node name="CollisionPolygon2D" parent="Hitbox" index="0"]
+position = Vector2(2, 0)
+polygon = PackedVector2Array(-6, 23, -8, -19, -6, -21, 10, -21, 10, 7, 3, 7, 2, 23)
+
+[node name="Hurtbox" parent="." instance=ExtResource("4_w8wou")]
+collision_mask = 4
+
+[node name="CollisionShape2D" parent="Hurtbox" index="0"]
+position = Vector2(0, 1)
+scale = Vector2(1.18033, 1)
+shape = SubResource("RectangleShape2D_pm26p")
+
+[node name="StompHurtbox" parent="." instance=ExtResource("4_w8wou")]
+collision_mask = 64
+
+[node name="CollisionShape2D" parent="StompHurtbox" index="0"]
+position = Vector2(0, -20.875)
+shape = SubResource("RectangleShape2D_33ube")
+
+[node name="Node" type="Node" parent="."]
+
+[node name="Start" type="Marker2D" parent="Node"]
+
+[node name="Destination" type="Marker2D" parent="Node"]
+
+[connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]
+[connection signal="area_entered" from="StompHurtbox" to="." method="_on_stomp_hurtbox_area_entered"]
+
+[editable path="Hitbox"]
+[editable path="Hurtbox"]
+[editable path="StompHurtbox"]

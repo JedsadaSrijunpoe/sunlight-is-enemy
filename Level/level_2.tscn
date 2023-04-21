@@ -1,9 +1,12 @@
-[gd_scene load_steps=28 format=3 uid="uid://b5lftc7hjlv7c"]
+[gd_scene load_steps=31 format=3 uid="uid://b5lftc7hjlv7c"]
 
 [ext_resource type="TileSet" uid="uid://c44gq1ueufkne" path="res://TileMap/dungeon_platformer_tile_set.tres" id="1_fb7wg"]
 [ext_resource type="PackedScene" uid="uid://55uh4xtx1ylx" path="res://Hazard/window.tscn" id="2_mrbvo"]
+[ext_resource type="PackedScene" uid="uid://bki1tq2g2gv5o" path="res://Overlap/hitbox.tscn" id="3_60ym1"]
 [ext_resource type="PackedScene" uid="uid://kiu6g4gkywwq" path="res://Player/player.tscn" id="3_s23fk"]
 [ext_resource type="PackedScene" uid="uid://dshcq4y4i7jbj" path="res://Camera/camera_with_limit.tscn" id="4_osfvy"]
+[ext_resource type="PackedScene" uid="uid://cl1y4mot5j503" path="res://World/moving_platform.tscn" id="5_37sm8"]
+[ext_resource type="PackedScene" uid="uid://bbbnlvbey444q" path="res://World/moving_spike_platform.tscn" id="7_p1qrx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_43h16"]
 size = Vector2(112, 16)
@@ -75,6 +78,8 @@ size = Vector2(336, 16)
 size = Vector2(1200, 16)
 
 [node name="level_2" type="Node2D"]
+metadata/_edit_vertical_guides_ = [345.0, 410.0, 997.0, 1065.0]
+metadata/_edit_horizontal_guides_ = []
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource("1_fb7wg")
@@ -194,6 +199,16 @@ position = Vector2(157, -343)
 [node name="Window2" parent="." instance=ExtResource("2_mrbvo")]
 position = Vector2(479, -343)
 
+[node name="Crack" parent="." instance=ExtResource("3_60ym1")]
+collision_layer = 4
+IS_LIGHT = true
+
+[node name="CollisionPolygon2D" parent="Crack" index="0"]
+polygon = PackedVector2Array(353, -180, 332, -146, 341, -117, 331, -79, 353, -22, 422, -23, 430, -66, 424, -106, 431, -142, 422, -181, 382, -184)
+
+[node name="Polygon2D" type="Polygon2D" parent="Crack"]
+polygon = PackedVector2Array(382, -184, 353, -180, 332, -146, 341, -117, 331, -79, 353, -22, 422, -23, 430, -66, 424, -106, 431, -142, 422, -181)
+
 [node name="Player" parent="." instance=ExtResource("3_s23fk")]
 position = Vector2(-42, -16)
 
@@ -209,4 +224,33 @@ position = Vector2(1120, 32)
 [node name="TopLeft" parent="Camera2D/Node" index="1"]
 position = Vector2(-80, -432)
 
+[node name="MovingPlatform" parent="." instance=ExtResource("5_37sm8")]
+position = Vector2(345, -47)
+offset = Vector2(65, 0)
+
+[node name="MovingPlatform2" parent="." instance=ExtResource("5_37sm8")]
+position = Vector2(410, -83)
+offset = Vector2(-65, 0)
+
+[node name="MovingPlatform4" parent="." instance=ExtResource("5_37sm8")]
+position = Vector2(410, -158)
+offset = Vector2(-65, 0)
+
+[node name="MovingPlatform3" parent="." instance=ExtResource("5_37sm8")]
+position = Vector2(345, -121)
+offset = Vector2(65, 0)
+
+[node name="MovingSpikePlatform" parent="." instance=ExtResource("7_p1qrx")]
+position = Vector2(997, -229)
+offset = Vector2(65, 0)
+
+[node name="MovingSpikePlatform2" parent="." instance=ExtResource("7_p1qrx")]
+position = Vector2(1065, -273)
+offset = Vector2(-68, 0)
+
+[node name="MovingSpikePlatform3" parent="." instance=ExtResource("7_p1qrx")]
+position = Vector2(997, -314)
+offset = Vector2(65, 0)
+
+[editable path="Crack"]
 [editable path="Camera2D"]
