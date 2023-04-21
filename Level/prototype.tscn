@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://ddhhm3j6ayefl"]
+[gd_scene load_steps=17 format=3 uid="uid://ddhhm3j6ayefl"]
 
 [ext_resource type="Texture2D" uid="uid://cqoqimwucxhic" path="res://World/wallpaper3.png" id="1_6c7wj"]
 [ext_resource type="PackedScene" uid="uid://55uh4xtx1ylx" path="res://Hazard/window.tscn" id="2_lfpkj"]
@@ -11,6 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://dsh4lmynpchsw" path="res://World/door.tscn" id="9_b7a2f"]
 [ext_resource type="Script" path="res://World/door.gd" id="10_jwrfh"]
 [ext_resource type="PackedScene" uid="uid://1bd5qm2rxjur" path="res://Hazard/knight_enemy.tscn" id="11_7ylyj"]
+[ext_resource type="PackedScene" uid="uid://clkcgs3nrgfvg" path="res://World/next_level_area.tscn" id="12_cwjlu"]
+[ext_resource type="PackedScene" uid="uid://buhroafmnptvy" path="res://Level/level_1.tscn" id="13_dy5mw"]
 
 [sub_resource type="Gradient" id="Gradient_iuo6q"]
 colors = PackedColorArray(0.36601, 0.12483, 0.0196051, 1, 1, 1, 1, 1)
@@ -83,9 +85,13 @@ position = Vector2(443, 154)
 [node name="Destination" parent="KnightEnemy/Node" index="1"]
 position = Vector2(575, 154)
 
+[node name="NextLevelArea" parent="." instance=ExtResource("12_cwjlu")]
+position = Vector2(602, 85)
+scale = Vector2(1, 8.56)
+next_scene = ExtResource("13_dy5mw")
+
 [connection signal="switch_state_changed" from="Switch" to="Window" method="_on_switch_switch_state_changed"]
 [connection signal="switch_state_changed" from="Switch" to="Door" method="_on_switch_switch_state_changed"]
-[connection signal="body_entered" from="NextLevelArea" to="NextLevelArea" method="_on_body_entered"]
 
 [editable path="Window"]
 [editable path="Window/Hitbox"]
@@ -93,3 +99,4 @@ position = Vector2(575, 154)
 [editable path="KnightEnemy"]
 [editable path="KnightEnemy/Hitbox"]
 [editable path="KnightEnemy/Hurtbox"]
+[editable path="KnightEnemy/StompHurtbox"]
