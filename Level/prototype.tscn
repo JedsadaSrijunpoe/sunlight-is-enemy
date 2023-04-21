@@ -85,6 +85,7 @@ position = Vector2(575, 154)
 
 [connection signal="switch_state_changed" from="Switch" to="Window" method="_on_switch_switch_state_changed"]
 [connection signal="switch_state_changed" from="Switch" to="Door" method="_on_switch_switch_state_changed"]
+[connection signal="body_entered" from="NextLevelArea" to="NextLevelArea" method="_on_body_entered"]
 
 [editable path="Window"]
 [editable path="Window/Hitbox"]
