@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dr241j1e1xh"]
 
 [ext_resource type="Texture2D" uid="uid://6ytjaan6dbhy" path="res://Assets/play.png" id="1_1a8a7"]
-[ext_resource type="Script" path="res://Level/main_menu.gd" id="1_4k3wt"]
+[ext_resource type="Script" path="res://UI/main_menu.gd" id="1_fh2ph"]
 [ext_resource type="Texture2D" uid="uid://bdb8jfjam1rph" path="res://Assets/background_test.png" id="2_0gfwd"]
 
 [sub_resource type="Theme" id="Theme_hqk8p"]
@@ -15,7 +15,7 @@ offset_top = 22.0
 offset_bottom = 22.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_4k3wt")
+script = ExtResource("1_fh2ph")
 metadata/_edit_vertical_guides_ = [160.0]
 
 [node name="Background" type="Sprite2D" parent="."]
