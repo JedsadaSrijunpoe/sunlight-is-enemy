@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bo6dlrqpt5mk4"]
+[gd_scene load_steps=15 format=3 uid="uid://bo6dlrqpt5mk4"]
 
 [ext_resource type="TileSet" uid="uid://c44gq1ueufkne" path="res://TileMap/dungeon_platformer_tile_set.tres" id="1_x2mkr"]
 [ext_resource type="PackedScene" uid="uid://kiu6g4gkywwq" path="res://Player/player.tscn" id="2_d2qev"]
@@ -19,6 +19,12 @@ size = Vector2(128, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t20yj"]
 size = Vector2(560, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i13n8"]
+size = Vector2(592, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ns0ss"]
+size = Vector2(224, 16)
 
 [sub_resource type="LabelSettings" id="LabelSettings_0ror5"]
 font_size = 12
@@ -49,6 +55,14 @@ shape = SubResource("RectangleShape2D_ts3qd")
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="TileMap/StaticBody2D"]
 position = Vector2(520, 40)
 shape = SubResource("RectangleShape2D_t20yj")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="TileMap/StaticBody2D"]
+position = Vector2(489, -152)
+shape = SubResource("RectangleShape2D_i13n8")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="TileMap/StaticBody2D"]
+position = Vector2(96, 104)
+shape = SubResource("RectangleShape2D_ns0ss")
 
 [node name="Props" type="TileMap" parent="."]
 tile_set = ExtResource("1_x2mkr")

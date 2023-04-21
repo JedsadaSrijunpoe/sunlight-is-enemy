@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://buhroafmnptvy"]
+[gd_scene load_steps=13 format=3 uid="uid://buhroafmnptvy"]
 
 [ext_resource type="PackedScene" uid="uid://dshcq4y4i7jbj" path="res://Camera/camera_with_limit.tscn" id="1_gid3i"]
 [ext_resource type="TileSet" uid="uid://c44gq1ueufkne" path="res://TileMap/dungeon_platformer_tile_set.tres" id="1_koaq8"]
@@ -8,14 +8,20 @@
 [ext_resource type="PackedScene" uid="uid://1bd5qm2rxjur" path="res://Hazard/knight_enemy.tscn" id="7_dooxr"]
 [ext_resource type="PackedScene" uid="uid://cxqt7udetk2iw" path="res://World/switch.tscn" id="7_kwgax"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_66vce"]
-size = Vector2(399, 16)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hsvnp"]
+size = Vector2(144, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8qb0b"]
+size = Vector2(848, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0qhuv"]
+size = Vector2(48, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mbcjf"]
 size = Vector2(486.137, 16)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_hsvnp"]
-size = Vector2(144, 16)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_66vce"]
+size = Vector2(399, 16)
 
 [node name="Level1" type="Node2D"]
 
@@ -28,26 +34,26 @@ layer_0/tile_data = PackedInt32Array(720896, 131072, 1, 720897, 131072, 1, 72089
 collision_layer = 2
 collision_mask = 33
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/StaticBody2D"]
-position = Vector2(199.5, 183)
-shape = SubResource("RectangleShape2D_66vce")
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="TileMap/StaticBody2D"]
+position = Vector2(72, 40)
+shape = SubResource("RectangleShape2D_hsvnp")
 
-[node name="StaticBody2D2" type="StaticBody2D" parent="TileMap"]
-collision_layer = 2
-collision_mask = 33
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="TileMap/StaticBody2D"]
+position = Vector2(408, -120)
+shape = SubResource("RectangleShape2D_8qb0b")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/StaticBody2D2"]
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="TileMap/StaticBody2D"]
+position = Vector2(280, 8)
+shape = SubResource("RectangleShape2D_0qhuv")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="TileMap/StaticBody2D"]
 position = Vector2(655.763, 72)
 scale = Vector2(1.12, 1)
 shape = SubResource("RectangleShape2D_mbcjf")
 
-[node name="StaticBody2D3" type="StaticBody2D" parent="TileMap"]
-collision_layer = 2
-collision_mask = 33
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/StaticBody2D3"]
-position = Vector2(72, 40)
-shape = SubResource("RectangleShape2D_hsvnp")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/StaticBody2D"]
+position = Vector2(199.5, 184)
+shape = SubResource("RectangleShape2D_66vce")
 
 [node name="Camera2D" parent="." instance=ExtResource("1_gid3i")]
 position = Vector2(28, 157)
