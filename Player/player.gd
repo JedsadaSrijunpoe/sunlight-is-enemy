@@ -50,7 +50,7 @@ func bat_state(delta):
 		velocity.y += gravity * 0.125*delta
 		
 	if Input.is_action_just_pressed("jump"):
-		velocity.y  = 0.4*JUMP_VELOCITY
+		velocity.y  = 0.4 * JUMP_VELOCITY
 		
 	if velocity.x :
 		animated_sprite.flip_h = velocity.x < 0
@@ -107,6 +107,5 @@ func _on_humanhurtbox_area_entered(area):
 
 func _on_switchbox_area_entered(switch):
 	switch.entered = true
-	
 func _on_switchbox_area_exited(switch):
 	switch.entered = false
