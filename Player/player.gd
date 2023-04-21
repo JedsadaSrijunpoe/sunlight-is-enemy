@@ -26,10 +26,6 @@ var state = HUMANOID
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
-# Mark respawn point as the starting position
-func _ready():
-	$Node/RespawnPoint.position = position
-	
 # Handle movement
 func _physics_process(delta):
 	match state:
@@ -117,13 +113,6 @@ func _on_switchbox_area_entered(switch):
 func _on_switchbox_area_exited(switch):
 	switch.entered = false
 
-# Move to spawn point and transform into humanoid
+# Reload the current scene.
 func respawn():
-	state = HUMANOID
-	bat_collision_shape.disabled = true
-	bat_hurtbox.get_node("CollisionShape2D").disabled = true
-	humanoid_collision_shape.disabled = false
-	human_hurtbox.get_node("CollisionShape2D").disabled = false
-	hitbox.get_node("CollisionPolygon2D").disabled = false
-	
-	position = $Node/RespawnPoint.position
+	get_tree().reload_current_scene()

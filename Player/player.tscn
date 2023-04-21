@@ -98,10 +98,6 @@ collision_layer = 64
 scale = Vector2(0.995984, 1)
 polygon = PackedVector2Array(-5.02016, 17, -5.02016, 16, 5.02016, 16, 5.02016, 17)
 
-[node name="Node" type="Node" parent="."]
-
-[node name="RespawnPoint" type="Marker2D" parent="Node"]
-
 [connection signal="area_entered" from="BatHurtbox" to="." method="_on_bathurtbox_area_entered"]
 [connection signal="area_entered" from="HumanHurtbox" to="." method="_on_humanhurtbox_area_entered"]
 [connection signal="area_entered" from="Switchbox" to="." method="_on_switchbox_area_entered"]
