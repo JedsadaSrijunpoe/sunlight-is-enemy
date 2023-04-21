@@ -1,0 +1,52 @@
+[gd_scene load_steps=5 format=3 uid="uid://dr241j1e1xh"]
+
+[ext_resource type="Texture2D" uid="uid://6ytjaan6dbhy" path="res://Assets/play.png" id="1_1a8a7"]
+[ext_resource type="Script" path="res://Level/main_menu.gd" id="1_4k3wt"]
+[ext_resource type="Texture2D" uid="uid://bdb8jfjam1rph" path="res://Assets/background_test.png" id="2_0gfwd"]
+
+[sub_resource type="Theme" id="Theme_hqk8p"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 22.0
+offset_bottom = 22.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4k3wt")
+metadata/_edit_vertical_guides_ = [160.0]
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(160.25, 68.25)
+scale = Vector2(0.525493, 0.467448)
+texture = ExtResource("2_0gfwd")
+
+[node name="Play" type="Button" parent="."]
+layout_mode = 0
+offset_left = 131.0
+offset_top = 69.0
+offset_right = 158.0
+offset_bottom = 77.0
+scale = Vector2(2.08, 2.08)
+theme = SubResource("Theme_hqk8p")
+
+[node name="Sprite2D" type="Sprite2D" parent="Play"]
+position = Vector2(13.5, 4.5)
+scale = Vector2(0.5625, 0.5625)
+texture = ExtResource("1_1a8a7")
+
+[node name="Setting" type="Button" parent="."]
+offset_left = 131.0
+offset_top = 97.0
+offset_right = 158.0
+offset_bottom = 105.0
+scale = Vector2(2.08, 2.08)
+theme = SubResource("Theme_hqk8p")
+
+[node name="Sprite2D" type="Sprite2D" parent="Setting"]
+position = Vector2(13.5, 4.5)
+scale = Vector2(0.5625, 0.5625)
+
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
