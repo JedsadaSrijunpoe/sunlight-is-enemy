@@ -74,3 +74,7 @@ func go_toward_start(delta):
 func _on_hurtbox_area_entered(area):
 	if not area.IS_LIGHT:
 		queue_free()
+
+
+func _on_stomp_hurtbox_area_entered(area):
+	queue_free()
