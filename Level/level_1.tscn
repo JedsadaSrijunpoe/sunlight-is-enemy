@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://buhroafmnptvy"]
+[gd_scene load_steps=12 format=3 uid="uid://buhroafmnptvy"]
 
 [ext_resource type="PackedScene" uid="uid://dshcq4y4i7jbj" path="res://Camera/camera_with_limit.tscn" id="1_gid3i"]
 [ext_resource type="TileSet" uid="uid://c44gq1ueufkne" path="res://TileMap/dungeon_platformer_tile_set.tres" id="1_koaq8"]
@@ -17,6 +17,8 @@ size = Vector2(486.137, 16)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hsvnp"]
 size = Vector2(144, 16)
 
+[sub_resource type="LabelSettings" id="LabelSettings_qlmom"]
+
 [node name="Level1" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -29,7 +31,7 @@ collision_layer = 2
 collision_mask = 33
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/StaticBody2D"]
-position = Vector2(199.5, 184)
+position = Vector2(199.5, 183)
 shape = SubResource("RectangleShape2D_66vce")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="TileMap"]
@@ -82,6 +84,15 @@ layer_0/tile_data = PackedInt32Array(655382, 1, 65536, 589847, 1, 131072, 524311
 [node name="Switch" parent="." instance=ExtResource("7_kwgax")]
 position = Vector2(33, 24)
 
+[node name="Label" type="Label" parent="Switch"]
+offset_left = -27.0
+offset_top = 14.0
+offset_right = 47.0
+offset_bottom = 40.0
+text = "E:interact
+"
+label_settings = SubResource("LabelSettings_qlmom")
+
 [node name="KnightEnemy" parent="." instance=ExtResource("7_dooxr")]
 position = Vector2(395, 47)
 
@@ -97,3 +108,4 @@ position = Vector2(886, 47)
 [editable path="KnightEnemy"]
 [editable path="KnightEnemy/Hitbox"]
 [editable path="KnightEnemy/Hurtbox"]
+[editable path="KnightEnemy/StompHurtbox"]

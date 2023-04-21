@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://jrppygrn8l5b"]
+
+[ext_resource type="Texture2D" uid="uid://bfcrp654mxqk5" path="res://Hazard/spiketrap.png" id="1_1kp7l"]
+[ext_resource type="PackedScene" uid="uid://bki1tq2g2gv5o" path="res://Overlap/hitbox.tscn" id="2_w8r3b"]
+
+[node name="SpikeTrap" type="Node2D"]
+rotation = 1.5708
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_1kp7l")
+
+[node name="Hitbox" parent="." instance=ExtResource("2_w8r3b")]
+collision_layer = 4
+
+[node name="CollisionPolygon2D" parent="Hitbox" index="0"]
+polygon = PackedVector2Array(-7, 8, -7, 4, -4, 2, -1, 4, 1, 4, 4, 2, 7, 4, 7, 8)
+
+[editable path="Hitbox"]

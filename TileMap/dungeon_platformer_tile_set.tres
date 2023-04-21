@@ -1,9 +1,10 @@
-[gd_resource type="TileSet" load_steps=7 format=3 uid="uid://c44gq1ueufkne"]
+[gd_resource type="TileSet" load_steps=8 format=3 uid="uid://c44gq1ueufkne"]
 
 [ext_resource type="Texture2D" uid="uid://bmglxkv2erqys" path="res://TileMap/Dungeon Tile Set.png" id="1_d2wau"]
 [ext_resource type="PackedScene" uid="uid://bw878r7c0fvro" path="res://Hazard/spike_trap.tscn" id="2_eqkuk"]
 [ext_resource type="PackedScene" uid="uid://07jxicydicfp" path="res://Hazard/spike_trap_wall_left.tscn" id="3_xymwl"]
 [ext_resource type="PackedScene" uid="uid://c3am3e8wn6m2i" path="res://Hazard/spike_trap_wall_down.tscn" id="4_cpp0v"]
+[ext_resource type="PackedScene" uid="uid://jrppygrn8l5b" path="res://Hazard/spike_trap_wall_right.tscn" id="4_nmenr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_oda74"]
 texture = ExtResource("1_d2wau")
@@ -54,9 +55,11 @@ texture = ExtResource("1_d2wau")
 5:2/0 = 0
 5:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 5:2/0/physics_layer_0/angular_velocity = 0.0
+5:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 6:2/0 = 0
 6:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 6:2/0/physics_layer_0/angular_velocity = 0.0
+6:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 8:2/0 = 0
 8:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 8:2/0/physics_layer_0/angular_velocity = 0.0
@@ -90,9 +93,11 @@ texture = ExtResource("1_d2wau")
 5:3/0 = 0
 5:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 5:3/0/physics_layer_0/angular_velocity = 0.0
+5:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 6:3/0 = 0
 6:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 6:3/0/physics_layer_0/angular_velocity = 0.0
+6:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 8:3/0 = 0
 8:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 8:3/0/physics_layer_0/angular_velocity = 0.0
@@ -433,9 +438,11 @@ texture = ExtResource("1_d2wau")
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_xitk2"]
 scenes/1/scene = ExtResource("2_eqkuk")
 scenes/2/scene = ExtResource("3_xymwl")
+scenes/4/scene = ExtResource("4_nmenr")
 scenes/9/scene = ExtResource("4_cpp0v")
 
 [resource]
-physics_layer_0/collision_layer = 1
+physics_layer_0/collision_layer = 2
+physics_layer_0/collision_mask = 33
 sources/0 = SubResource("TileSetAtlasSource_oda74")
 sources/1 = SubResource("TileSetScenesCollectionSource_xitk2")
