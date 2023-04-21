@@ -69,6 +69,7 @@ func go_toward_start(delta):
 	else:
 		past_direction *= -1
 		patrol_dest = DEST
+	print(velocity)
 		
 func _on_hurtbox_area_entered(area):
 	if not area.IS_LIGHT:

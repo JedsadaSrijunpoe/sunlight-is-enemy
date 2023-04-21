@@ -43,6 +43,7 @@ size = Vector2(38.5687, 16.1634)
 size = Vector2(9.68561, 14.2886)
 
 [node name="Player" type="CharacterBody2D"]
+collision_mask = 2
 slide_on_ceiling = false
 script = ExtResource("1_laxjk")
 
@@ -91,7 +92,7 @@ scale = Vector2(1.03246, 1.60967)
 shape = SubResource("RectangleShape2D_l5ns7")
 
 [node name="Hitbox" parent="." instance=ExtResource("5_befhp")]
-collision_layer = 32
+collision_layer = 64
 
 [node name="CollisionPolygon2D" parent="Hitbox" index="0"]
 scale = Vector2(0.995984, 1)
