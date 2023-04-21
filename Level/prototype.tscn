@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://ddhhm3j6ayefl"]
+[gd_scene load_steps=16 format=3 uid="uid://ddhhm3j6ayefl"]
 
 [ext_resource type="Texture2D" uid="uid://cqoqimwucxhic" path="res://World/wallpaper3.png" id="1_6c7wj"]
 [ext_resource type="PackedScene" uid="uid://55uh4xtx1ylx" path="res://Hazard/window.tscn" id="2_lfpkj"]
@@ -10,6 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://cxqt7udetk2iw" path="res://World/switch.tscn" id="8_n72x1"]
 [ext_resource type="PackedScene" uid="uid://dsh4lmynpchsw" path="res://World/door.tscn" id="9_b7a2f"]
 [ext_resource type="Script" path="res://World/door.gd" id="10_jwrfh"]
+[ext_resource type="PackedScene" uid="uid://clkcgs3nrgfvg" path="res://World/next_level_area.tscn" id="11_g624e"]
+[ext_resource type="PackedScene" uid="uid://buhroafmnptvy" path="res://Level/level_1.tscn" id="12_bv5pw"]
 
 [sub_resource type="Gradient" id="Gradient_iuo6q"]
 colors = PackedColorArray(0.36601, 0.12483, 0.0196051, 1, 1, 1, 1, 1)
@@ -21,7 +23,7 @@ fill_to = Vector2(0, 0)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6ule5"]
 size = Vector2(610.375, 20)
 
-[node name="Level1" type="Node2D"]
+[node name="Main" type="Node2D"]
 
 [node name="Background" type="Sprite2D" parent="."]
 texture_repeat = 2
@@ -71,8 +73,13 @@ position = Vector2(54, 162)
 position = Vector2(151, 138)
 script = ExtResource("10_jwrfh")
 
+[node name="NextLevelArea" parent="." instance=ExtResource("11_g624e")]
+position = Vector2(473, 159)
+next_scene = ExtResource("12_bv5pw")
+
 [connection signal="switch_state_changed" from="Switch" to="Window" method="_on_switch_switch_state_changed"]
 [connection signal="switch_state_changed" from="Switch" to="Door" method="_on_switch_switch_state_changed"]
+[connection signal="body_entered" from="NextLevelArea" to="NextLevelArea" method="_on_body_entered"]
 
 [editable path="Window"]
 [editable path="Window/Hitbox"]
