@@ -23,12 +23,10 @@ script = ExtResource("1_sb83j")
 texture = ExtResource("1_tcxht")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2(0, 1.5)
 shape = SubResource("RectangleShape2D_np4d4")
 
 [node name="Hitbox" parent="." instance=ExtResource("3_214pw")]
-visible = false
 collision_layer = 8
 
 [node name="CollisionPolygon2D" parent="Hitbox" index="0"]
@@ -36,7 +34,6 @@ position = Vector2(2, 0)
 polygon = PackedVector2Array(-6, 16, -8, -10, -6, -12, 2, -12, 4, -10, 9, -10, 9, 9, 3, 9, 2, 16)
 
 [node name="Hurtbox" parent="." instance=ExtResource("4_dk3re")]
-visible = false
 collision_mask = 4
 
 [node name="CollisionShape2D" parent="Hurtbox" index="0"]
