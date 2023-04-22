@@ -14,7 +14,6 @@ texture = ExtResource("1_m460k")
 
 [node name="Hitbox" parent="." instance=ExtResource("1_gkw1v")]
 collision_layer = 4
-IS_LIGHT = true
 
 [node name="CollisionPolygon2D" parent="Hitbox" index="0"]
 position = Vector2(0.0142884, 0)
