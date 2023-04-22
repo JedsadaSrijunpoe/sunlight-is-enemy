@@ -1,4 +1,4 @@
-extends Sprite2D
+extends StaticBody2D
 
 @export var start_disabled: bool
 var is_activated
@@ -9,10 +9,10 @@ func _ready():
 func  _process(_delta):
 	if is_activated:
 		$Hitbox/CollisionPolygon2D.disabled = false
-		show()
+		$Hitbox/Flame.show()
 	else:
 		$Hitbox/CollisionPolygon2D.disabled = true
-		hide()
+		$Hitbox/Flame.hide()
 		
 func _on_switch_switch_state_changed(activated):
 	is_activated = activated

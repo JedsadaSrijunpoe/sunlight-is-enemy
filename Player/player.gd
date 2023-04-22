@@ -41,7 +41,7 @@ func _physics_process(delta):
 	
 # Handle movement in bat form.
 func bat_state(delta):
-	var input_vector = Vector2.ZERO
+	var _input_vector = Vector2.ZERO
 	var direction_x = Input.get_axis("move_left", "move_right")
 #	input_vector.x = Input.get_axis("move_left", "move_right")
 #	input_vector.y = Input.get_axis("move_up", "move_down")
