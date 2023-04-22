@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://dsh4lmynpchsw" path="res://World/door.tscn" id="9_b7a2f"]
 [ext_resource type="Script" path="res://World/door.gd" id="10_jwrfh"]
 [ext_resource type="PackedScene" uid="uid://1bd5qm2rxjur" path="res://Hazard/knight_enemy.tscn" id="11_7ylyj"]
-[ext_resource type="PackedScene" uid="uid://clkcgs3nrgfvg" path="res://World/next_level_area.tscn" id="12_cwjlu"]
+[ext_resource type="PackedScene" uid="uid://bxh87xberc4bg" path="res://World/next_level_area.tscn" id="12_cwjlu"]
 [ext_resource type="PackedScene" uid="uid://buhroafmnptvy" path="res://Level/level_1.tscn" id="13_dy5mw"]
 [ext_resource type="Texture2D" uid="uid://bbnv0wc4yttqy" path="res://World/moving_spike_platform.png" id="14_f36ry"]
 [ext_resource type="PackedScene" uid="uid://c2wuujfs4la7i" path="res://UI/user_interface.tscn" id="15_mojve"]

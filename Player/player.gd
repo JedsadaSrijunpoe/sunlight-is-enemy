@@ -16,7 +16,7 @@ enum {
 var state = HUMANOID
 
 ## The player's movespeed in bat form.
-@export var FLYING_SPEED : float = 300.0
+@export var FLYING_SPEED : float = 100.0
 ## The player's movespeed in humanoid form.
 @export var WALKING_SPEED : float = 100.0
 ## The maximum gravity force that can effect the player in humanoid form.
@@ -46,7 +46,7 @@ func bat_state(delta):
 #	input_vector.x = Input.get_axis("move_left", "move_right")
 #	input_vector.y = Input.get_axis("move_up", "move_down")
 	#velocity = input_vector.normalized() * FLYING_SPEED
-	velocity.x = direction_x* WALKING_SPEED
+	velocity.x = direction_x * FLYING_SPEED
 	
 	# Flip the sprite horizontally if the direction point to left side.
 	if not is_on_floor():

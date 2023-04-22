@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dshcq4y4i7jbj" path="res://Camera/camera_with_limit.tscn" id="3_p0rdy"]
 [ext_resource type="PackedScene" uid="uid://dq1cd0v330j4s" path="res://Hazard/tall_knight_enemy.tscn" id="4_lbotf"]
 [ext_resource type="PackedScene" uid="uid://55uh4xtx1ylx" path="res://Hazard/window.tscn" id="4_nshwd"]
-[ext_resource type="PackedScene" path="res://World/next_level_area.tscn" id="6_ks6f4"]
+[ext_resource type="PackedScene" uid="uid://bxh87xberc4bg" path="res://World/next_level_area.tscn" id="6_ks6f4"]
 [ext_resource type="PackedScene" uid="uid://buhroafmnptvy" path="res://Level/level_1.tscn" id="7_0bre3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g055h"]

@@ -7,7 +7,7 @@
 [ext_resource type="Script" path="res://Hazard/window.gd" id="4_1yk86"]
 [ext_resource type="PackedScene" uid="uid://dq1cd0v330j4s" path="res://Hazard/tall_knight_enemy.tscn" id="6_1bioi"]
 [ext_resource type="PackedScene" uid="uid://cxqt7udetk2iw" path="res://World/switch.tscn" id="7_kwgax"]
-[ext_resource type="PackedScene" uid="uid://clkcgs3nrgfvg" path="res://World/next_level_area.tscn" id="8_noy2a"]
+[ext_resource type="PackedScene" uid="uid://bxh87xberc4bg" path="res://World/next_level_area.tscn" id="8_noy2a"]
 [ext_resource type="PackedScene" uid="uid://b5lftc7hjlv7c" path="res://Level/level_2.tscn" id="9_vhsia"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hsvnp"]
