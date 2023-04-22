@@ -18,19 +18,19 @@
 size = Vector2(412, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vooea"]
-size = Vector2(22, 1016)
+size = Vector2(22, 1017)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0lwga"]
-size = Vector2(369, 15)
+size = Vector2(372, 15)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ku1ug"]
 size = Vector2(20, 893.25)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4k26h"]
-size = Vector2(59, 20)
+size = Vector2(61.5, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aihi7"]
-size = Vector2(80, 16)
+size = Vector2(79.5, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ves7e"]
 size = Vector2(64, 16)
@@ -125,11 +125,11 @@ position = Vector2(-270, 8)
 shape = SubResource("RectangleShape2D_j2x8c")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="TileMap/SecretPath"]
-position = Vector2(-466, -494)
+position = Vector2(-466, -494.5)
 shape = SubResource("RectangleShape2D_vooea")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="TileMap/SecretPath"]
-position = Vector2(-235.5, -41.5)
+position = Vector2(-234, -41.5)
 shape = SubResource("RectangleShape2D_0lwga")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="TileMap/SecretPath"]
@@ -137,7 +137,7 @@ position = Vector2(-422, -480.625)
 shape = SubResource("RectangleShape2D_ku1ug")
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="TileMap/SecretPath"]
-position = Vector2(-448, -1013)
+position = Vector2(-446.75, -1013)
 shape = SubResource("RectangleShape2D_4k26h")
 
 [node name="Floor" type="StaticBody2D" parent="TileMap"]
@@ -173,7 +173,7 @@ position = Vector2(-8, 8)
 shape = SubResource("RectangleShape2D_q8l3t")
 
 [node name="CollisionShape2D8" type="CollisionShape2D" parent="TileMap/Floor"]
-position = Vector2(-231.5, -472)
+position = Vector2(-231.75, -472)
 shape = SubResource("RectangleShape2D_aihi7")
 
 [node name="CollisionShape2D9" type="CollisionShape2D" parent="TileMap/Floor"]
