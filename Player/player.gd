@@ -36,7 +36,7 @@ func _physics_process(delta):
 			animated_sprite.play("Bat")
 			bat_state(delta)
 		HUMANOID :
-			animated_sprite.play("Humanoid") 
+			animated_sprite.play("Humanoid")
 			humanoid_state(delta)
 	
 # Handle movement in bat form.
@@ -68,6 +68,7 @@ func bat_state(delta):
 		human_hurtbox.get_node("CollisionShape2D").disabled = false
 		hitbox.get_node("CollisionPolygon2D").disabled = false
 		switch_hitbox.get_node("CollisionShape2D").disabled = false
+		velocity.y = 0
 		
 # Handle movement in human form
 func humanoid_state(delta):
@@ -100,6 +101,7 @@ func humanoid_state(delta):
 		human_hurtbox.get_node("CollisionShape2D").disabled = true
 		hitbox.get_node("CollisionPolygon2D").disabled = true
 		switch_hitbox.get_node("CollisionShape2D").disabled = true
+		velocity.y = 0
 
 # How the player react to hurtbox collision in bat form
 func _on_bathurtbox_area_entered(_area):
