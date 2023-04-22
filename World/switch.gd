@@ -16,6 +16,7 @@ func _process(_delta):
 	if entered and Input.is_action_just_pressed("interact"):
 		activated = not activated
 		switch_state_changed.emit(activated)
+		SoundPlayer.play_sound(SoundPlayer.LEVER)
 	
 	# Flip the switch sprite
 	if activated:
