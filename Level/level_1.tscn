@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://kiu6g4gkywwq" path="res://Player/player.tscn" id="1_np07d"]
 [ext_resource type="PackedScene" uid="uid://55uh4xtx1ylx" path="res://Hazard/window.tscn" id="2_5jm23"]
 [ext_resource type="Script" path="res://Hazard/close_window_with_switch.gd" id="3_6rxrb"]
-[ext_resource type="PackedScene" uid="uid://1bd5qm2rxjur" path="res://Hazard/knight_enemy.tscn" id="7_dooxr"]
+[ext_resource type="PackedScene" uid="uid://dq1cd0v330j4s" path="res://Hazard/tall_knight_enemy.tscn" id="6_1bioi"]
 [ext_resource type="PackedScene" uid="uid://cxqt7udetk2iw" path="res://World/switch.tscn" id="7_kwgax"]
 [ext_resource type="PackedScene" uid="uid://clkcgs3nrgfvg" path="res://World/next_level_area.tscn" id="8_noy2a"]
 [ext_resource type="PackedScene" uid="uid://b5lftc7hjlv7c" path="res://Level/level_2.tscn" id="9_vhsia"]
@@ -26,6 +26,7 @@ size = Vector2(486.137, 16)
 size = Vector2(399, 16)
 
 [node name="Level1" type="Node2D"]
+metadata/_edit_horizontal_guides_ = [40.0]
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource("1_koaq8")
@@ -87,6 +88,15 @@ position = Vector2(28, 157)
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
 remote_path = NodePath("../../Camera2D")
 
+[node name="TallKnightEnemy" parent="." instance=ExtResource("6_1bioi")]
+position = Vector2(398, 40)
+
+[node name="Start" parent="TallKnightEnemy/Node" index="0"]
+position = Vector2(398, 40)
+
+[node name="Destination" parent="TallKnightEnemy/Node" index="1"]
+position = Vector2(881, 40)
+
 [node name="Spike_traps" type="TileMap" parent="."]
 tile_set = ExtResource("1_koaq8")
 format = 2
@@ -94,15 +104,6 @@ layer_0/tile_data = PackedInt32Array(655382, 1, 65536, 589847, 1, 131072, 524311
 
 [node name="Switch" parent="." instance=ExtResource("7_kwgax")]
 position = Vector2(33, 24)
-
-[node name="KnightEnemy" parent="." instance=ExtResource("7_dooxr")]
-position = Vector2(395, 47)
-
-[node name="Start" parent="KnightEnemy/Node" index="0"]
-position = Vector2(395, 47)
-
-[node name="Destination" parent="KnightEnemy/Node" index="1"]
-position = Vector2(886, 47)
 
 [node name="NextLevelArea" parent="." instance=ExtResource("8_noy2a")]
 position = Vector2(881, -122)
@@ -112,7 +113,7 @@ next_scene = ExtResource("9_vhsia")
 [connection signal="switch_state_changed" from="Switch" to="Window3" method="_on_switch_switch_state_changed"]
 
 [editable path="Camera2D"]
-[editable path="KnightEnemy"]
-[editable path="KnightEnemy/Hitbox"]
-[editable path="KnightEnemy/Hurtbox"]
-[editable path="KnightEnemy/StompHurtbox"]
+[editable path="TallKnightEnemy"]
+[editable path="TallKnightEnemy/Hitbox"]
+[editable path="TallKnightEnemy/Hurtbox"]
+[editable path="TallKnightEnemy/StompHurtbox"]
