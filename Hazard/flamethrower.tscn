@@ -8,6 +8,8 @@
 size = Vector2(8, 8)
 
 [node name="FlameThrower" type="StaticBody2D"]
+collision_layer = 2
+collision_mask = 33
 
 [node name="Base" type="Sprite2D" parent="."]
 texture = ExtResource("1_m460k")
