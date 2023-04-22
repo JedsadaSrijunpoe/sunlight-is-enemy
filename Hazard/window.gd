@@ -1,21 +1,14 @@
 extends Sprite2D
 
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
+var opened_window = preload("res://Hazard/window.png")
+var closed_window = preload("res://Hazard/closed_window.png")
 
 func _on_switch_switch_state_changed(activated):
 	if activated:
-		texture = load("res://World/crate.png")
 		$Hitbox/CollisionPolygon2D.disabled = true
+		$Polygon2D.hide()
+		texture = closed_window
 	else:
-		texture = load("res://Hazard/window.png")
 		$Hitbox/CollisionPolygon2D.disabled = false
-
+		$Polygon2D.show()
+		texture = opened_window
