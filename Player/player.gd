@@ -109,11 +109,13 @@ func humanoid_state(delta):
 
 # How the player react to hurtbox collision in bat form
 func _on_bathurtbox_area_entered(_area):
+	SoundPlayer.play_sound(SoundPlayer.PLAYER_DEATH)
 	call_deferred("respawn")
 
 # How the player react to hurtbox collision in humanoid form
 func _on_humanhurtbox_area_entered(area):
 	if not area.IS_LIGHT:
+		SoundPlayer.play_sound(SoundPlayer.PLAYER_DEATH)
 		call_deferred("respawn")
 
 # Tell the switch that player has enterer switch area

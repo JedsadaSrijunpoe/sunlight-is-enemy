@@ -5,7 +5,9 @@ const FLAP = preload("res://Sound/Flap.wav")
 const TRANSFORM = preload("res://Sound/Transform.wav")
 const TRANSFORM2 = preload("res://Sound/Transform2.wav")
 const ENEMY_KILLED = preload("res://Sound/EnemyKilled.wav")
+const PLAYER_DEATH = preload("res://Sound/PlayerDeath.wav")
 const LEVER = preload("res://Sound/Lever.wav")
+const NEXT_LEVEL = preload("res://Sound/NextLevel.wav")
 
 @onready var audio_players = $AudioPlayers
 
