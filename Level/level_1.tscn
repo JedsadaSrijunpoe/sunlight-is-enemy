@@ -4,7 +4,7 @@
 [ext_resource type="TileSet" uid="uid://c44gq1ueufkne" path="res://TileMap/dungeon_platformer_tile_set.tres" id="1_koaq8"]
 [ext_resource type="PackedScene" uid="uid://kiu6g4gkywwq" path="res://Player/player.tscn" id="1_np07d"]
 [ext_resource type="PackedScene" uid="uid://55uh4xtx1ylx" path="res://Hazard/window.tscn" id="2_5jm23"]
-[ext_resource type="Script" path="res://Hazard/close_window_with_switch.gd" id="3_6rxrb"]
+[ext_resource type="Script" path="res://Hazard/window.gd" id="4_1yk86"]
 [ext_resource type="PackedScene" uid="uid://dq1cd0v330j4s" path="res://Hazard/tall_knight_enemy.tscn" id="6_1bioi"]
 [ext_resource type="PackedScene" uid="uid://cxqt7udetk2iw" path="res://World/switch.tscn" id="7_kwgax"]
 [ext_resource type="PackedScene" uid="uid://clkcgs3nrgfvg" path="res://World/next_level_area.tscn" id="8_noy2a"]
@@ -80,7 +80,7 @@ position = Vector2(534, -79)
 
 [node name="Window3" parent="." instance=ExtResource("2_5jm23")]
 position = Vector2(851, -79)
-script = ExtResource("3_6rxrb")
+script = ExtResource("4_1yk86")
 
 [node name="Player" parent="." instance=ExtResource("1_np07d")]
 position = Vector2(28, 157)

@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://b7c3t4aho6nsn"]
+
+[ext_resource type="PackedScene" uid="uid://bki1tq2g2gv5o" path="res://Overlap/hitbox.tscn" id="1_xua46"]
+
+[sub_resource type="Gradient" id="Gradient_b0ody"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(1, 1, 1, 0.588235)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_fj7mn"]
+gradient = SubResource("Gradient_b0ody")
+
+[node name="LightPillar" type="Sprite2D"]
+texture = SubResource("GradientTexture2D_fj7mn")
+
+[node name="Hitbox" parent="." instance=ExtResource("1_xua46")]
+collision_layer = 4
+IS_LIGHT = true
+
+[node name="CollisionPolygon2D" parent="Hitbox" index="0"]
+position = Vector2(0.0142884, 0)
+scale = Vector2(1.18022, -1.58951)
+polygon = PackedVector2Array(-27, 20, 27, 20, 27, -20, -27, -20)
+
+[editable path="Hitbox"]
