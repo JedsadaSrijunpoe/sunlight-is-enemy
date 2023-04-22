@@ -43,9 +43,6 @@ func _physics_process(delta):
 func bat_state(delta):
 	var _input_vector = Vector2.ZERO
 	var direction_x = Input.get_axis("move_left", "move_right")
-#	input_vector.x = Input.get_axis("move_left", "move_right")
-#	input_vector.y = Input.get_axis("move_up", "move_down")
-	#velocity = input_vector.normalized() * FLYING_SPEED
 	velocity.x = direction_x * FLYING_SPEED
 	
 	# Flip the sprite horizontally if the direction point to left side.
@@ -54,6 +51,7 @@ func bat_state(delta):
 		
 	if Input.is_action_just_pressed("jump"):
 		velocity.y  = FLAP_VELOCITY
+		SoundPlayer.play_sound(SoundPlayer.FLAP)
 		
 	if velocity.x :
 		animated_sprite.flip_h = velocity.x < 0
@@ -68,6 +66,7 @@ func bat_state(delta):
 		human_hurtbox.get_node("CollisionShape2D").disabled = false
 		hitbox.get_node("CollisionPolygon2D").disabled = false
 		switch_hitbox.get_node("CollisionShape2D").disabled = false
+		SoundPlayer.play_sound(SoundPlayer.TRANSFORM2)
 		
 # Handle movement in human form
 func humanoid_state(delta):
@@ -105,6 +104,8 @@ func humanoid_state(delta):
 			velocity.y *= 1.5 * 80/275
 		else :
 			velocity.y = 0
+			
+		SoundPlayer.play_sound(SoundPlayer.TRANSFORM)
 
 # How the player react to hurtbox collision in bat form
 func _on_bathurtbox_area_entered(_area):
