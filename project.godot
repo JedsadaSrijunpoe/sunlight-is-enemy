@@ -15,6 +15,10 @@ run/main_scene="res://Level/level_1.tscn"
 config/features=PackedStringArray("4.0", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+SoundPlayer="*res://Sound/sound_player.tscn"
+
 [display]
 
 window/size/viewport_width=320

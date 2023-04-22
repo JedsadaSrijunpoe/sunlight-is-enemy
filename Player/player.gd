@@ -81,6 +81,7 @@ func humanoid_state(delta):
 	# Handle Jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
+		SoundPlayer.play_sound(SoundPlayer.JUMP)
 		
 	# Get velocity vector
 	velocity.x = direction_x * WALKING_SPEED
