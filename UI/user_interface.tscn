@@ -1,9 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://c2wuujfs4la7i"]
+[gd_scene load_steps=5 format=3 uid="uid://c2wuujfs4la7i"]
 
 [ext_resource type="Script" path="res://UI/user_interface.gd" id="1_dqmmd"]
 [ext_resource type="Texture2D" uid="uid://hehbx76cuk70" path="res://Assets/next.png" id="2_ntdfw"]
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_okbrr"]
+[sub_resource type="Gradient" id="Gradient_a8fh6"]
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(0.324203, 0.324203, 0.324203, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_1lgkh"]
+gradient = SubResource("Gradient_a8fh6")
 
 [node name="User Interface" type="Control"]
 process_mode = 3
@@ -14,6 +19,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_dqmmd")
+metadata/_edit_horizontal_guides_ = [33.0]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -30,33 +36,35 @@ anchors_preset = 0
 offset_right = 320.0
 offset_bottom = 179.0
 
-[node name="Background" type="TextureRect" parent="CanvasLayer/EndLevelScreen"]
-layout_mode = 0
-offset_right = 320.0
-offset_bottom = 179.0
-texture = SubResource("PlaceholderTexture2D_okbrr")
-
-[node name="TextureButton" type="TextureButton" parent="CanvasLayer/EndLevelScreen"]
-layout_mode = 0
-offset_left = 65.0
-offset_top = 84.0
-offset_right = 113.0
-offset_bottom = 124.0
-texture_normal = ExtResource("2_ntdfw")
-
-[node name="NextLevelButton" type="Button" parent="CanvasLayer/EndLevelScreen"]
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/EndLevelScreen"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -33.0
-offset_top = 7.0
-offset_right = 33.0
-offset_bottom = 35.0
+offset_left = -75.5
+offset_top = -66.5
+offset_right = 75.5
+offset_bottom = 66.5
 grow_horizontal = 2
 grow_vertical = 2
+texture = SubResource("GradientTexture2D_1lgkh")
+
+[node name="NextLevelButton" type="TextureButton" parent="CanvasLayer/EndLevelScreen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -24.0
+offset_top = 13.0
+offset_right = 24.0
+offset_bottom = 29.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("2_ntdfw")
 
 [node name="FinishTime" type="Label" parent="CanvasLayer/EndLevelScreen"]
 layout_mode = 1
@@ -66,11 +74,36 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -20.0
-offset_top = -26.0
+offset_top = -23.0
 offset_right = 20.0
+offset_bottom = 3.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "0"
 horizontal_alignment = 1
+
+[node name="LevelLabel" type="Label" parent="CanvasLayer/EndLevelScreen"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -61.0
+offset_top = 33.0
+offset_right = 71.0
+offset_bottom = 59.0
+grow_horizontal = 2
+text = "Level      passed!"
+
+[node name="LevelNumLabel" type="Label" parent="CanvasLayer/EndLevelScreen"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -16.0
+offset_top = 33.0
+offset_right = 24.0
+offset_bottom = 59.0
+grow_horizontal = 2
+text = "0"
 
 [connection signal="pressed" from="CanvasLayer/EndLevelScreen/NextLevelButton" to="." method="_on_next_level_button_pressed"]

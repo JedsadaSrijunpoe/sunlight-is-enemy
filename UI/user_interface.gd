@@ -5,6 +5,7 @@ extends Control
 
 var raw_timer = 0
 var timer = 0
+var level = 0
 var is_counting = false
 var next_scene
 
@@ -50,10 +51,12 @@ func end_level(temp: PackedScene):
 	stop_timer()
 	show_timer(false)
 	
-	end_level_screen.get_node("FinishTime").text = str(snapped(timer, 0.001))
+	end_level_screen.get_node("FinishTime").text = str(snapped(timer, 0.001)) + " s"
+	end_level_screen.get_node("LevelNumLabel").text = str(level)
 	end_level_screen.show()
 
 func _on_next_level_button_pressed():
+	level += 1
 	get_tree().paused = false
 	get_tree().change_scene_to_packed(next_scene)
 	start_level()
