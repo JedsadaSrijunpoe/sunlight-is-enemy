@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://qyymwkearwuc"]
+
+[ext_resource type="Script" path="res://World/moving_platform.gd" id="1_g81ee"]
+[ext_resource type="Texture2D" uid="uid://bbnv0wc4yttqy" path="res://World/moving_spike_platform.png" id="2_gvvsd"]
+[ext_resource type="PackedScene" uid="uid://bki1tq2g2gv5o" path="res://Overlap/hitbox.tscn" id="3_pg5ll"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yga7v"]
+size = Vector2(18, 8)
+
+[node name="MovingSpikePlatform" type="Node2D"]
+script = ExtResource("1_g81ee")
+offset = Vector2(300, 0)
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
+collision_layer = 2
+collision_mask = 33
+
+[node name="Sprite2D" type="Sprite2D" parent="AnimatableBody2D"]
+scale = Vector2(0.541667, 1)
+texture = ExtResource("2_gvvsd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D"]
+shape = SubResource("RectangleShape2D_yga7v")
+
+[node name="Hitbox" parent="AnimatableBody2D" instance=ExtResource("3_pg5ll")]
+collision_layer = 4
+
+[node name="CollisionPolygon2D" parent="AnimatableBody2D/Hitbox" index="0"]
+position = Vector2(10, 0)
+polygon = PackedVector2Array(-19, -4, -23, 0, -19, 4)
+
+[node name="Hitbox2" parent="AnimatableBody2D" instance=ExtResource("3_pg5ll")]
+collision_layer = 4
+
+[node name="CollisionPolygon2D" parent="AnimatableBody2D/Hitbox2" index="0"]
+position = Vector2(-8, 0)
+polygon = PackedVector2Array(17, -4, 21, 0, 17, 4)
+
+[editable path="AnimatableBody2D/Hitbox"]
+[editable path="AnimatableBody2D/Hitbox2"]

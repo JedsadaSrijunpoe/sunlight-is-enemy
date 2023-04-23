@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bbnv0wc4yttqy" path="res://World/moving_spike_platform.png" id="2_lsvhe"]
 [ext_resource type="PackedScene" uid="uid://bki1tq2g2gv5o" path="res://Overlap/hitbox.tscn" id="3_cgq87"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_yga7v"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mtlqg"]
 size = Vector2(34, 8)
 
 [node name="MovingSpikePlatform" type="Node2D"]
@@ -19,7 +19,7 @@ collision_mask = 33
 texture = ExtResource("2_lsvhe")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D"]
-shape = SubResource("RectangleShape2D_yga7v")
+shape = SubResource("RectangleShape2D_mtlqg")
 
 [node name="Hitbox" parent="AnimatableBody2D" instance=ExtResource("3_cgq87")]
 collision_layer = 4
