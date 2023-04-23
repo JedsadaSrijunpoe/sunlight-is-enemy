@@ -75,6 +75,6 @@ func _on_hurtbox_area_entered(area):
 		SoundPlayer.play_sound(SoundPlayer.ENEMY_KILLED)
 		queue_free()
 
-func _on_stomp_hurtbox_area_entered(area):
+func _on_stomp_hurtbox_area_entered(_area):
 	SoundPlayer.play_sound(SoundPlayer.ENEMY_KILLED)
 	queue_free()
