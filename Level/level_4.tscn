@@ -1,26 +1,28 @@
-[gd_scene load_steps=22 format=3 uid="uid://bidsnvqjwkfkc"]
+[gd_scene load_steps=50 format=3 uid="uid://bidsnvqjwkfkc"]
 
 [ext_resource type="TileSet" uid="uid://c44gq1ueufkne" path="res://TileMap/dungeon_platformer_tile_set.tres" id="1_nxwy6"]
 [ext_resource type="PackedScene" uid="uid://b7c3t4aho6nsn" path="res://Hazard/light_pillar.tscn" id="2_3l850"]
-[ext_resource type="PackedScene" uid="uid://rncn6bstp65j" path="res://Hazard/flamethrower.tscn" id="3_we4of"]
 [ext_resource type="PackedScene" uid="uid://bki1tq2g2gv5o" path="res://Overlap/hitbox.tscn" id="4_3brrf"]
 [ext_resource type="PackedScene" uid="uid://cl1y4mot5j503" path="res://World/moving_platform.tscn" id="5_t0uqq"]
+[ext_resource type="PackedScene" uid="uid://1gm38c62am8m" path="res://Hazard/fullblock_flamethrower.tscn" id="6_8o7jd"]
 [ext_resource type="PackedScene" uid="uid://bbbnlvbey444q" path="res://World/moving_spike_platform.tscn" id="6_cou26"]
+[ext_resource type="PackedScene" uid="uid://kiu6g4gkywwq" path="res://Player/player.tscn" id="7_wwx55"]
+[ext_resource type="PackedScene" uid="uid://dshcq4y4i7jbj" path="res://Camera/camera_with_limit.tscn" id="8_p738q"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6rbca"]
 size = Vector2(16, 48)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ya71k"]
-size = Vector2(15, 31)
+size = Vector2(16, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gl5bg"]
 size = Vector2(312, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_apus6"]
-size = Vector2(15, 47)
+size = Vector2(16, 48)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6e5n1"]
-size = Vector2(15, 64)
+size = Vector2(16, 64)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4yk55"]
 size = Vector2(159, 16)
@@ -29,30 +31,109 @@ size = Vector2(159, 16)
 size = Vector2(20, 557)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f5eb4"]
-size = Vector2(60, 15)
+size = Vector2(268, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8ao0y"]
-size = Vector2(21, 434.5)
+size = Vector2(16, 441)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_afqhf"]
-size = Vector2(20, 53)
+size = Vector2(16, 48)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aqawa"]
-size = Vector2(542, 20)
+size = Vector2(532, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qsmrm"]
-size = Vector2(450, 14)
+size = Vector2(448, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_upovv"]
-size = Vector2(17, 190)
+size = Vector2(16, 224)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bkh7a"]
-size = Vector2(521, 15)
+size = Vector2(516, 15)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7e54m"]
-size = Vector2(20, 228)
+size = Vector2(16, 198)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hybbe"]
+size = Vector2(512, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hmuhf"]
+size = Vector2(511, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jl87r"]
+size = Vector2(16, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_df7gr"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_plvbe"]
+size = Vector2(32, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_osp2k"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7gywx"]
+size = Vector2(32, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eq8bd"]
+size = Vector2(143, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_afa5y"]
+size = Vector2(64, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_37srx"]
+size = Vector2(32, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y7rbl"]
+size = Vector2(48, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_djkjt"]
+size = Vector2(64, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pqpk0"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v7548"]
+size = Vector2(48, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2kbel"]
+size = Vector2(64, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q82wy"]
+size = Vector2(48, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3ge74"]
+size = Vector2(64, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ngm2x"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_umq5d"]
+size = Vector2(32, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hfcot"]
+size = Vector2(80, 15)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_locqq"]
+size = Vector2(384, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_li380"]
+size = Vector2(288, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x0xtw"]
+size = Vector2(64, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lekqd"]
+size = Vector2(144, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_msjj0"]
+size = Vector2(80, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ate5v"]
+size = Vector2(80, 16)
 
 [node name="level_4" type="Node2D"]
+metadata/_edit_vertical_guides_ = [-56.0]
 
 [node name="Environment" type="TileMap" parent="."]
 tile_set = ExtResource("1_nxwy6")
@@ -62,7 +143,7 @@ layer_0/tile_data = PackedInt32Array(-2359300, 131072, 2, -2293764, 131072, 2, -
 [node name="Furniture" type="TileMap" parent="."]
 tile_set = ExtResource("1_nxwy6")
 format = 2
-layer_0/tile_data = PackedInt32Array(-1441759, 851968, 10, -1376223, 851968, 11, -1441758, 851968, 10, -1376222, 851968, 11)
+layer_0/tile_data = PackedInt32Array(-1441759, 851968, 10, -1376223, 851968, 11, -1441758, 851968, 65546, -1376222, 851968, 65547)
 
 [node name="SpikeTrap" type="TileMap" parent="."]
 tile_set = ExtResource("1_nxwy6")
@@ -107,134 +188,6 @@ scale = Vector2(0.21875, 0.973633)
 [node name="LightPillar9" parent="Lightpillar" instance=ExtResource("2_3l850")]
 position = Vector2(622, -83)
 scale = Vector2(0.21875, 0.973633)
-
-[node name="Flamethrower" type="Node2D" parent="."]
-
-[node name="FlameThrower2" parent="Flamethrower" instance=ExtResource("3_we4of")]
-position = Vector2(538, -12)
-rotation = 1.57772
-
-[node name="Base" parent="Flamethrower/FlameThrower2" index="0"]
-position = Vector2(14.5878, 3.05124)
-scale = Vector2(1.8849, 1.9681)
-
-[node name="CollisionPolygon2D" parent="Flamethrower/FlameThrower2/Hitbox" index="0"]
-position = Vector2(17.965, 2.55844)
-scale = Vector2(2.91358, -2.9106)
-polygon = PackedVector2Array(-23.7963, 2.74249, -18.5281, 2.68413, -3.40131, 2.5165, -3.40131, -2.5165, -23.7365, -2.5165)
-
-[node name="Flame" parent="Flamethrower/FlameThrower2/Hitbox" index="1"]
-position = Vector2(-21.6309, 1.81717)
-scale = Vector2(1.11408, 2.23552)
-region_rect = Rect2(-44.2243, -0.604744, 52.7752, 8.62913)
-
-[node name="CollisionShape2D" parent="Flamethrower/FlameThrower2" index="2"]
-position = Vector2(15.0204, 2.89612)
-
-[node name="FlameThrower3" parent="Flamethrower" instance=ExtResource("3_we4of")]
-position = Vector2(601, -44)
-rotation = 1.57772
-
-[node name="Base" parent="Flamethrower/FlameThrower3" index="0"]
-position = Vector2(14.5878, 3.05124)
-scale = Vector2(1.8849, 1.9681)
-
-[node name="CollisionPolygon2D" parent="Flamethrower/FlameThrower3/Hitbox" index="0"]
-position = Vector2(17.965, 2.55838)
-scale = Vector2(2.91358, -2.9106)
-polygon = PackedVector2Array(-23.7963, 2.74249, -18.5281, 2.68413, -3.40131, 2.5165, -3.40131, -2.5165, -23.7365, -2.5165)
-
-[node name="Flame" parent="Flamethrower/FlameThrower3/Hitbox" index="1"]
-position = Vector2(-21.6309, 1.81717)
-scale = Vector2(1.11408, 2.23552)
-region_rect = Rect2(-44.2243, -0.604744, 52.7752, 8.62913)
-
-[node name="CollisionShape2D" parent="Flamethrower/FlameThrower3" index="2"]
-position = Vector2(15.0204, 2.89612)
-
-[node name="FlameThrower4" parent="Flamethrower" instance=ExtResource("3_we4of")]
-position = Vector2(664, -76)
-rotation = 1.57772
-
-[node name="Base" parent="Flamethrower/FlameThrower4" index="0"]
-position = Vector2(14.5878, 3.05124)
-scale = Vector2(1.8849, 1.9681)
-
-[node name="CollisionPolygon2D" parent="Flamethrower/FlameThrower4/Hitbox" index="0"]
-position = Vector2(17.965, 2.55838)
-scale = Vector2(2.91358, -2.9106)
-polygon = PackedVector2Array(-23.7963, 2.74249, -18.5281, 2.68413, -3.40131, 2.5165, -3.40131, -2.5165, -23.7365, -2.5165)
-
-[node name="Flame" parent="Flamethrower/FlameThrower4/Hitbox" index="1"]
-position = Vector2(-21.6309, 1.81717)
-scale = Vector2(1.11408, 2.23552)
-region_rect = Rect2(-44.2243, -0.604744, 52.7752, 8.62913)
-
-[node name="CollisionShape2D" parent="Flamethrower/FlameThrower4" index="2"]
-position = Vector2(15.0204, 2.89612)
-
-[node name="FlameThrowerDown1" parent="Flamethrower" instance=ExtResource("3_we4of")]
-position = Vector2(565, -69)
-rotation = -1.57084
-
-[node name="Base" parent="Flamethrower/FlameThrowerDown1" index="0"]
-position = Vector2(13.9885, 1.95175)
-scale = Vector2(1.8849, 1.9681)
-
-[node name="CollisionPolygon2D" parent="Flamethrower/FlameThrowerDown1/Hitbox" index="0"]
-position = Vector2(17.965, 2.55844)
-scale = Vector2(2.91358, -2.9106)
-polygon = PackedVector2Array(-23.7963, 2.74249, -18.5281, 2.68413, -3.40131, 2.5165, -3.40131, -2.5165, -23.7365, -2.5165)
-
-[node name="Flame" parent="Flamethrower/FlameThrowerDown1/Hitbox" index="1"]
-position = Vector2(-21.6309, 1.81717)
-scale = Vector2(1.11408, 2.23552)
-region_rect = Rect2(-44.2243, -0.604744, 52.7752, 8.62913)
-
-[node name="CollisionShape2D" parent="Flamethrower/FlameThrowerDown1" index="2"]
-position = Vector2(14.0135, 1.90308)
-
-[node name="FlameThrowerDown2" parent="Flamethrower" instance=ExtResource("3_we4of")]
-position = Vector2(630, -100)
-rotation = 4.71235
-
-[node name="Base" parent="Flamethrower/FlameThrowerDown2" index="0"]
-position = Vector2(13.9885, 1.95175)
-scale = Vector2(1.8849, 1.9681)
-
-[node name="CollisionPolygon2D" parent="Flamethrower/FlameThrowerDown2/Hitbox" index="0"]
-position = Vector2(17.965, 2.55844)
-scale = Vector2(2.91358, -2.9106)
-polygon = PackedVector2Array(-23.7963, 2.74249, -18.5281, 2.68413, -3.40131, 2.5165, -3.40131, -2.5165, -23.7365, -2.5165)
-
-[node name="Flame" parent="Flamethrower/FlameThrowerDown2/Hitbox" index="1"]
-position = Vector2(-21.6309, 1.81717)
-scale = Vector2(1.11408, 2.23552)
-region_rect = Rect2(-44.2243, -0.604744, 52.7752, 8.62913)
-
-[node name="CollisionShape2D" parent="Flamethrower/FlameThrowerDown2" index="2"]
-position = Vector2(14.0135, 1.90308)
-
-[node name="FlameThrower5" parent="Flamethrower" instance=ExtResource("3_we4of")]
-position = Vector2(603, -451)
-rotation = 1.57772
-
-[node name="Base" parent="Flamethrower/FlameThrower5" index="0"]
-position = Vector2(14.5878, 3.05124)
-scale = Vector2(1.8849, 1.9681)
-
-[node name="CollisionPolygon2D" parent="Flamethrower/FlameThrower5/Hitbox" index="0"]
-position = Vector2(17.965, 2.55844)
-scale = Vector2(2.91358, -2.9106)
-polygon = PackedVector2Array(-23.7963, 2.74249, -18.5281, 2.68413, -3.40131, 2.5165, -3.40131, -2.5165, -23.7365, -2.5165)
-
-[node name="Flame" parent="Flamethrower/FlameThrower5/Hitbox" index="1"]
-position = Vector2(-21.6309, 1.81717)
-scale = Vector2(1.11408, 2.23552)
-region_rect = Rect2(-44.2243, -0.604744, 52.7752, 8.62913)
-
-[node name="CollisionShape2D" parent="Flamethrower/FlameThrower5" index="2"]
-position = Vector2(15.0204, 2.89612)
 
 [node name="Crack" parent="." instance=ExtResource("4_3brrf")]
 position = Vector2(346, -71)
@@ -346,11 +299,8 @@ scale = Vector2(0.333333, 1)
 position = Vector2(680, -407)
 
 [node name="Sprite2D" parent="MovingSpikePlatform/MovingSpikePlatform/AnimatableBody2D" index="0"]
-position = Vector2(3.75211e-05, 0)
-scale = Vector2(0.249999, 1)
-
-[node name="CollisionShape2D" parent="MovingSpikePlatform/MovingSpikePlatform/AnimatableBody2D" index="1"]
-position = Vector2(0, -0.5)
+position = Vector2(-1.35005e-05, 0)
+scale = Vector2(0.291666, 1)
 
 [node name="CollisionPolygon2D" parent="MovingSpikePlatform/MovingSpikePlatform/AnimatableBody2D/Hitbox" index="0"]
 position = Vector2(6, -1.14441e-05)
@@ -643,7 +593,7 @@ shape = SubResource("RectangleShape2D_6rbca")
 [node name="StaticBody2D2" type="StaticBody2D" parent="Floor/SecretPath1"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor/SecretPath1/StaticBody2D2"]
-position = Vector2(584, -15)
+position = Vector2(584, -16)
 shape = SubResource("RectangleShape2D_ya71k")
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="Floor/SecretPath1"]
@@ -655,13 +605,13 @@ shape = SubResource("RectangleShape2D_gl5bg")
 [node name="StaticBody2D4" type="StaticBody2D" parent="Floor/SecretPath1"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor/SecretPath1/StaticBody2D4"]
-position = Vector2(616, -25)
+position = Vector2(616, -24)
 shape = SubResource("RectangleShape2D_apus6")
 
 [node name="StaticBody2D5" type="StaticBody2D" parent="Floor/SecretPath1"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor/SecretPath1/StaticBody2D5"]
-position = Vector2(648.5, -32)
+position = Vector2(648, -32)
 shape = SubResource("RectangleShape2D_6e5n1")
 
 [node name="StaticBody2D6" type="StaticBody2D" parent="Floor/SecretPath1"]
@@ -685,7 +635,7 @@ shape = SubResource("RectangleShape2D_6e5n1")
 [node name="StaticBody2D9" type="StaticBody2D" parent="Floor/SecretPath1"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor/SecretPath1/StaticBody2D9"]
-position = Vector2(846, -503.5)
+position = Vector2(742, -504)
 shape = SubResource("RectangleShape2D_f5eb4")
 
 [node name="SecretPath2" type="Node2D" parent="Floor"]
@@ -693,57 +643,290 @@ shape = SubResource("RectangleShape2D_f5eb4")
 [node name="StaticBody2D1" type="StaticBody2D" parent="Floor/SecretPath2"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor/SecretPath2/StaticBody2D1"]
-position = Vector2(97.5, -335.75)
+position = Vector2(100, -339.5)
 shape = SubResource("RectangleShape2D_8ao0y")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="Floor/SecretPath2"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor/SecretPath2/StaticBody2D2"]
-position = Vector2(619, -537.5)
+position = Vector2(616, -536)
 shape = SubResource("RectangleShape2D_afqhf")
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="Floor/SecretPath2"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor/SecretPath2/StaticBody2D3"]
-position = Vector2(358, -563)
+position = Vector2(358, -552)
 shape = SubResource("RectangleShape2D_aqawa")
 
 [node name="StaticBody2D4" type="StaticBody2D" parent="Floor/SecretPath2"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor/SecretPath2/StaticBody2D4"]
-position = Vector2(367, -504)
+position = Vector2(368, -504)
 shape = SubResource("RectangleShape2D_qsmrm")
 
 [node name="StaticBody2D5" type="StaticBody2D" parent="Floor/SecretPath2"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor/SecretPath2/StaticBody2D5"]
-position = Vector2(150.5, -416)
+position = Vector2(152, -400)
 shape = SubResource("RectangleShape2D_upovv")
 
 [node name="StaticBody2D6" type="StaticBody2D" parent="Floor/SecretPath2"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor/SecretPath2/StaticBody2D6"]
-position = Vector2(347.5, -126.5)
+position = Vector2(350, -126.5)
 shape = SubResource("RectangleShape2D_bkh7a")
 
 [node name="StaticBody2D7" type="StaticBody2D" parent="Floor/SecretPath2"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor/SecretPath2/StaticBody2D7"]
-position = Vector2(603, -236)
+position = Vector2(600, -221)
 shape = SubResource("RectangleShape2D_7e54m")
 
-[editable path="Flamethrower/FlameThrower2"]
-[editable path="Flamethrower/FlameThrower2/Hitbox"]
-[editable path="Flamethrower/FlameThrower3"]
-[editable path="Flamethrower/FlameThrower3/Hitbox"]
-[editable path="Flamethrower/FlameThrower4"]
-[editable path="Flamethrower/FlameThrower4/Hitbox"]
-[editable path="Flamethrower/FlameThrowerDown1"]
-[editable path="Flamethrower/FlameThrowerDown1/Hitbox"]
-[editable path="Flamethrower/FlameThrowerDown2"]
-[editable path="Flamethrower/FlameThrowerDown2/Hitbox"]
-[editable path="Flamethrower/FlameThrower5"]
-[editable path="Flamethrower/FlameThrower5/Hitbox"]
+[node name="NormalPath" type="Node2D" parent="Floor"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Floor/NormalPath"]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Floor/NormalPath/StaticBody2D"]
+position = Vector2(272, -88)
+shape = SubResource("RectangleShape2D_hybbe")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Floor/NormalPath/StaticBody2D"]
+position = Vector2(272.5, 24)
+shape = SubResource("RectangleShape2D_hmuhf")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Floor/NormalPath/StaticBody2D"]
+position = Vector2(520, 16)
+shape = SubResource("RectangleShape2D_jl87r")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="Floor/NormalPath/StaticBody2D"]
+position = Vector2(552, -88)
+shape = SubResource("RectangleShape2D_df7gr")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="Floor/NormalPath/StaticBody2D"]
+position = Vector2(592, -104)
+shape = SubResource("RectangleShape2D_plvbe")
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="Floor/NormalPath/StaticBody2D"]
+position = Vector2(616, -120)
+shape = SubResource("RectangleShape2D_osp2k")
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="Floor/NormalPath/StaticBody2D"]
+position = Vector2(616, -120)
+shape = SubResource("RectangleShape2D_osp2k")
+
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="Floor/NormalPath/StaticBody2D"]
+position = Vector2(656, -136)
+shape = SubResource("RectangleShape2D_7gywx")
+
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="Floor/NormalPath/StaticBody2D"]
+position = Vector2(743.5, -72)
+shape = SubResource("RectangleShape2D_eq8bd")
+
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="Floor/NormalPath/StaticBody2D"]
+position = Vector2(640, -440)
+shape = SubResource("RectangleShape2D_afa5y")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Floor/NormalPath/StaticBody2D"]
+position = Vector2(528, -72)
+shape = SubResource("RectangleShape2D_37srx")
+
+[node name="CollisionShape2D14" type="CollisionShape2D" parent="Floor/NormalPath/StaticBody2D"]
+position = Vector2(568, -424)
+shape = SubResource("RectangleShape2D_y7rbl")
+
+[node name="CollisionShape2D15" type="CollisionShape2D" parent="Floor/NormalPath/StaticBody2D"]
+position = Vector2(512, -408)
+shape = SubResource("RectangleShape2D_djkjt")
+
+[node name="CollisionShape2D16" type="CollisionShape2D" parent="Floor/NormalPath/StaticBody2D"]
+position = Vector2(512, -488)
+shape = SubResource("RectangleShape2D_djkjt")
+
+[node name="CollisionShape2D17" type="CollisionShape2D" parent="Floor/NormalPath/StaticBody2D"]
+position = Vector2(472, -472)
+shape = SubResource("RectangleShape2D_pqpk0")
+
+[node name="CollisionShape2D18" type="CollisionShape2D" parent="Floor/NormalPath/StaticBody2D"]
+position = Vector2(440, -456)
+shape = SubResource("RectangleShape2D_v7548")
+
+[node name="CollisionShape2D19" type="CollisionShape2D" parent="Floor/NormalPath/StaticBody2D"]
+position = Vector2(448, -392)
+shape = SubResource("RectangleShape2D_2kbel")
+
+[node name="CollisionShape2D20" type="CollisionShape2D" parent="Floor/NormalPath/StaticBody2D"]
+position = Vector2(392, -376)
+shape = SubResource("RectangleShape2D_q82wy")
+
+[node name="CollisionShape2D21" type="CollisionShape2D" parent="Floor/NormalPath/StaticBody2D"]
+position = Vector2(384, -440)
+shape = SubResource("RectangleShape2D_3ge74")
+
+[node name="CollisionShape2D24" type="CollisionShape2D" parent="Floor/NormalPath/StaticBody2D"]
+position = Vector2(304, -408)
+shape = SubResource("RectangleShape2D_3ge74")
+
+[node name="CollisionShape2D22" type="CollisionShape2D" parent="Floor/NormalPath/StaticBody2D"]
+position = Vector2(344, -424)
+shape = SubResource("RectangleShape2D_ngm2x")
+
+[node name="CollisionShape2D25" type="CollisionShape2D" parent="Floor/NormalPath/StaticBody2D"]
+position = Vector2(232, -376)
+shape = SubResource("RectangleShape2D_ngm2x")
+
+[node name="CollisionShape2D33" type="CollisionShape2D" parent="Floor/NormalPath/StaticBody2D"]
+position = Vector2(256, -392)
+shape = SubResource("RectangleShape2D_umq5d")
+
+[node name="CollisionShape2D34" type="CollisionShape2D" parent="Floor/NormalPath/StaticBody2D"]
+position = Vector2(208, -360)
+shape = SubResource("RectangleShape2D_umq5d")
+
+[node name="CollisionShape2D35" type="CollisionShape2D" parent="Floor/NormalPath/StaticBody2D"]
+position = Vector2(312, -344.5)
+shape = SubResource("RectangleShape2D_hfcot")
+
+[node name="CollisionShape2D31" type="CollisionShape2D" parent="Floor/NormalPath/StaticBody2D"]
+position = Vector2(184, -344)
+shape = SubResource("RectangleShape2D_ngm2x")
+
+[node name="CollisionShape2D32" type="CollisionShape2D" parent="Floor/NormalPath/StaticBody2D"]
+position = Vector2(168, -328)
+shape = SubResource("RectangleShape2D_ngm2x")
+
+[node name="CollisionShape2D26" type="CollisionShape2D" parent="Floor/NormalPath/StaticBody2D"]
+position = Vector2(264, -328)
+shape = SubResource("RectangleShape2D_ngm2x")
+
+[node name="CollisionShape2D27" type="CollisionShape2D" parent="Floor/NormalPath/StaticBody2D"]
+position = Vector2(248, -312)
+shape = SubResource("RectangleShape2D_ngm2x")
+
+[node name="CollisionShape2D28" type="CollisionShape2D" parent="Floor/NormalPath/StaticBody2D"]
+position = Vector2(232, -296)
+shape = SubResource("RectangleShape2D_ngm2x")
+
+[node name="CollisionShape2D29" type="CollisionShape2D" parent="Floor/NormalPath/StaticBody2D"]
+position = Vector2(216, -280)
+shape = SubResource("RectangleShape2D_ngm2x")
+
+[node name="CollisionShape2D30" type="CollisionShape2D" parent="Floor/NormalPath/StaticBody2D"]
+position = Vector2(200, -264)
+shape = SubResource("RectangleShape2D_ngm2x")
+
+[node name="CollisionShape2D36" type="CollisionShape2D" parent="Floor/NormalPath/StaticBody2D"]
+position = Vector2(320, -185)
+shape = SubResource("RectangleShape2D_locqq")
+
+[node name="CollisionShape2D37" type="CollisionShape2D" parent="Floor/NormalPath/StaticBody2D"]
+position = Vector2(336, -248)
+shape = SubResource("RectangleShape2D_li380")
+
+[node name="CollisionShape2D38" type="CollisionShape2D" parent="Floor/NormalPath/StaticBody2D"]
+position = Vector2(528, -312)
+shape = SubResource("RectangleShape2D_x0xtw")
+
+[node name="CollisionShape2D39" type="CollisionShape2D" parent="Floor/NormalPath/StaticBody2D"]
+position = Vector2(536, -376)
+shape = SubResource("RectangleShape2D_lekqd")
+
+[node name="CollisionShape2D23" type="CollisionShape2D" parent="Floor/NormalPath/StaticBody2D"]
+position = Vector2(360, -360)
+shape = SubResource("RectangleShape2D_ngm2x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor/NormalPath/StaticBody2D"]
+position = Vector2(-8, 8)
+shape = SubResource("RectangleShape2D_msjj0")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Floor/NormalPath/StaticBody2D"]
+position = Vector2(-8, -72)
+shape = SubResource("RectangleShape2D_ate5v")
+
+[node name="Flamethrower" type="Node2D" parent="."]
+
+[node name="FullBlockFlameThrower6" parent="Flamethrower" instance=ExtResource("6_8o7jd")]
+position = Vector2(600, -424)
+rotation = 1.5708
+
+[node name="CollisionPolygon2D" parent="Flamethrower/FullBlockFlameThrower6/Hitbox" index="0"]
+polygon = PackedVector2Array(-57.6164, 2.51648, -3.40131, 2.5165, -3.3892, -7.5495, -57.6164, -7.5495)
+
+[node name="Flame" parent="Flamethrower/FullBlockFlameThrower6/Hitbox" index="1"]
+position = Vector2(-40, 0)
+region_rect = Rect2(-16, 0, 32, 8)
+
+[node name="FullBlockFlameThrower5" parent="Flamethrower" instance=ExtResource("6_8o7jd")]
+position = Vector2(664, -56)
+rotation = 1.5708
+
+[node name="CollisionPolygon2D" parent="Flamethrower/FullBlockFlameThrower5/Hitbox" index="0"]
+polygon = PackedVector2Array(-57.6164, 2.51648, -3.40131, 2.5165, -3.3892, -7.5495, -57.6164, -7.5495)
+
+[node name="Flame" parent="Flamethrower/FullBlockFlameThrower5/Hitbox" index="1"]
+position = Vector2(-40, 0)
+region_rect = Rect2(-16, 0, 32, 8)
+
+[node name="FullBlockFlameThrower4" parent="Flamethrower" instance=ExtResource("6_8o7jd")]
+position = Vector2(632, -120)
+rotation = -1.5708
+
+[node name="CollisionPolygon2D" parent="Flamethrower/FullBlockFlameThrower4/Hitbox" index="0"]
+polygon = PackedVector2Array(-57.6164, 2.51648, -3.40131, 2.5165, -3.3892, -7.5495, -57.6164, -7.5495)
+
+[node name="Flame" parent="Flamethrower/FullBlockFlameThrower4/Hitbox" index="1"]
+position = Vector2(-40, 0)
+region_rect = Rect2(-16, 0, 32, 8)
+
+[node name="FullBlockFlameThrower" parent="Flamethrower" instance=ExtResource("6_8o7jd")]
+position = Vector2(536, 8)
+rotation = 1.5708
+
+[node name="CollisionPolygon2D" parent="Flamethrower/FullBlockFlameThrower/Hitbox" index="0"]
+polygon = PackedVector2Array(-57.6164, 2.51651, -3.40131, 2.5165, -3.3892, -7.5495, -57.6164, -7.54947)
+
+[node name="Flame" parent="Flamethrower/FullBlockFlameThrower/Hitbox" index="1"]
+position = Vector2(-40, 0)
+region_rect = Rect2(-16, 0, 32, 8)
+
+[node name="FullBlockFlameThrower2" parent="Flamethrower" instance=ExtResource("6_8o7jd")]
+position = Vector2(568, -88)
+rotation = -1.5708
+
+[node name="CollisionPolygon2D" parent="Flamethrower/FullBlockFlameThrower2/Hitbox" index="0"]
+polygon = PackedVector2Array(-57.6164, 2.51648, -3.40131, 2.5165, -3.3892, -7.5495, -57.6164, -7.5495)
+
+[node name="Flame" parent="Flamethrower/FullBlockFlameThrower2/Hitbox" index="1"]
+position = Vector2(-40, 0)
+region_rect = Rect2(-16, 0, 32, 8)
+
+[node name="FullBlockFlameThrower3" parent="Flamethrower" instance=ExtResource("6_8o7jd")]
+position = Vector2(600, -24)
+rotation = 1.5708
+
+[node name="CollisionPolygon2D" parent="Flamethrower/FullBlockFlameThrower3/Hitbox" index="0"]
+polygon = PackedVector2Array(-57.6164, 2.51648, -3.40131, 2.5165, -3.3892, -7.5495, -57.6164, -7.5495)
+
+[node name="Flame" parent="Flamethrower/FullBlockFlameThrower3/Hitbox" index="1"]
+position = Vector2(-40, 0)
+region_rect = Rect2(-16, 0, 32, 8)
+
+[node name="Player" parent="." instance=ExtResource("7_wwx55")]
+position = Vector2(-18, -16)
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
+remote_path = NodePath("../../Camera2D")
+
+[node name="Camera2D" parent="." instance=ExtResource("8_p738q")]
+position = Vector2(-18, -16)
+
+[node name="BottomRight" parent="Camera2D/Node" index="0"]
+position = Vector2(944, 96)
+
+[node name="TopLeft" parent="Camera2D/Node" index="1"]
+position = Vector2(-56, -592)
+
 [editable path="Crack"]
 [editable path="Crack2"]
 [editable path="MovingPlatform/MovingPlatform"]
@@ -803,3 +986,16 @@ shape = SubResource("RectangleShape2D_7e54m")
 [editable path="MovingSpikePlatform/MovingSpikePlatform15"]
 [editable path="MovingSpikePlatform/MovingSpikePlatform15/AnimatableBody2D/Hitbox"]
 [editable path="MovingSpikePlatform/MovingSpikePlatform15/AnimatableBody2D/Hitbox2"]
+[editable path="Flamethrower/FullBlockFlameThrower6"]
+[editable path="Flamethrower/FullBlockFlameThrower6/Hitbox"]
+[editable path="Flamethrower/FullBlockFlameThrower5"]
+[editable path="Flamethrower/FullBlockFlameThrower5/Hitbox"]
+[editable path="Flamethrower/FullBlockFlameThrower4"]
+[editable path="Flamethrower/FullBlockFlameThrower4/Hitbox"]
+[editable path="Flamethrower/FullBlockFlameThrower"]
+[editable path="Flamethrower/FullBlockFlameThrower/Hitbox"]
+[editable path="Flamethrower/FullBlockFlameThrower2"]
+[editable path="Flamethrower/FullBlockFlameThrower2/Hitbox"]
+[editable path="Flamethrower/FullBlockFlameThrower3"]
+[editable path="Flamethrower/FullBlockFlameThrower3/Hitbox"]
+[editable path="Camera2D"]
