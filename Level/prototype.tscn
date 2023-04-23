@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://ddhhm3j6ayefl"]
+[gd_scene load_steps=20 format=3 uid="uid://ddhhm3j6ayefl"]
 
 [ext_resource type="Texture2D" uid="uid://cqoqimwucxhic" path="res://World/wallpaper3.png" id="1_6c7wj"]
 [ext_resource type="PackedScene" uid="uid://55uh4xtx1ylx" path="res://Hazard/window.tscn" id="2_lfpkj"]
@@ -14,7 +14,6 @@
 [ext_resource type="PackedScene" uid="uid://bxh87xberc4bg" path="res://World/next_level_area.tscn" id="12_cwjlu"]
 [ext_resource type="PackedScene" uid="uid://buhroafmnptvy" path="res://Level/level_1.tscn" id="13_dy5mw"]
 [ext_resource type="Texture2D" uid="uid://bbnv0wc4yttqy" path="res://World/moving_spike_platform.png" id="14_f36ry"]
-[ext_resource type="PackedScene" uid="uid://c2wuujfs4la7i" path="res://UI/user_interface.tscn" id="15_mojve"]
 [ext_resource type="PackedScene" uid="uid://b7c3t4aho6nsn" path="res://Hazard/light_pillar.tscn" id="16_cuqkr"]
 [ext_resource type="Script" path="res://Hazard/light_pillar.gd" id="17_wvxl6"]
 
@@ -30,8 +29,6 @@ size = Vector2(610.375, 20)
 
 [node name="Level2" type="Node2D"]
 metadata/_edit_horizontal_guides_ = []
-
-[node name="User Interface" parent="." instance=ExtResource("15_mojve")]
 
 [node name="Background" type="Sprite2D" parent="."]
 texture_repeat = 2

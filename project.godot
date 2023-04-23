@@ -11,13 +11,14 @@ config_version=5
 [application]
 
 config/name="Vampire platformer prototype"
-run/main_scene="res://Level/level_1.tscn"
+run/main_scene="res://UI/main_menu.tscn"
 config/features=PackedStringArray("4.0", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
 SoundPlayer="*res://Sound/sound_player.tscn"
+UserInterface="*res://UI/user_interface.tscn"
 
 [display]
 

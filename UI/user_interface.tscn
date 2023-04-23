@@ -1,8 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://c2wuujfs4la7i"]
+[gd_scene load_steps=3 format=3 uid="uid://c2wuujfs4la7i"]
 
 [ext_resource type="Script" path="res://UI/user_interface.gd" id="1_dqmmd"]
 
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_okbrr"]
+
 [node name="User Interface" type="Control"]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -13,9 +16,52 @@ script = ExtResource("1_dqmmd")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Label" type="Label" parent="CanvasLayer"]
+[node name="LabelTimer" type="Label" parent="CanvasLayer"]
 offset_left = 10.0
 offset_right = 91.0
 offset_bottom = 26.0
 text = "0"
 vertical_alignment = 1
+
+[node name="EndLevelScreen" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 320.0
+offset_bottom = 179.0
+
+[node name="Background" type="TextureRect" parent="CanvasLayer/EndLevelScreen"]
+layout_mode = 0
+offset_right = 320.0
+offset_bottom = 179.0
+texture = SubResource("PlaceholderTexture2D_okbrr")
+
+[node name="NextLevelButton" type="Button" parent="CanvasLayer/EndLevelScreen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -33.0
+offset_top = 7.0
+offset_right = 33.0
+offset_bottom = 35.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="FinishTime" type="Label" parent="CanvasLayer/EndLevelScreen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -26.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "0"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="CanvasLayer/EndLevelScreen/NextLevelButton" to="." method="_on_next_level_button_pressed"]

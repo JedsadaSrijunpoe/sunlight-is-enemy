@@ -5,6 +5,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_75578"]
 
 [node name="NextLevelArea" type="Area2D"]
+collision_layer = 0
 script = ExtResource("1_rmnny")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
