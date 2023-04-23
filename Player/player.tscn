@@ -102,10 +102,15 @@ polygon = PackedVector2Array(-5.02016, 17, -5.02016, 16, 5.02016, 16, 5.02016, 1
 
 [node name="RespawnPoint" type="Marker2D" parent="Node"]
 
+[node name="DoubleTapTimer" type="Timer" parent="."]
+process_callback = 0
+one_shot = true
+
 [connection signal="area_entered" from="BatHurtbox" to="." method="_on_bathurtbox_area_entered"]
 [connection signal="area_entered" from="HumanHurtbox" to="." method="_on_humanhurtbox_area_entered"]
 [connection signal="area_entered" from="Switchbox" to="." method="_on_switchbox_area_entered"]
 [connection signal="area_exited" from="Switchbox" to="." method="_on_switchbox_area_exited"]
+[connection signal="timeout" from="DoubleTapTimer" to="." method="_on_double_tap_timer_timeout"]
 
 [editable path="BatHurtbox"]
 [editable path="HumanHurtbox"]

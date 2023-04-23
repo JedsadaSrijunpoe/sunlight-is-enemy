@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dcx2bbaqtnmx7"]
+[gd_scene load_steps=3 format=3 uid="uid://dcx2bbaqtnmx7"]
 
 [ext_resource type="Script" path="res://Sound/sound_player.gd" id="1_emlpj"]
+[ext_resource type="AudioStream" uid="uid://besjokn1nwyah" path="res://Sound/LoopingFlap.wav" id="2_6r5vo"]
 
 [node name="SoundPlayer" type="Node"]
 process_mode = 3
@@ -23,3 +24,8 @@ script = ExtResource("1_emlpj")
 [node name="AudioStreamPlayer7" type="AudioStreamPlayer" parent="AudioPlayers"]
 
 [node name="AudioStreamPlayer8" type="AudioStreamPlayer" parent="AudioPlayers"]
+
+[node name="LoopingAudioPlayers" type="Node" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="LoopingAudioPlayers"]
+stream = ExtResource("2_6r5vo")

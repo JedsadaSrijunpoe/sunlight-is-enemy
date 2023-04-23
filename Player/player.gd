@@ -12,8 +12,12 @@ enum {
 @onready var human_hurtbox = $HumanHurtbox
 @onready var hitbox = $Hitbox
 @onready var switch_hitbox = $Switchbox
+@onready var double_tap_timer = $DoubleTapTimer
 
 var state = HUMANOID
+var next_jump_is_double_tap = false
+var continuous_flight = false
+var flap = false
 
 ## The player's movespeed in bat form.
 @export var FLYING_SPEED : float = 100.0
@@ -50,8 +54,23 @@ func bat_state(delta):
 		velocity.y += gravity * 0.125*delta
 		
 	if Input.is_action_just_pressed("jump"):
+		if not next_jump_is_double_tap:
+			velocity.y  = FLAP_VELOCITY
+			next_jump_is_double_tap = true
+			double_tap_timer.start(0.2)
+			SoundPlayer.play_sound(SoundPlayer.FLAP)
+		else :
+			print("How")
+			next_jump_is_double_tap = false
+			continuous_flight = true
+			SoundPlayer.play_sound_in_loop(SoundPlayer.LOOP_FLAP)
+			
+	if continuous_flight and Input.is_action_pressed("jump"):
 		velocity.y  = FLAP_VELOCITY
-		SoundPlayer.play_sound(SoundPlayer.FLAP)
+		
+	if continuous_flight and Input.is_action_just_released("jump"):
+		continuous_flight = false
+		SoundPlayer.stop_sound_in_loop(SoundPlayer.LOOP_FLAP)
 		
 	if velocity.x :
 		animated_sprite.flip_h = velocity.x < 0
@@ -109,12 +128,14 @@ func humanoid_state(delta):
 
 # How the player react to hurtbox collision in bat form
 func _on_bathurtbox_area_entered(_area):
+	SoundPlayer.kill_all_loop()
 	SoundPlayer.play_sound(SoundPlayer.PLAYER_DEATH)
 	call_deferred("respawn")
 
 # How the player react to hurtbox collision in humanoid form
 func _on_humanhurtbox_area_entered(area):
 	if not area.IS_LIGHT:
+		SoundPlayer.kill_all_loop()
 		SoundPlayer.play_sound(SoundPlayer.PLAYER_DEATH)
 		call_deferred("respawn")
 
@@ -129,3 +150,6 @@ func _on_switchbox_area_exited(switch):
 # Reload the current scene.
 func respawn():
 	get_tree().reload_current_scene()
+
+func _on_double_tap_timer_timeout():
+	next_jump_is_double_tap = false
