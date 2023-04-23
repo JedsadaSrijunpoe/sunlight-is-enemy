@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://c2wuujfs4la7i"]
+[gd_scene load_steps=4 format=3 uid="uid://c2wuujfs4la7i"]
 
 [ext_resource type="Script" path="res://UI/user_interface.gd" id="1_dqmmd"]
+[ext_resource type="Texture2D" uid="uid://hehbx76cuk70" path="res://Assets/next.png" id="2_ntdfw"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_okbrr"]
 
@@ -34,6 +35,14 @@ layout_mode = 0
 offset_right = 320.0
 offset_bottom = 179.0
 texture = SubResource("PlaceholderTexture2D_okbrr")
+
+[node name="TextureButton" type="TextureButton" parent="CanvasLayer/EndLevelScreen"]
+layout_mode = 0
+offset_left = 65.0
+offset_top = 84.0
+offset_right = 113.0
+offset_bottom = 124.0
+texture_normal = ExtResource("2_ntdfw")
 
 [node name="NextLevelButton" type="Button" parent="CanvasLayer/EndLevelScreen"]
 layout_mode = 1
