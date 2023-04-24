@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://c2wuujfs4la7i"]
+[gd_scene load_steps=6 format=3 uid="uid://c2wuujfs4la7i"]
 
 [ext_resource type="Script" path="res://UI/user_interface.gd" id="1_dqmmd"]
 [ext_resource type="Texture2D" uid="uid://hehbx76cuk70" path="res://Assets/next.png" id="2_ntdfw"]
+[ext_resource type="LabelSettings" uid="uid://cia5glscak576" path="res://Assets/pixeboy_label_settings.tres" id="2_s82d4"]
 [ext_resource type="Texture2D" uid="uid://3shyh2k76cat" path="res://Assets/EndLevelRect.png" id="2_yhl8b"]
 [ext_resource type="Texture2D" uid="uid://cq4p1wwiid4jo" path="res://Assets/next_hover.png" id="3_vbmmo"]
 
@@ -23,6 +24,7 @@ offset_left = 10.0
 offset_right = 91.0
 offset_bottom = 26.0
 text = "0"
+label_settings = ExtResource("2_s82d4")
 vertical_alignment = 1
 
 [node name="EndLevelScreen" type="Control" parent="CanvasLayer"]
@@ -76,31 +78,38 @@ offset_bottom = 3.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "0"
+label_settings = ExtResource("2_s82d4")
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="LevelLabel" type="Label" parent="CanvasLayer/EndLevelScreen"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -61.0
+offset_left = -65.0
 offset_top = 33.0
-offset_right = 71.0
+offset_right = 67.0
 offset_bottom = 59.0
 grow_horizontal = 2
-text = "Level      passed!"
+text = "Level     passed!"
+label_settings = ExtResource("2_s82d4")
+horizontal_alignment = 1
+vertical_alignment = 2
 
 [node name="LevelNumLabel" type="Label" parent="CanvasLayer/EndLevelScreen"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -16.0
+offset_left = -11.0
 offset_top = 33.0
-offset_right = 24.0
+offset_right = 29.0
 offset_bottom = 59.0
 grow_horizontal = 2
 text = "0"
+label_settings = ExtResource("2_s82d4")
+vertical_alignment = 2
 
 [connection signal="mouse_entered" from="CanvasLayer/EndLevelScreen/NextLevelButton" to="." method="_on_next_level_button_mouse_entered"]
 [connection signal="pressed" from="CanvasLayer/EndLevelScreen/NextLevelButton" to="." method="_on_next_level_button_pressed"]

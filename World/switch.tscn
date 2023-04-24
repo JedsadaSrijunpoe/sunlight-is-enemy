@@ -2,11 +2,10 @@
 
 [ext_resource type="Script" path="res://World/switch.gd" id="1_vanye"]
 [ext_resource type="Texture2D" uid="uid://hlss3wwhicfj" path="res://World/switch.png" id="2_xdddp"]
+[ext_resource type="LabelSettings" uid="uid://cia5glscak576" path="res://Assets/pixeboy_label_settings.tres" id="3_v5hxh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mi0aw"]
 size = Vector2(20, 18)
-
-[sub_resource type="LabelSettings" id="LabelSettings_k5y85"]
 
 [node name="Switch" type="Area2D"]
 collision_layer = 16
@@ -28,4 +27,4 @@ offset_right = 38.0
 offset_bottom = 32.0
 text = "[E] : Interact
 "
-label_settings = SubResource("LabelSettings_k5y85")
+label_settings = ExtResource("3_v5hxh")
