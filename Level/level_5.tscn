@@ -1,10 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://t41i00dghuc"]
+[gd_scene load_steps=6 format=3 uid="uid://t41i00dghuc"]
 
 [ext_resource type="PackedScene" uid="uid://b6f48pv75xxoy" path="res://Hazard/circular_time.tscn" id="1_0kasx"]
 [ext_resource type="TileSet" uid="uid://c44gq1ueufkne" path="res://TileMap/dungeon_platformer_tile_set.tres" id="1_yd70f"]
 [ext_resource type="PackedScene" uid="uid://dshcq4y4i7jbj" path="res://Camera/camera_with_limit.tscn" id="3_7j0re"]
+[ext_resource type="PackedScene" uid="uid://du8fx58opbcln" path="res://Hazard/king_sword.tscn" id="4_do3xi"]
+[ext_resource type="PackedScene" uid="uid://kiu6g4gkywwq" path="res://Player/player.tscn" id="5_82dgq"]
 
 [node name="level_5" type="Node2D"]
+metadata/_edit_vertical_guides_ = []
+metadata/_edit_horizontal_guides_ = []
 
 [node name="CircularTime" parent="." instance=ExtResource("1_0kasx")]
 scale = Vector2(1.5, 1.5)
@@ -37,4 +41,297 @@ position = Vector2(333, 7)
 [node name="TopLeft" parent="Camera2D/Node" index="1"]
 position = Vector2(-333, -367)
 
+[node name="Player" parent="." instance=ExtResource("5_82dgq")]
+position = Vector2(-23, -82)
+
+[node name="Sword" type="Node2D" parent="."]
+
+[node name="KingSword" parent="Sword" instance=ExtResource("4_do3xi")]
+position = Vector2(-310, -306)
+duration = 3.0
+
+[node name="RayCast2D" parent="Sword/KingSword" index="1"]
+target_position = Vector2(0, 300)
+
+[node name="KingSword2" parent="Sword" instance=ExtResource("4_do3xi")]
+position = Vector2(-294, -306)
+duration = 3.0
+
+[node name="RayCast2D" parent="Sword/KingSword2" index="1"]
+target_position = Vector2(0, 300)
+
+[node name="KingSword3" parent="Sword" instance=ExtResource("4_do3xi")]
+position = Vector2(-278, -306)
+duration = 3.0
+
+[node name="RayCast2D" parent="Sword/KingSword3" index="1"]
+target_position = Vector2(0, 300)
+
+[node name="KingSword4" parent="Sword" instance=ExtResource("4_do3xi")]
+position = Vector2(-262, -306)
+duration = 3.0
+
+[node name="RayCast2D" parent="Sword/KingSword4" index="1"]
+target_position = Vector2(0, 300)
+
+[node name="KingSword5" parent="Sword" instance=ExtResource("4_do3xi")]
+position = Vector2(-246, -306)
+duration = 3.0
+
+[node name="RayCast2D" parent="Sword/KingSword5" index="1"]
+target_position = Vector2(0, 300)
+
+[node name="KingSword6" parent="Sword" instance=ExtResource("4_do3xi")]
+position = Vector2(-230, -306)
+duration = 3.0
+
+[node name="RayCast2D" parent="Sword/KingSword6" index="1"]
+target_position = Vector2(0, 300)
+
+[node name="KingSword7" parent="Sword" instance=ExtResource("4_do3xi")]
+position = Vector2(-214, -306)
+duration = 3.0
+
+[node name="RayCast2D" parent="Sword/KingSword7" index="1"]
+target_position = Vector2(0, 300)
+
+[node name="KingSword8" parent="Sword" instance=ExtResource("4_do3xi")]
+position = Vector2(-198, -306)
+duration = 3.0
+
+[node name="RayCast2D" parent="Sword/KingSword8" index="1"]
+target_position = Vector2(0, 300)
+
+[node name="KingSword9" parent="Sword" instance=ExtResource("4_do3xi")]
+position = Vector2(-182, -306)
+duration = 3.0
+
+[node name="RayCast2D" parent="Sword/KingSword9" index="1"]
+target_position = Vector2(0, 300)
+
+[node name="KingSword10" parent="Sword" instance=ExtResource("4_do3xi")]
+position = Vector2(-166, -306)
+duration = 3.0
+
+[node name="RayCast2D" parent="Sword/KingSword10" index="1"]
+target_position = Vector2(0, 300)
+
+[node name="KingSword11" parent="Sword" instance=ExtResource("4_do3xi")]
+position = Vector2(-150, -306)
+duration = 3.0
+
+[node name="RayCast2D" parent="Sword/KingSword11" index="1"]
+target_position = Vector2(0, 300)
+
+[node name="KingSword12" parent="Sword" instance=ExtResource("4_do3xi")]
+position = Vector2(-134, -306)
+duration = 3.0
+
+[node name="RayCast2D" parent="Sword/KingSword12" index="1"]
+target_position = Vector2(0, 300)
+
+[node name="KingSword13" parent="Sword" instance=ExtResource("4_do3xi")]
+position = Vector2(-118, -306)
+duration = 3.0
+
+[node name="RayCast2D" parent="Sword/KingSword13" index="1"]
+target_position = Vector2(0, 300)
+
+[node name="KingSword14" parent="Sword" instance=ExtResource("4_do3xi")]
+position = Vector2(-102, -306)
+duration = 3.0
+
+[node name="RayCast2D" parent="Sword/KingSword14" index="1"]
+target_position = Vector2(0, 300)
+
+[node name="KingSword15" parent="Sword" instance=ExtResource("4_do3xi")]
+position = Vector2(-86, -306)
+duration = 3.0
+
+[node name="RayCast2D" parent="Sword/KingSword15" index="1"]
+target_position = Vector2(0, 300)
+
+[node name="KingSword16" parent="Sword" instance=ExtResource("4_do3xi")]
+position = Vector2(-70, -306)
+duration = 3.0
+
+[node name="RayCast2D" parent="Sword/KingSword16" index="1"]
+target_position = Vector2(0, 300)
+
+[node name="KingSword17" parent="Sword" instance=ExtResource("4_do3xi")]
+position = Vector2(71, -306)
+duration = 3.0
+
+[node name="RayCast2D" parent="Sword/KingSword17" index="1"]
+target_position = Vector2(0, 300)
+
+[node name="KingSword18" parent="Sword" instance=ExtResource("4_do3xi")]
+position = Vector2(87, -306)
+duration = 3.0
+
+[node name="RayCast2D" parent="Sword/KingSword18" index="1"]
+target_position = Vector2(0, 300)
+
+[node name="KingSword19" parent="Sword" instance=ExtResource("4_do3xi")]
+position = Vector2(103, -306)
+duration = 3.0
+
+[node name="RayCast2D" parent="Sword/KingSword19" index="1"]
+target_position = Vector2(0, 300)
+
+[node name="KingSword20" parent="Sword" instance=ExtResource("4_do3xi")]
+position = Vector2(119, -306)
+duration = 3.0
+
+[node name="RayCast2D" parent="Sword/KingSword20" index="1"]
+target_position = Vector2(0, 300)
+
+[node name="KingSword21" parent="Sword" instance=ExtResource("4_do3xi")]
+position = Vector2(135, -306)
+duration = 3.0
+
+[node name="RayCast2D" parent="Sword/KingSword21" index="1"]
+target_position = Vector2(0, 300)
+
+[node name="KingSword22" parent="Sword" instance=ExtResource("4_do3xi")]
+position = Vector2(151, -306)
+duration = 3.0
+
+[node name="RayCast2D" parent="Sword/KingSword22" index="1"]
+target_position = Vector2(0, 300)
+
+[node name="KingSword23" parent="Sword" instance=ExtResource("4_do3xi")]
+position = Vector2(167, -306)
+duration = 3.0
+
+[node name="RayCast2D" parent="Sword/KingSword23" index="1"]
+target_position = Vector2(0, 300)
+
+[node name="KingSword24" parent="Sword" instance=ExtResource("4_do3xi")]
+position = Vector2(183, -306)
+duration = 3.0
+
+[node name="RayCast2D" parent="Sword/KingSword24" index="1"]
+target_position = Vector2(0, 300)
+
+[node name="KingSword25" parent="Sword" instance=ExtResource("4_do3xi")]
+position = Vector2(199, -306)
+duration = 3.0
+
+[node name="RayCast2D" parent="Sword/KingSword25" index="1"]
+target_position = Vector2(0, 300)
+
+[node name="KingSword26" parent="Sword" instance=ExtResource("4_do3xi")]
+position = Vector2(215, -306)
+duration = 3.0
+
+[node name="RayCast2D" parent="Sword/KingSword26" index="1"]
+target_position = Vector2(0, 300)
+
+[node name="KingSword27" parent="Sword" instance=ExtResource("4_do3xi")]
+position = Vector2(231, -306)
+duration = 3.0
+
+[node name="RayCast2D" parent="Sword/KingSword27" index="1"]
+target_position = Vector2(0, 300)
+
+[node name="KingSword28" parent="Sword" instance=ExtResource("4_do3xi")]
+position = Vector2(247, -306)
+duration = 3.0
+
+[node name="RayCast2D" parent="Sword/KingSword28" index="1"]
+target_position = Vector2(0, 300)
+
+[node name="KingSword29" parent="Sword" instance=ExtResource("4_do3xi")]
+position = Vector2(263, -306)
+duration = 3.0
+
+[node name="RayCast2D" parent="Sword/KingSword29" index="1"]
+target_position = Vector2(0, 300)
+
+[node name="KingSword30" parent="Sword" instance=ExtResource("4_do3xi")]
+position = Vector2(279, -306)
+duration = 3.0
+
+[node name="RayCast2D" parent="Sword/KingSword30" index="1"]
+target_position = Vector2(0, 300)
+
+[node name="KingSword31" parent="Sword" instance=ExtResource("4_do3xi")]
+position = Vector2(295, -306)
+duration = 3.0
+
+[node name="RayCast2D" parent="Sword/KingSword31" index="1"]
+target_position = Vector2(0, 300)
+
+[node name="KingSword32" parent="Sword" instance=ExtResource("4_do3xi")]
+position = Vector2(311, -306)
+duration = 3.0
+
+[node name="RayCast2D" parent="Sword/KingSword32" index="1"]
+target_position = Vector2(0, 300)
+
 [editable path="Camera2D"]
+[editable path="Sword/KingSword"]
+[editable path="Sword/KingSword/Hitbox"]
+[editable path="Sword/KingSword2"]
+[editable path="Sword/KingSword2/Hitbox"]
+[editable path="Sword/KingSword3"]
+[editable path="Sword/KingSword3/Hitbox"]
+[editable path="Sword/KingSword4"]
+[editable path="Sword/KingSword4/Hitbox"]
+[editable path="Sword/KingSword5"]
+[editable path="Sword/KingSword5/Hitbox"]
+[editable path="Sword/KingSword6"]
+[editable path="Sword/KingSword6/Hitbox"]
+[editable path="Sword/KingSword7"]
+[editable path="Sword/KingSword7/Hitbox"]
+[editable path="Sword/KingSword8"]
+[editable path="Sword/KingSword8/Hitbox"]
+[editable path="Sword/KingSword9"]
+[editable path="Sword/KingSword9/Hitbox"]
+[editable path="Sword/KingSword10"]
+[editable path="Sword/KingSword10/Hitbox"]
+[editable path="Sword/KingSword11"]
+[editable path="Sword/KingSword11/Hitbox"]
+[editable path="Sword/KingSword12"]
+[editable path="Sword/KingSword12/Hitbox"]
+[editable path="Sword/KingSword13"]
+[editable path="Sword/KingSword13/Hitbox"]
+[editable path="Sword/KingSword14"]
+[editable path="Sword/KingSword14/Hitbox"]
+[editable path="Sword/KingSword15"]
+[editable path="Sword/KingSword15/Hitbox"]
+[editable path="Sword/KingSword16"]
+[editable path="Sword/KingSword16/Hitbox"]
+[editable path="Sword/KingSword17"]
+[editable path="Sword/KingSword17/Hitbox"]
+[editable path="Sword/KingSword18"]
+[editable path="Sword/KingSword18/Hitbox"]
+[editable path="Sword/KingSword19"]
+[editable path="Sword/KingSword19/Hitbox"]
+[editable path="Sword/KingSword20"]
+[editable path="Sword/KingSword20/Hitbox"]
+[editable path="Sword/KingSword21"]
+[editable path="Sword/KingSword21/Hitbox"]
+[editable path="Sword/KingSword22"]
+[editable path="Sword/KingSword22/Hitbox"]
+[editable path="Sword/KingSword23"]
+[editable path="Sword/KingSword23/Hitbox"]
+[editable path="Sword/KingSword24"]
+[editable path="Sword/KingSword24/Hitbox"]
+[editable path="Sword/KingSword25"]
+[editable path="Sword/KingSword25/Hitbox"]
+[editable path="Sword/KingSword26"]
+[editable path="Sword/KingSword26/Hitbox"]
+[editable path="Sword/KingSword27"]
+[editable path="Sword/KingSword27/Hitbox"]
+[editable path="Sword/KingSword28"]
+[editable path="Sword/KingSword28/Hitbox"]
+[editable path="Sword/KingSword29"]
+[editable path="Sword/KingSword29/Hitbox"]
+[editable path="Sword/KingSword30"]
+[editable path="Sword/KingSword30/Hitbox"]
+[editable path="Sword/KingSword31"]
+[editable path="Sword/KingSword31/Hitbox"]
+[editable path="Sword/KingSword32"]
+[editable path="Sword/KingSword32/Hitbox"]

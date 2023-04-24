@@ -14,6 +14,7 @@ metadata/_edit_horizontal_guides_ = [-483.0, 465.0]
 polygon = PackedVector2Array(-400, 2, -400, -481, 415, -483, 415, 6)
 
 [node name="Hitbox" parent="light" instance=ExtResource("2_tsmq4")]
+collision_layer = 4
 IS_LIGHT = true
 
 [node name="CollisionPolygon2D" parent="light/Hitbox" index="0"]
