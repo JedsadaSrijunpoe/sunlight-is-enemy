@@ -8,7 +8,7 @@
 [ext_resource type="Script" path="res://World/door.gd" id="6_d6p7m"]
 [ext_resource type="PackedScene" uid="uid://b7c3t4aho6nsn" path="res://Hazard/light_pillar.tscn" id="7_wf34j"]
 [ext_resource type="Script" path="res://Hazard/light_pillar.gd" id="8_e7tmn"]
-[ext_resource type="PackedScene" uid="uid://cxqt7udetk2iw" path="res://World/switch.tscn" id="8_y8iui"]
+[ext_resource type="PackedScene" uid="uid://d11d18s5o61fm" path="res://World/switch.tscn" id="8_y8iui"]
 [ext_resource type="PackedScene" uid="uid://rncn6bstp65j" path="res://Hazard/flamethrower.tscn" id="10_qffqo"]
 [ext_resource type="Script" path="res://Hazard/flamethrower.gd" id="11_04jr7"]
 [ext_resource type="PackedScene" uid="uid://bxh87xberc4bg" path="res://World/next_level_area.tscn" id="12_apl7d"]
