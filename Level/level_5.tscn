@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://t41i00dghuc"]
+[gd_scene load_steps=7 format=3 uid="uid://t41i00dghuc"]
 
 [ext_resource type="PackedScene" uid="uid://b6f48pv75xxoy" path="res://Hazard/circular_time.tscn" id="1_0kasx"]
 [ext_resource type="TileSet" uid="uid://c44gq1ueufkne" path="res://TileMap/dungeon_platformer_tile_set.tres" id="1_yd70f"]
 [ext_resource type="PackedScene" uid="uid://dshcq4y4i7jbj" path="res://Camera/camera_with_limit.tscn" id="3_7j0re"]
-[ext_resource type="PackedScene" uid="uid://du8fx58opbcln" path="res://Hazard/king_sword.tscn" id="4_do3xi"]
+[ext_resource type="PackedScene" path="res://Hazard/king_sword.tscn" id="4_do3xi"]
 [ext_resource type="PackedScene" uid="uid://kiu6g4gkywwq" path="res://Player/player.tscn" id="5_82dgq"]
+[ext_resource type="Texture2D" uid="uid://cf0tcu53o20va" path="res://Hazard/King.png" id="6_nsxan"]
 
 [node name="level_5" type="Node2D"]
 metadata/_edit_vertical_guides_ = []
@@ -269,6 +270,10 @@ duration = 3.0
 
 [node name="RayCast2D" parent="Sword/KingSword32" index="1"]
 target_position = Vector2(0, 300)
+
+[node name="King" type="Sprite2D" parent="."]
+position = Vector2(0, -319)
+texture = ExtResource("6_nsxan")
 
 [editable path="Camera2D"]
 [editable path="Sword/KingSword"]
