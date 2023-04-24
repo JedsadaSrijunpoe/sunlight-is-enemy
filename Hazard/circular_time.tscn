@@ -11,7 +11,7 @@ metadata/_edit_horizontal_guides_ = [-483.0, 465.0]
 [node name="light" type="Node2D" parent="."]
 
 [node name="Polygon2D" type="Polygon2D" parent="light"]
-polygon = PackedVector2Array(-400, 2, -400, -481, 415, -483, 415, 6)
+polygon = PackedVector2Array(-400, 0, -400, -483, 415, -483, 415, 0)
 
 [node name="Hitbox" parent="light" instance=ExtResource("2_tsmq4")]
 collision_layer = 4
@@ -19,14 +19,13 @@ IS_LIGHT = true
 
 [node name="CollisionPolygon2D" parent="light/Hitbox" index="0"]
 position = Vector2(0, -1)
-polygon = PackedVector2Array(-400, 4, -399, -479, 415, -481, 416, 8)
+polygon = PackedVector2Array(-400, 1, -400, -482, 415, -482, 415, 1)
 
 [node name="night" type="Node2D" parent="."]
-position = Vector2(2, -3)
 
 [node name="Polygon2D2" type="Polygon2D" parent="night"]
 position = Vector2(-2, 488)
 color = Color(0, 0, 0, 1)
-polygon = PackedVector2Array(-400, 2, -400, -481, 415, -483, 415, 6)
+polygon = PackedVector2Array(-398, -23, -398, -488, 417, -488, 417, -23)
 
 [editable path="light/Hitbox"]
