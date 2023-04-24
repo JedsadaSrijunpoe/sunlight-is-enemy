@@ -60,4 +60,5 @@ grow_vertical = 2
 texture_normal = ExtResource("1_1a8a7")
 texture_hover = ExtResource("3_d6o0y")
 
+[connection signal="mouse_entered" from="Play" to="." method="_on_play_mouse_entered"]
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]

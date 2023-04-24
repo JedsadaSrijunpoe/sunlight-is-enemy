@@ -1,15 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://c2wuujfs4la7i"]
+[gd_scene load_steps=5 format=3 uid="uid://c2wuujfs4la7i"]
 
 [ext_resource type="Script" path="res://UI/user_interface.gd" id="1_dqmmd"]
 [ext_resource type="Texture2D" uid="uid://hehbx76cuk70" path="res://Assets/next.png" id="2_ntdfw"]
+[ext_resource type="Texture2D" uid="uid://3shyh2k76cat" path="res://Assets/EndLevelRect.png" id="2_yhl8b"]
 [ext_resource type="Texture2D" uid="uid://cq4p1wwiid4jo" path="res://Assets/next_hover.png" id="3_vbmmo"]
-
-[sub_resource type="Gradient" id="Gradient_a8fh6"]
-offsets = PackedFloat32Array(1)
-colors = PackedColorArray(0.430057, 0.430057, 0.430057, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_1lgkh"]
-gradient = SubResource("Gradient_a8fh6")
 
 [node name="User Interface" type="Control"]
 process_mode = 3
@@ -50,7 +44,7 @@ offset_right = 75.5
 offset_bottom = 66.5
 grow_horizontal = 2
 grow_vertical = 2
-texture = SubResource("GradientTexture2D_1lgkh")
+texture = ExtResource("2_yhl8b")
 
 [node name="NextLevelButton" type="TextureButton" parent="CanvasLayer/EndLevelScreen"]
 layout_mode = 1
@@ -108,4 +102,5 @@ offset_bottom = 59.0
 grow_horizontal = 2
 text = "0"
 
+[connection signal="mouse_entered" from="CanvasLayer/EndLevelScreen/NextLevelButton" to="." method="_on_next_level_button_mouse_entered"]
 [connection signal="pressed" from="CanvasLayer/EndLevelScreen/NextLevelButton" to="." method="_on_next_level_button_pressed"]

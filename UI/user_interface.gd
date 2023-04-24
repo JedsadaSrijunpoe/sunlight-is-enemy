@@ -56,7 +56,12 @@ func end_level(temp: PackedScene):
 	end_level_screen.show()
 
 func _on_next_level_button_pressed():
+	SoundPlayer.play_sound(SoundPlayer.BUTTON_CLICK)
 	level += 1
 	get_tree().paused = false
 	get_tree().change_scene_to_packed(next_scene)
 	start_level()
+
+
+func _on_next_level_button_mouse_entered():
+	SoundPlayer.play_sound(SoundPlayer.BUTTON_HOVER)

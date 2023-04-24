@@ -8,6 +8,8 @@ const ENEMY_KILLED = preload("res://Sound/EnemyKilled.wav")
 const PLAYER_DEATH = preload("res://Sound/PlayerDeath.wav")
 const LEVER = preload("res://Sound/Lever.wav")
 const NEXT_LEVEL = preload("res://Sound/NextLevel.wav")
+const BUTTON_HOVER = preload("res://Sound/ButtonHover.wav")
+const BUTTON_CLICK = preload("res://Sound/ButtonClick.wav")
 
 const LOOP_FLAP = preload("res://Sound/LoopingFlap.wav")
 
