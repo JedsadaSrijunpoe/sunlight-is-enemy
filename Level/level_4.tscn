@@ -899,7 +899,7 @@ position = Vector2(80, -72)
 shape = SubResource("RectangleShape2D_ate5v")
 
 [node name="Player" parent="." instance=ExtResource("7_wwx55")]
-position = Vector2(684, -97)
+position = Vector2(52, -17)
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
 remote_path = NodePath("../../Camera2D")
@@ -987,7 +987,7 @@ libraries = {
 position = Vector2(662, -456)
 
 [node name="Camera2D" parent="." instance=ExtResource("8_p738q")]
-position = Vector2(684, -97)
+position = Vector2(52, -17)
 
 [node name="BottomRight" parent="Camera2D/Node" index="0"]
 position = Vector2(944, 96)

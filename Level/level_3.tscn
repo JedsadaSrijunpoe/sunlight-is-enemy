@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://bobc700uaiaiy"]
+[gd_scene load_steps=32 format=3 uid="uid://bobc700uaiaiy"]
 
 [ext_resource type="TileSet" uid="uid://c44gq1ueufkne" path="res://TileMap/dungeon_platformer_tile_set.tres" id="1_k4aj4"]
 [ext_resource type="PackedScene" uid="uid://55uh4xtx1ylx" path="res://Hazard/window.tscn" id="2_26ex3"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://rncn6bstp65j" path="res://Hazard/flamethrower.tscn" id="10_qffqo"]
 [ext_resource type="Script" path="res://Hazard/flamethrower.gd" id="11_04jr7"]
 [ext_resource type="PackedScene" uid="uid://bxh87xberc4bg" path="res://World/next_level_area.tscn" id="12_apl7d"]
+[ext_resource type="PackedScene" uid="uid://bidsnvqjwkfkc" path="res://Level/level_4.tscn" id="13_65exd"]
 [ext_resource type="PackedScene" uid="uid://bbbnlvbey444q" path="res://World/moving_spike_platform.tscn" id="14_islx8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j2x8c"]
@@ -310,6 +311,7 @@ position = Vector2(220, -440)
 [node name="NextLevelArea" parent="." instance=ExtResource("12_apl7d")]
 position = Vector2(128, -1008)
 scale = Vector2(1.6, 1.6)
+next_scene = ExtResource("13_65exd")
 
 [node name="MovingSpikePlatform" parent="." instance=ExtResource("14_islx8")]
 position = Vector2(-24, -968)
