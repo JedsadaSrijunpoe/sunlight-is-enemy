@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=3 uid="uid://bidsnvqjwkfkc"]
+[gd_scene load_steps=63 format=3 uid="uid://bidsnvqjwkfkc"]
 
 [ext_resource type="TileSet" uid="uid://c44gq1ueufkne" path="res://TileMap/dungeon_platformer_tile_set.tres" id="1_nxwy6"]
 [ext_resource type="PackedScene" uid="uid://b7c3t4aho6nsn" path="res://Hazard/light_pillar.tscn" id="2_3l850"]
@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://kiu6g4gkywwq" path="res://Player/player.tscn" id="7_wwx55"]
 [ext_resource type="Script" path="res://Hazard/flamethrower.gd" id="8_oaxgk"]
 [ext_resource type="PackedScene" uid="uid://dshcq4y4i7jbj" path="res://Camera/camera_with_limit.tscn" id="8_p738q"]
-[ext_resource type="PackedScene" uid="uid://cxqt7udetk2iw" path="res://World/switch.tscn" id="9_aag1c"]
+[ext_resource type="PackedScene" uid="uid://d11d18s5o61fm" path="res://World/switch.tscn" id="9_aag1c"]
 [ext_resource type="PackedScene" uid="uid://2sc2qa1lrcxl" path="res://World/small_moving_spike_platform.tscn" id="11_4govv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b2ong"]
@@ -39,12 +39,6 @@ size = Vector2(16, 8)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pgx74"]
 size = Vector2(16, 8)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_kwuu2"]
-size = Vector2(16, 8)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_wyw30"]
-size = Vector2(16, 8)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5q26e"]
 size = Vector2(16, 8)
 
@@ -61,7 +55,7 @@ size = Vector2(8, 8)
 size = Vector2(16, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8ao0y"]
-size = Vector2(16, 441)
+size = Vector2(16, 448)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_afqhf"]
 size = Vector2(16, 48)
@@ -76,10 +70,10 @@ size = Vector2(448, 16)
 size = Vector2(16, 224)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bkh7a"]
-size = Vector2(516, 15)
+size = Vector2(516, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7e54m"]
-size = Vector2(16, 198)
+size = Vector2(16, 208)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hybbe"]
 size = Vector2(416, 16)
@@ -488,7 +482,7 @@ scale = Vector2(0.333333, 1)
 shape = SubResource("RectangleShape2D_b2ong")
 
 [node name="MovingPlatform2" parent="MovingPlatform" instance=ExtResource("5_t0uqq")]
-position = Vector2(776, -132)
+position = Vector2(776, -133)
 offset = Vector2(-74, 0)
 
 [node name="Sprite2D" parent="MovingPlatform/MovingPlatform2/AnimatableBody2D" index="0"]
@@ -498,8 +492,8 @@ scale = Vector2(0.333333, 1)
 shape = SubResource("RectangleShape2D_w87x5")
 
 [node name="MovingPlatform3" parent="MovingPlatform" instance=ExtResource("5_t0uqq")]
-position = Vector2(776, -161)
-offset = Vector2(-74, 0)
+position = Vector2(702, -169)
+offset = Vector2(74, 0)
 
 [node name="Sprite2D" parent="MovingPlatform/MovingPlatform3/AnimatableBody2D" index="0"]
 scale = Vector2(0.333333, 1)
@@ -508,7 +502,8 @@ scale = Vector2(0.333333, 1)
 shape = SubResource("RectangleShape2D_aam8c")
 
 [node name="MovingPlatform4" parent="MovingPlatform" instance=ExtResource("5_t0uqq")]
-position = Vector2(702, -192)
+position = Vector2(776, -205)
+offset = Vector2(-74, 0)
 
 [node name="Sprite2D" parent="MovingPlatform/MovingPlatform4/AnimatableBody2D" index="0"]
 scale = Vector2(0.333333, 1)
@@ -517,7 +512,8 @@ scale = Vector2(0.333333, 1)
 shape = SubResource("RectangleShape2D_0nuwq")
 
 [node name="MovingPlatform5" parent="MovingPlatform" instance=ExtResource("5_t0uqq")]
-position = Vector2(736, -221)
+position = Vector2(736, -245)
+offset = Vector2(37, 0)
 
 [node name="Sprite2D" parent="MovingPlatform/MovingPlatform5/AnimatableBody2D" index="0"]
 scale = Vector2(0.333333, 1)
@@ -526,7 +522,8 @@ scale = Vector2(0.333333, 1)
 shape = SubResource("RectangleShape2D_uoj60")
 
 [node name="MovingPlatform6" parent="MovingPlatform" instance=ExtResource("5_t0uqq")]
-position = Vector2(776, -249)
+position = Vector2(776, -278)
+offset = Vector2(-74, 0)
 
 [node name="Sprite2D" parent="MovingPlatform/MovingPlatform6/AnimatableBody2D" index="0"]
 scale = Vector2(0.333333, 1)
@@ -535,7 +532,8 @@ scale = Vector2(0.333333, 1)
 shape = SubResource("RectangleShape2D_qosdv")
 
 [node name="MovingPlatform7" parent="MovingPlatform" instance=ExtResource("5_t0uqq")]
-position = Vector2(697, -278)
+position = Vector2(702, -317)
+offset = Vector2(74, 0)
 
 [node name="Sprite2D" parent="MovingPlatform/MovingPlatform7/AnimatableBody2D" index="0"]
 scale = Vector2(0.333333, 1)
@@ -544,7 +542,8 @@ scale = Vector2(0.333333, 1)
 shape = SubResource("RectangleShape2D_rblsr")
 
 [node name="MovingPlatform8" parent="MovingPlatform" instance=ExtResource("5_t0uqq")]
-position = Vector2(732, -305)
+position = Vector2(736, -384)
+offset = Vector2(37, 0)
 
 [node name="Sprite2D" parent="MovingPlatform/MovingPlatform8/AnimatableBody2D" index="0"]
 scale = Vector2(0.333333, 1)
@@ -553,7 +552,8 @@ scale = Vector2(0.333333, 1)
 shape = SubResource("RectangleShape2D_rtj2y")
 
 [node name="MovingPlatform9" parent="MovingPlatform" instance=ExtResource("5_t0uqq")]
-position = Vector2(770, -332)
+position = Vector2(776, -345)
+offset = Vector2(-74, 0)
 
 [node name="Sprite2D" parent="MovingPlatform/MovingPlatform9/AnimatableBody2D" index="0"]
 scale = Vector2(0.333333, 1)
@@ -561,26 +561,9 @@ scale = Vector2(0.333333, 1)
 [node name="CollisionShape2D" parent="MovingPlatform/MovingPlatform9/AnimatableBody2D" index="1"]
 shape = SubResource("RectangleShape2D_pgx74")
 
-[node name="MovingPlatform10" parent="MovingPlatform" instance=ExtResource("5_t0uqq")]
-position = Vector2(693, -370)
-
-[node name="Sprite2D" parent="MovingPlatform/MovingPlatform10/AnimatableBody2D" index="0"]
-scale = Vector2(0.333333, 1)
-
-[node name="CollisionShape2D" parent="MovingPlatform/MovingPlatform10/AnimatableBody2D" index="1"]
-shape = SubResource("RectangleShape2D_kwuu2")
-
-[node name="MovingPlatform11" parent="MovingPlatform" instance=ExtResource("5_t0uqq")]
-position = Vector2(728, -397)
-
-[node name="Sprite2D" parent="MovingPlatform/MovingPlatform11/AnimatableBody2D" index="0"]
-scale = Vector2(0.333333, 1)
-
-[node name="CollisionShape2D" parent="MovingPlatform/MovingPlatform11/AnimatableBody2D" index="1"]
-shape = SubResource("RectangleShape2D_wyw30")
-
 [node name="MovingPlatform12" parent="MovingPlatform" instance=ExtResource("5_t0uqq")]
-position = Vector2(766, -424)
+position = Vector2(776, -422)
+offset = Vector2(-74, 0)
 
 [node name="Sprite2D" parent="MovingPlatform/MovingPlatform12/AnimatableBody2D" index="0"]
 scale = Vector2(0.333333, 1)
@@ -589,136 +572,6 @@ scale = Vector2(0.333333, 1)
 shape = SubResource("RectangleShape2D_5q26e")
 
 [node name="MovingSpikePlatform" type="Node2D" parent="."]
-
-[node name="MovingSpikePlatform" parent="MovingSpikePlatform" instance=ExtResource("6_cou26")]
-position = Vector2(680, -407)
-
-[node name="Sprite2D" parent="MovingSpikePlatform/MovingSpikePlatform/AnimatableBody2D" index="0"]
-position = Vector2(-1.35005e-05, 0)
-scale = Vector2(0.291666, 1)
-
-[node name="CollisionPolygon2D" parent="MovingSpikePlatform/MovingSpikePlatform/AnimatableBody2D/Hitbox" index="0"]
-position = Vector2(6, -1.14441e-05)
-scale = Vector2(0.544643, 1.04688)
-polygon = PackedVector2Array(-18.7557, -3.53433, -24, 0, -18.3607, 3.82089)
-
-[node name="CollisionPolygon2D" parent="MovingSpikePlatform/MovingSpikePlatform/AnimatableBody2D/Hitbox2" index="0"]
-position = Vector2(-13, 0)
-polygon = PackedVector2Array(17, -4, 20, 0, 17, 4)
-
-[node name="MovingSpikePlatform2" parent="MovingSpikePlatform" instance=ExtResource("6_cou26")]
-position = Vector2(680, -379)
-
-[node name="Sprite2D" parent="MovingSpikePlatform/MovingSpikePlatform2/AnimatableBody2D" index="0"]
-position = Vector2(3.75211e-05, 0)
-scale = Vector2(0.249999, 1)
-
-[node name="CollisionShape2D" parent="MovingSpikePlatform/MovingSpikePlatform2/AnimatableBody2D" index="1"]
-position = Vector2(0, -0.5)
-
-[node name="CollisionPolygon2D" parent="MovingSpikePlatform/MovingSpikePlatform2/AnimatableBody2D/Hitbox" index="0"]
-position = Vector2(6, -1.14441e-05)
-scale = Vector2(0.544643, 1.04688)
-polygon = PackedVector2Array(-18.7557, -3.53433, -24, 0, -18.3607, 3.82089)
-
-[node name="CollisionPolygon2D" parent="MovingSpikePlatform/MovingSpikePlatform2/AnimatableBody2D/Hitbox2" index="0"]
-position = Vector2(-13, 0)
-polygon = PackedVector2Array(17, -4, 20, 0, 17, 4)
-
-[node name="MovingSpikePlatform3" parent="MovingSpikePlatform" instance=ExtResource("6_cou26")]
-position = Vector2(681, -346)
-
-[node name="Sprite2D" parent="MovingSpikePlatform/MovingSpikePlatform3/AnimatableBody2D" index="0"]
-position = Vector2(3.75211e-05, 0)
-scale = Vector2(0.249999, 1)
-
-[node name="CollisionShape2D" parent="MovingSpikePlatform/MovingSpikePlatform3/AnimatableBody2D" index="1"]
-position = Vector2(0, -0.5)
-
-[node name="CollisionPolygon2D" parent="MovingSpikePlatform/MovingSpikePlatform3/AnimatableBody2D/Hitbox" index="0"]
-position = Vector2(6, -1.14441e-05)
-scale = Vector2(0.544643, 1.04688)
-polygon = PackedVector2Array(-18.7557, -3.53433, -24, 0, -18.3607, 3.82089)
-
-[node name="CollisionPolygon2D" parent="MovingSpikePlatform/MovingSpikePlatform3/AnimatableBody2D/Hitbox2" index="0"]
-position = Vector2(-13, 0)
-polygon = PackedVector2Array(17, -4, 20, 0, 17, 4)
-
-[node name="MovingSpikePlatform4" parent="MovingSpikePlatform" instance=ExtResource("6_cou26")]
-position = Vector2(681, -318)
-
-[node name="Sprite2D" parent="MovingSpikePlatform/MovingSpikePlatform4/AnimatableBody2D" index="0"]
-position = Vector2(3.75211e-05, 0)
-scale = Vector2(0.249999, 1)
-
-[node name="CollisionShape2D" parent="MovingSpikePlatform/MovingSpikePlatform4/AnimatableBody2D" index="1"]
-position = Vector2(0, -0.5)
-
-[node name="CollisionPolygon2D" parent="MovingSpikePlatform/MovingSpikePlatform4/AnimatableBody2D/Hitbox" index="0"]
-position = Vector2(6, -1.14441e-05)
-scale = Vector2(0.544643, 1.04688)
-polygon = PackedVector2Array(-18.7557, -3.53433, -24, 0, -18.3607, 3.82089)
-
-[node name="CollisionPolygon2D" parent="MovingSpikePlatform/MovingSpikePlatform4/AnimatableBody2D/Hitbox2" index="0"]
-position = Vector2(-13, 0)
-polygon = PackedVector2Array(17, -4, 20, 0, 17, 4)
-
-[node name="MovingSpikePlatform5" parent="MovingSpikePlatform" instance=ExtResource("6_cou26")]
-position = Vector2(682, -290)
-
-[node name="Sprite2D" parent="MovingSpikePlatform/MovingSpikePlatform5/AnimatableBody2D" index="0"]
-position = Vector2(3.75211e-05, 0)
-scale = Vector2(0.249999, 1)
-
-[node name="CollisionShape2D" parent="MovingSpikePlatform/MovingSpikePlatform5/AnimatableBody2D" index="1"]
-position = Vector2(0, -0.5)
-
-[node name="CollisionPolygon2D" parent="MovingSpikePlatform/MovingSpikePlatform5/AnimatableBody2D/Hitbox" index="0"]
-position = Vector2(6, -1.14441e-05)
-scale = Vector2(0.544643, 1.04688)
-polygon = PackedVector2Array(-18.7557, -3.53433, -24, 0, -18.3607, 3.82089)
-
-[node name="CollisionPolygon2D" parent="MovingSpikePlatform/MovingSpikePlatform5/AnimatableBody2D/Hitbox2" index="0"]
-position = Vector2(-13, 0)
-polygon = PackedVector2Array(17, -4, 20, 0, 17, 4)
-
-[node name="MovingSpikePlatform6" parent="MovingSpikePlatform" instance=ExtResource("6_cou26")]
-position = Vector2(682, -262)
-
-[node name="Sprite2D" parent="MovingSpikePlatform/MovingSpikePlatform6/AnimatableBody2D" index="0"]
-position = Vector2(3.75211e-05, 0)
-scale = Vector2(0.249999, 1)
-
-[node name="CollisionShape2D" parent="MovingSpikePlatform/MovingSpikePlatform6/AnimatableBody2D" index="1"]
-position = Vector2(0, -0.5)
-
-[node name="CollisionPolygon2D" parent="MovingSpikePlatform/MovingSpikePlatform6/AnimatableBody2D/Hitbox" index="0"]
-position = Vector2(6, -1.14441e-05)
-scale = Vector2(0.544643, 1.04688)
-polygon = PackedVector2Array(-18.7557, -3.53433, -24, 0, -18.3607, 3.82089)
-
-[node name="CollisionPolygon2D" parent="MovingSpikePlatform/MovingSpikePlatform6/AnimatableBody2D/Hitbox2" index="0"]
-position = Vector2(-13, 0)
-polygon = PackedVector2Array(17, -4, 20, 0, 17, 4)
-
-[node name="MovingSpikePlatform7" parent="MovingSpikePlatform" instance=ExtResource("6_cou26")]
-position = Vector2(683, -229)
-
-[node name="Sprite2D" parent="MovingSpikePlatform/MovingSpikePlatform7/AnimatableBody2D" index="0"]
-position = Vector2(3.75211e-05, 0)
-scale = Vector2(0.249999, 1)
-
-[node name="CollisionShape2D" parent="MovingSpikePlatform/MovingSpikePlatform7/AnimatableBody2D" index="1"]
-position = Vector2(0, -0.5)
-
-[node name="CollisionPolygon2D" parent="MovingSpikePlatform/MovingSpikePlatform7/AnimatableBody2D/Hitbox" index="0"]
-position = Vector2(6, -1.14441e-05)
-scale = Vector2(0.544643, 1.04688)
-polygon = PackedVector2Array(-18.7557, -3.53433, -24, 0, -18.3607, 3.82089)
-
-[node name="CollisionPolygon2D" parent="MovingSpikePlatform/MovingSpikePlatform7/AnimatableBody2D/Hitbox2" index="0"]
-position = Vector2(-13, 0)
-polygon = PackedVector2Array(17, -4, 20, 0, 17, 4)
 
 [node name="MovingSpikePlatform11" parent="MovingSpikePlatform" instance=ExtResource("6_cou26")]
 position = Vector2(143, -33)
@@ -780,6 +633,18 @@ polygon = PackedVector2Array(-18.3606, -3.82087, -24, 0, -18.3607, 3.82089)
 position = Vector2(-13, 0)
 polygon = PackedVector2Array(17, -4, 20, 0, 17, 4)
 
+[node name="CrackJump" type="Node2D" parent="MovingSpikePlatform"]
+
+[node name="SmallMovingSpikePlatform3" parent="MovingSpikePlatform/CrackJump" instance=ExtResource("11_4govv")]
+position = Vector2(702, -177)
+offset = Vector2(74, 0)
+duration = 6.0
+
+[node name="SmallMovingSpikePlatform4" parent="MovingSpikePlatform/CrackJump" instance=ExtResource("11_4govv")]
+position = Vector2(702, -222)
+offset = Vector2(74, 0)
+duration = 6.0
+
 [node name="Floor" type="TileMap" parent="."]
 tile_set = ExtResource("1_nxwy6")
 format = 2
@@ -800,7 +665,7 @@ collision_layer = 2
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor/SecretPath2/StaticBody2D1"]
-position = Vector2(100, -339.5)
+position = Vector2(100, -336)
 shape = SubResource("RectangleShape2D_8ao0y")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="Floor/SecretPath2"]
@@ -840,7 +705,7 @@ collision_layer = 2
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor/SecretPath2/StaticBody2D6"]
-position = Vector2(350, -126.5)
+position = Vector2(350, -120)
 shape = SubResource("RectangleShape2D_bkh7a")
 
 [node name="StaticBody2D7" type="StaticBody2D" parent="Floor/SecretPath2"]
@@ -848,7 +713,7 @@ collision_layer = 2
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor/SecretPath2/StaticBody2D7"]
-position = Vector2(600, -221)
+position = Vector2(600, -216)
 shape = SubResource("RectangleShape2D_7e54m")
 
 [node name="NormalPath" type="Node2D" parent="Floor"]
@@ -1034,7 +899,7 @@ position = Vector2(80, -72)
 shape = SubResource("RectangleShape2D_ate5v")
 
 [node name="Player" parent="." instance=ExtResource("7_wwx55")]
-position = Vector2(521, -16)
+position = Vector2(684, -97)
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
 remote_path = NodePath("../../Camera2D")
@@ -1122,7 +987,7 @@ libraries = {
 position = Vector2(662, -456)
 
 [node name="Camera2D" parent="." instance=ExtResource("8_p738q")]
-position = Vector2(521, -16)
+position = Vector2(684, -97)
 
 [node name="BottomRight" parent="Camera2D/Node" index="0"]
 position = Vector2(944, 96)
@@ -1137,11 +1002,13 @@ position = Vector2(161, -223)
 position = Vector2(160, -199)
 
 [node name="SmallMovingSpikePlatform3" parent="." instance=ExtResource("11_4govv")]
-position = Vector2(702, -169)
-offset = Vector2(-74, 0)
+position = Vector2(702, -393)
+offset = Vector2(74, 0)
+duration = 6.0
 
 [node name="SmallMovingSpikePlatform4" parent="." instance=ExtResource("11_4govv")]
-position = Vector2(776, -201)
+position = Vector2(702, -296)
+offset = Vector2(37, 0)
 
 [connection signal="switch_state_changed" from="Switch" to="Flamethrower/FullBlockFlameThrower6" method="_on_switch_toggle_state_changed"]
 
@@ -1156,30 +1023,7 @@ position = Vector2(776, -201)
 [editable path="MovingPlatform/MovingPlatform7"]
 [editable path="MovingPlatform/MovingPlatform8"]
 [editable path="MovingPlatform/MovingPlatform9"]
-[editable path="MovingPlatform/MovingPlatform10"]
-[editable path="MovingPlatform/MovingPlatform11"]
 [editable path="MovingPlatform/MovingPlatform12"]
-[editable path="MovingSpikePlatform/MovingSpikePlatform"]
-[editable path="MovingSpikePlatform/MovingSpikePlatform/AnimatableBody2D/Hitbox"]
-[editable path="MovingSpikePlatform/MovingSpikePlatform/AnimatableBody2D/Hitbox2"]
-[editable path="MovingSpikePlatform/MovingSpikePlatform2"]
-[editable path="MovingSpikePlatform/MovingSpikePlatform2/AnimatableBody2D/Hitbox"]
-[editable path="MovingSpikePlatform/MovingSpikePlatform2/AnimatableBody2D/Hitbox2"]
-[editable path="MovingSpikePlatform/MovingSpikePlatform3"]
-[editable path="MovingSpikePlatform/MovingSpikePlatform3/AnimatableBody2D/Hitbox"]
-[editable path="MovingSpikePlatform/MovingSpikePlatform3/AnimatableBody2D/Hitbox2"]
-[editable path="MovingSpikePlatform/MovingSpikePlatform4"]
-[editable path="MovingSpikePlatform/MovingSpikePlatform4/AnimatableBody2D/Hitbox"]
-[editable path="MovingSpikePlatform/MovingSpikePlatform4/AnimatableBody2D/Hitbox2"]
-[editable path="MovingSpikePlatform/MovingSpikePlatform5"]
-[editable path="MovingSpikePlatform/MovingSpikePlatform5/AnimatableBody2D/Hitbox"]
-[editable path="MovingSpikePlatform/MovingSpikePlatform5/AnimatableBody2D/Hitbox2"]
-[editable path="MovingSpikePlatform/MovingSpikePlatform6"]
-[editable path="MovingSpikePlatform/MovingSpikePlatform6/AnimatableBody2D/Hitbox"]
-[editable path="MovingSpikePlatform/MovingSpikePlatform6/AnimatableBody2D/Hitbox2"]
-[editable path="MovingSpikePlatform/MovingSpikePlatform7"]
-[editable path="MovingSpikePlatform/MovingSpikePlatform7/AnimatableBody2D/Hitbox"]
-[editable path="MovingSpikePlatform/MovingSpikePlatform7/AnimatableBody2D/Hitbox2"]
 [editable path="MovingSpikePlatform/MovingSpikePlatform11"]
 [editable path="MovingSpikePlatform/MovingSpikePlatform11/AnimatableBody2D/Hitbox"]
 [editable path="MovingSpikePlatform/MovingSpikePlatform11/AnimatableBody2D/Hitbox2"]
