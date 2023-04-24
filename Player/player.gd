@@ -60,7 +60,6 @@ func bat_state(delta):
 			double_tap_timer.start(0.2)
 			SoundPlayer.play_sound(SoundPlayer.FLAP)
 		else :
-			print("How")
 			next_jump_is_double_tap = false
 			continuous_flight = true
 			SoundPlayer.play_sound_in_loop(SoundPlayer.LOOP_FLAP)
@@ -85,6 +84,8 @@ func bat_state(delta):
 		human_hurtbox.get_node("CollisionShape2D").disabled = false
 		hitbox.get_node("CollisionPolygon2D").disabled = false
 		switch_hitbox.get_node("CollisionShape2D").disabled = false
+		continuous_flight = false
+		SoundPlayer.stop_sound_in_loop(SoundPlayer.LOOP_FLAP)
 		SoundPlayer.play_sound(SoundPlayer.TRANSFORM2)
 		
 # Handle movement in human form
