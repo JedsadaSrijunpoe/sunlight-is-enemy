@@ -33,6 +33,11 @@ var flap = false
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
+func _ready():
+	var check_point_position = CheckPoint.get_check_point_position()
+	if check_point_position != null:
+		global_position = check_point_position
+	
 # Handle movement
 func _physics_process(delta):
 	match state:

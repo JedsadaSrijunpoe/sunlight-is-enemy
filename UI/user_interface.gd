@@ -54,6 +54,8 @@ func end_level(temp: PackedScene):
 	end_level_screen.get_node("FinishTime").text = str(snapped(timer, 0.001)) + " s"
 	end_level_screen.get_node("LevelNumLabel").text = str(level)
 	end_level_screen.show()
+	
+	CheckPoint.level_passed()
 
 func _on_next_level_button_pressed():
 	SoundPlayer.play_sound(SoundPlayer.BUTTON_CLICK)

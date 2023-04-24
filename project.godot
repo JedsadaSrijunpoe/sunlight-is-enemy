@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 SoundPlayer="*res://Sound/sound_player.tscn"
 UserInterface="*res://UI/user_interface.tscn"
+CheckPoint="*res://Player/check_point.gd"
 
 [display]
 
