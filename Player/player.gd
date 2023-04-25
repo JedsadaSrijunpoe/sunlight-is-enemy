@@ -42,7 +42,7 @@ func _ready():
 func _physics_process(delta):
 	match state:
 		BAT :
-			animated_sprite.play("Bat")
+			#animated_sprite.play("Bat")
 			bat_state(delta)
 		HUMANOID :
 			animated_sprite.play("Humanoid")
@@ -64,6 +64,7 @@ func bat_state(delta):
 			next_jump_is_double_tap = true
 			double_tap_timer.start(0.2)
 			SoundPlayer.play_sound(SoundPlayer.FLAP)
+			animated_sprite.play("Bat")
 		else :
 			next_jump_is_double_tap = false
 			continuous_flight = true
@@ -71,6 +72,7 @@ func bat_state(delta):
 			
 	if continuous_flight and Input.is_action_pressed("jump"):
 		velocity.y  = FLAP_VELOCITY
+		animated_sprite.play("Bat")
 		
 	if continuous_flight and Input.is_action_just_released("jump"):
 		continuous_flight = false
@@ -119,6 +121,7 @@ func humanoid_state(delta):
 	# Toggle to bat state
 	if Input.is_action_just_pressed("toggle"):
 		state = BAT
+		animated_sprite.play("Bat")
 		bat_collision_shape.disabled = false
 		bat_hurtbox.get_node("CollisionShape2D").disabled = false
 		humanoid_collision_shape.disabled = true
