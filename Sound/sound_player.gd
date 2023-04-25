@@ -16,6 +16,7 @@ const LOOP_FLAP = preload("res://Sound/LoopingFlap.wav")
 @onready var audio_players = $AudioPlayers
 @onready var looping_audio_players = $LoopingAudioPlayers
 
+# Play a sound one time.
 func play_sound(sound):
 	for audio_player in audio_players.get_children():
 		if not audio_player.playing:
@@ -23,6 +24,7 @@ func play_sound(sound):
 			audio_player.play()
 			break
 
+# Play a sound in loop.
 func play_sound_in_loop(sound):
 	for audio_player in looping_audio_players.get_children():
 		if audio_player.stream == sound:
@@ -30,12 +32,14 @@ func play_sound_in_loop(sound):
 			audio_player.play()
 			break
 			
+# Stop a sound playing in loop.
 func stop_sound_in_loop(sound):
 	for audio_player in looping_audio_players.get_children():
 		if audio_player.stream == sound:
 			audio_player.stream.set_loop_mode(0)
 			break
 			
+# Kill all sound in the loop immediately.
 func kill_all_loop():
 	for audio_player in looping_audio_players.get_children():
 		audio_player.stop()
