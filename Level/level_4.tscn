@@ -996,10 +996,12 @@ position = Vector2(944, 96)
 position = Vector2(-56, -592)
 
 [node name="SmallMovingSpikePlatform" parent="." instance=ExtResource("11_4govv")]
-position = Vector2(161, -223)
+position = Vector2(203, -223)
+offset = Vector2(257, 0)
 
 [node name="SmallMovingSpikePlatform2" parent="." instance=ExtResource("11_4govv")]
-position = Vector2(160, -199)
+position = Vector2(203, -199)
+offset = Vector2(257, 0)
 
 [node name="SmallMovingSpikePlatform3" parent="." instance=ExtResource("11_4govv")]
 position = Vector2(702, -393)
