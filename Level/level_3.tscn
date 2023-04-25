@@ -341,7 +341,7 @@ duration = 5.0
 position = Vector2(-193, -964)
 
 [node name="CheckPointPosition" parent="CheckPointArea" index="1"]
-position = Vector2(43, 16)
+position = Vector2(-204, 10)
 
 [connection signal="switch_state_changed" from="Switch" to="Door" method="_on_switch_switch_state_changed"]
 [connection signal="switch_state_changed" from="Switch" to="Door2" method="_on_switch_switch_state_changed"]
