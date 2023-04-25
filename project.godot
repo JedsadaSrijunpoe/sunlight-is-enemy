@@ -84,6 +84,7 @@ interact={
 2d_physics/layer_5="Switch"
 2d_physics/layer_6="Enemy"
 2d_physics/layer_7="PlayerHitbox"
+2d_physics/layer_8="Level 5 Floor"
 
 [rendering]
 

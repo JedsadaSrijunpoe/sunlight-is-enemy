@@ -33,3 +33,7 @@ script = ExtResource("1_emlpj")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="LoopingAudioPlayers"]
 stream = ExtResource("2_6r5vo")
+
+[node name="BGM" type="Node" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="BGM"]

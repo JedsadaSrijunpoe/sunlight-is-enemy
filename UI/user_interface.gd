@@ -60,6 +60,8 @@ func end_level(temp: PackedScene):
 func _on_next_level_button_pressed():
 	SoundPlayer.play_sound(SoundPlayer.BUTTON_CLICK)
 	level += 1
+	if level == 5:
+		SoundPlayer.play_bgm(SoundPlayer.BOSS_THEME)
 	get_tree().paused = false
 	get_tree().change_scene_to_packed(next_scene)
 	start_level()

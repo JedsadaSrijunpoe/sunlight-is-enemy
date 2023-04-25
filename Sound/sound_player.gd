@@ -13,8 +13,12 @@ const BUTTON_CLICK = preload("res://Sound/ButtonClick.wav")
 
 const LOOP_FLAP = preload("res://Sound/LoopingFlap.wav")
 
+const NORMAL_THEME = preload("res://Sound/Soring.wav")
+const BOSS_THEME = preload("res://Sound/Tunica.mp3")
+
 @onready var audio_players = $AudioPlayers
 @onready var looping_audio_players = $LoopingAudioPlayers
+@onready var bgm = $BGM/AudioStreamPlayer
 
 # Play a sound one time.
 func play_sound(sound):
@@ -44,3 +48,12 @@ func kill_all_loop():
 	for audio_player in looping_audio_players.get_children():
 		audio_player.stop()
 		audio_player.seek(0)
+	
+# Play background music
+func play_bgm(sound):
+	bgm.stream = sound
+	bgm.play()
+
+# Stop background music
+func stop_bgm():
+	bgm.stop()
