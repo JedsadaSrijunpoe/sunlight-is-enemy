@@ -17,7 +17,6 @@ enum {
 var state = HUMANOID
 var next_jump_is_double_tap = false
 var continuous_flight = false
-var flap = false
 
 ## The player's movespeed in bat form.
 @export var FLYING_SPEED : float = 100.0
@@ -59,29 +58,37 @@ func bat_state(delta):
 		velocity.y += gravity * 0.125*delta
 		
 	if Input.is_action_just_pressed("jump"):
+		# Jumped once
 		if not next_jump_is_double_tap:
+			# Set upward vertical velocity and start the timer for double tap detection.
 			velocity.y  = FLAP_VELOCITY
 			next_jump_is_double_tap = true
 			double_tap_timer.start(0.2)
 			SoundPlayer.play_sound(SoundPlayer.FLAP)
 			animated_sprite.play("Bat")
+		# Double-tapped jump
 		else :
 			next_jump_is_double_tap = false
 			continuous_flight = true
 			SoundPlayer.play_sound_in_loop(SoundPlayer.LOOP_FLAP)
 			
+	# Begin continuous filght.
 	if continuous_flight and Input.is_action_pressed("jump"):
 		velocity.y  = FLAP_VELOCITY
 		animated_sprite.play("Bat")
 		
+	# Stop continous flight.
 	if continuous_flight and Input.is_action_just_released("jump"):
 		continuous_flight = false
 		SoundPlayer.stop_sound_in_loop(SoundPlayer.LOOP_FLAP)
 		
+	# Flip the sprite when the player is facing the left side of the screen.
 	if velocity.x :
 		animated_sprite.flip_h = velocity.x < 0
 		
+	# Move according to the velocity.
 	move_and_slide()
+	
 	# Toggle to humanoid state
 	if Input.is_action_just_pressed("toggle"):
 		state = HUMANOID
