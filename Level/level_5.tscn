@@ -1,25 +1,112 @@
-[gd_scene load_steps=7 format=3 uid="uid://t41i00dghuc"]
+[gd_scene load_steps=11 format=3 uid="uid://t41i00dghuc"]
 
 [ext_resource type="PackedScene" uid="uid://b6f48pv75xxoy" path="res://Hazard/circular_time.tscn" id="1_0kasx"]
 [ext_resource type="TileSet" uid="uid://c44gq1ueufkne" path="res://TileMap/dungeon_platformer_tile_set.tres" id="1_yd70f"]
 [ext_resource type="PackedScene" uid="uid://dshcq4y4i7jbj" path="res://Camera/camera_with_limit.tscn" id="3_7j0re"]
-[ext_resource type="PackedScene" path="res://Hazard/king_sword.tscn" id="4_do3xi"]
+[ext_resource type="PackedScene" uid="uid://cl1y4mot5j503" path="res://World/moving_platform.tscn" id="3_8kqfx"]
+[ext_resource type="PackedScene" uid="uid://du8fx58opbcln" path="res://Hazard/king_sword.tscn" id="4_do3xi"]
 [ext_resource type="PackedScene" uid="uid://kiu6g4gkywwq" path="res://Player/player.tscn" id="5_82dgq"]
+[ext_resource type="Script" path="res://Hazard/Sword.gd" id="6_l4mwp"]
 [ext_resource type="Texture2D" uid="uid://cf0tcu53o20va" path="res://Hazard/King.png" id="6_nsxan"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0e74p"]
+size = Vector2(32, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ui8ri"]
+size = Vector2(16, 8)
+
 [node name="level_5" type="Node2D"]
-metadata/_edit_vertical_guides_ = []
+metadata/_edit_vertical_guides_ = [-309.0]
 metadata/_edit_horizontal_guides_ = []
 
 [node name="CircularTime" parent="." instance=ExtResource("1_0kasx")]
 scale = Vector2(1.5, 1.5)
+Period = 3.0
 
 [node name="SpikeTrap" type="TileMap" parent="."]
 tile_set = ExtResource("1_yd70f")
 format = 2
-layer_0/tile_data = PackedInt32Array(-20, 1, 65536, -19, 1, 65536, -18, 1, 65536, -17, 1, 65536, -16, 1, 65536, -15, 1, 65536, -14, 1, 65536, -13, 1, 65536, -12, 1, 65536, -11, 1, 65536, -10, 1, 65536, -9, 1, 65536, -8, 1, 65536, -7, 1, 65536, -6, 1, 65536, -5, 1, 65536, -4, 1, 65536, -3, 1, 65536, -2, 1, 65536, -1, 1, 65536, -65536, 1, 65536, -65535, 1, 65536, -65534, 1, 65536, -65533, 1, 65536, -65532, 1, 65536, -65531, 1, 65536, -65530, 1, 65536, -65529, 1, 65536, -65528, 1, 65536, -65527, 1, 65536, -65526, 1, 65536, -65525, 1, 65536, -65524, 1, 65536, -65523, 1, 65536, -65522, 1, 65536, -65521, 1, 65536, -65520, 1, 65536, -65519, 1, 65536, -65518, 1, 65536, -65517, 1, 65536, -196609, 65536, 5, -262144, 65536, 5, -262143, 65536, 5, -196610, 65536, 5)
+layer_0/tile_data = PackedInt32Array(-196609, 65536, 5, -262144, 65536, 5, -262143, 65536, 5, -196610, 65536, 5)
 
-[node name="MovingSpikePlatform" type="Node2D" parent="."]
+[node name="MovingPlatform" type="Node2D" parent="."]
+
+[node name="MovingPlatform" parent="MovingPlatform" instance=ExtResource("3_8kqfx")]
+position = Vector2(-70, -90)
+offset = Vector2(-238, 0)
+duration = 5.5
+
+[node name="Sprite2D" parent="MovingPlatform/MovingPlatform/AnimatableBody2D" index="0"]
+scale = Vector2(0.666667, 1)
+
+[node name="CollisionShape2D" parent="MovingPlatform/MovingPlatform/AnimatableBody2D" index="1"]
+shape = SubResource("RectangleShape2D_0e74p")
+
+[node name="MovingPlatform2" parent="MovingPlatform" instance=ExtResource("3_8kqfx")]
+position = Vector2(-70, -122)
+offset = Vector2(-238, 0)
+duration = 5.0
+
+[node name="Sprite2D" parent="MovingPlatform/MovingPlatform2/AnimatableBody2D" index="0"]
+scale = Vector2(0.666667, 1)
+
+[node name="MovingPlatform3" parent="MovingPlatform" instance=ExtResource("3_8kqfx")]
+position = Vector2(-70, -154)
+offset = Vector2(-238, 0)
+duration = 4.0
+
+[node name="Sprite2D" parent="MovingPlatform/MovingPlatform3/AnimatableBody2D" index="0"]
+scale = Vector2(0.333333, 1)
+
+[node name="CollisionShape2D" parent="MovingPlatform/MovingPlatform3/AnimatableBody2D" index="1"]
+shape = SubResource("RectangleShape2D_ui8ri")
+
+[node name="MovingPlatform4" parent="MovingPlatform" instance=ExtResource("3_8kqfx")]
+position = Vector2(-70, -186)
+offset = Vector2(-238, 0)
+duration = 2.5
+
+[node name="Sprite2D" parent="MovingPlatform/MovingPlatform4/AnimatableBody2D" index="0"]
+scale = Vector2(0.333333, 1)
+
+[node name="CollisionShape2D" parent="MovingPlatform/MovingPlatform4/AnimatableBody2D" index="1"]
+shape = SubResource("RectangleShape2D_ui8ri")
+
+[node name="MovingPlatform5" parent="MovingPlatform" instance=ExtResource("3_8kqfx")]
+position = Vector2(70, -91)
+offset = Vector2(238, 0)
+
+[node name="Sprite2D" parent="MovingPlatform/MovingPlatform5/AnimatableBody2D" index="0"]
+scale = Vector2(0.666667, 1)
+
+[node name="CollisionShape2D" parent="MovingPlatform/MovingPlatform5/AnimatableBody2D" index="1"]
+shape = SubResource("RectangleShape2D_0e74p")
+
+[node name="MovingPlatform6" parent="MovingPlatform" instance=ExtResource("3_8kqfx")]
+position = Vector2(70, -123)
+offset = Vector2(238, 0)
+
+[node name="Sprite2D" parent="MovingPlatform/MovingPlatform6/AnimatableBody2D" index="0"]
+scale = Vector2(0.666667, 1)
+
+[node name="MovingPlatform7" parent="MovingPlatform" instance=ExtResource("3_8kqfx")]
+position = Vector2(70, -155)
+offset = Vector2(238, 0)
+
+[node name="Sprite2D" parent="MovingPlatform/MovingPlatform7/AnimatableBody2D" index="0"]
+scale = Vector2(0.333333, 1)
+
+[node name="CollisionShape2D" parent="MovingPlatform/MovingPlatform7/AnimatableBody2D" index="1"]
+shape = SubResource("RectangleShape2D_ui8ri")
+
+[node name="MovingPlatform8" parent="MovingPlatform" instance=ExtResource("3_8kqfx")]
+position = Vector2(70, -187)
+offset = Vector2(238, 0)
+
+[node name="Sprite2D" parent="MovingPlatform/MovingPlatform8/AnimatableBody2D" index="0"]
+scale = Vector2(0.333333, 1)
+
+[node name="CollisionShape2D" parent="MovingPlatform/MovingPlatform8/AnimatableBody2D" index="1"]
+shape = SubResource("RectangleShape2D_ui8ri")
 
 [node name="Furniture" type="TileMap" parent="."]
 tile_set = ExtResource("1_yd70f")
@@ -46,6 +133,7 @@ position = Vector2(-333, -367)
 position = Vector2(-23, -82)
 
 [node name="Sword" type="Node2D" parent="."]
+script = ExtResource("6_l4mwp")
 
 [node name="KingSword" parent="Sword" instance=ExtResource("4_do3xi")]
 position = Vector2(-310, -306)
@@ -76,7 +164,7 @@ duration = 3.0
 target_position = Vector2(0, 300)
 
 [node name="KingSword5" parent="Sword" instance=ExtResource("4_do3xi")]
-position = Vector2(-246, -306)
+position = Vector2(-246, -307)
 duration = 3.0
 
 [node name="RayCast2D" parent="Sword/KingSword5" index="1"]
@@ -272,9 +360,19 @@ duration = 3.0
 target_position = Vector2(0, 300)
 
 [node name="King" type="Sprite2D" parent="."]
-position = Vector2(0, -319)
+position = Vector2(-1, -311)
 texture = ExtResource("6_nsxan")
 
+[connection signal="DayChange" from="CircularTime" to="Sword" method="_on_circular_time_day_change"]
+
+[editable path="MovingPlatform/MovingPlatform"]
+[editable path="MovingPlatform/MovingPlatform2"]
+[editable path="MovingPlatform/MovingPlatform3"]
+[editable path="MovingPlatform/MovingPlatform4"]
+[editable path="MovingPlatform/MovingPlatform5"]
+[editable path="MovingPlatform/MovingPlatform6"]
+[editable path="MovingPlatform/MovingPlatform7"]
+[editable path="MovingPlatform/MovingPlatform8"]
 [editable path="Camera2D"]
 [editable path="Sword/KingSword"]
 [editable path="Sword/KingSword/Hitbox"]

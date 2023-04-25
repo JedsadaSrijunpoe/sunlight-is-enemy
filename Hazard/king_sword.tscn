@@ -1,8 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://du8fx58opbcln"]
+[gd_scene load_steps=6 format=3 uid="uid://du8fx58opbcln"]
 
 [ext_resource type="PackedScene" uid="uid://bki1tq2g2gv5o" path="res://Overlap/hitbox.tscn" id="1_0cadq"]
 [ext_resource type="Script" path="res://Hazard/king_sword.gd" id="1_wcrgg"]
 [ext_resource type="Texture2D" uid="uid://dl2i7t6un0u2e" path="res://Hazard/KingSword.png" id="2_p673g"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rcmm2"]
+size = Vector2(14, 47)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xhi0t"]
+size = Vector2(8, 4)
 
 [node name="KingSword" type="Node2D"]
 script = ExtResource("1_wcrgg")
@@ -10,14 +16,28 @@ script = ExtResource("1_wcrgg")
 [node name="Hitbox" parent="." instance=ExtResource("1_0cadq")]
 collision_layer = 8
 
+[node name="CollisionPolygon2D" parent="Hitbox" index="0"]
+polygon = PackedVector2Array(-3, 12, -3, 37, 0, 41, 3, 37, 3, 12)
+
 [node name="Sprite2D" type="Sprite2D" parent="Hitbox"]
 position = Vector2(0, 17)
 texture = ExtResource("2_p673g")
 
-[node name="CollisionPolygon2D" parent="Hitbox" index="1"]
-polygon = PackedVector2Array(-3, 12, -3, 37, 0, 41, 3, 37, 3, 12)
+[node name="PickUp" type="Area2D" parent="Hitbox"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox/PickUp"]
+position = Vector2(0, 16.5)
+shape = SubResource("RectangleShape2D_rcmm2")
+
+[node name="StuckArea" type="Area2D" parent="Hitbox"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox/StuckArea"]
+position = Vector2(0, 27)
+shape = SubResource("RectangleShape2D_xhi0t")
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
 target_position = Vector2(0, 114)
+
+[connection signal="area_entered" from="Hitbox/StuckArea" to="." method="_on_stuck_area_area_entered"]
 
 [editable path="Hitbox"]

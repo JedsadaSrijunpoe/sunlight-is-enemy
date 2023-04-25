@@ -1,7 +1,47 @@
-[gd_scene load_steps=3 format=3 uid="uid://b6f48pv75xxoy"]
+[gd_scene load_steps=7 format=3 uid="uid://b6f48pv75xxoy"]
 
 [ext_resource type="Script" path="res://Hazard/circular_time.gd" id="1_y0fl6"]
 [ext_resource type="PackedScene" uid="uid://bki1tq2g2gv5o" path="res://Overlap/hitbox.tscn" id="2_tsmq4"]
+
+[sub_resource type="Animation" id="Animation_2cp1j"]
+resource_name = "DayChange"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 3.14159]
+}
+
+[sub_resource type="Animation" id="Animation_71w7m"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_drwf7"]
+resource_name = "NightChange"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [3.14159, 6.28319]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_umode"]
+_data = {
+"DayChange": SubResource("Animation_2cp1j"),
+"NightChange": SubResource("Animation_drwf7"),
+"RESET": SubResource("Animation_71w7m")
+}
 
 [node name="CircularTime" type="Node2D"]
 script = ExtResource("1_y0fl6")
@@ -27,5 +67,16 @@ polygon = PackedVector2Array(-400, 1, -400, -482, 415, -482, 415, 1)
 position = Vector2(-2, 488)
 color = Color(0, 0, 0, 1)
 polygon = PackedVector2Array(-398, -23, -398, -488, 417, -488, 417, -23)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_umode")
+}
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 
 [editable path="light/Hitbox"]
