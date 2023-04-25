@@ -1,6 +1,8 @@
 extends Node2D
 
+## The distance of the ending position relative to the starting position.
 @export var offset = Vector2(0, 0)
+## The time it takes for the moving platform to make a single round trip.
 @export var duration = 3.0
 
 @onready var animatable_body = $AnimatableBody2D
