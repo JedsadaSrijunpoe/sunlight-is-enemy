@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=3 uid="uid://bidsnvqjwkfkc"]
+[gd_scene load_steps=64 format=3 uid="uid://bidsnvqjwkfkc"]
 
 [ext_resource type="TileSet" uid="uid://c44gq1ueufkne" path="res://TileMap/dungeon_platformer_tile_set.tres" id="1_nxwy6"]
 [ext_resource type="PackedScene" uid="uid://b7c3t4aho6nsn" path="res://Hazard/light_pillar.tscn" id="2_3l850"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://2sc2qa1lrcxl" path="res://World/small_moving_spike_platform.tscn" id="11_4govv"]
 [ext_resource type="PackedScene" uid="uid://bqdy3vfadfp6e" path="res://World/check_point_area.tscn" id="13_qqpex"]
 [ext_resource type="PackedScene" uid="uid://bxh87xberc4bg" path="res://World/next_level_area.tscn" id="14_s3blj"]
+[ext_resource type="PackedScene" uid="uid://t41i00dghuc" path="res://Level/level_5.tscn" id="15_umgmj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sil8m"]
 size = Vector2(16, 32)
@@ -1027,6 +1028,7 @@ position = Vector2(33, 10)
 [node name="NextLevelArea" parent="." instance=ExtResource("14_s3blj")]
 position = Vector2(544, -336)
 scale = Vector2(1.60001, 1.6)
+next_scene = ExtResource("15_umgmj")
 
 [connection signal="switch_state_changed" from="Switch" to="Flamethrower/FullBlockFlameThrower6" method="_on_switch_toggle_state_changed"]
 
