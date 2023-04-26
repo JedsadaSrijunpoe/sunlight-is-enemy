@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://55uh4xtx1ylx" path="res://Hazard/window.tscn" id="4_nshwd"]
 [ext_resource type="PackedScene" uid="uid://bxh87xberc4bg" path="res://World/next_level_area.tscn" id="6_ks6f4"]
 [ext_resource type="PackedScene" uid="uid://buhroafmnptvy" path="res://Level/level_1.tscn" id="7_0bre3"]
-[ext_resource type="LabelSettings" path="res://Assets/pixeboy_label_settings.tres" id="8_52w1q"]
+[ext_resource type="LabelSettings" uid="uid://cdo1rbe1us7ji" path="res://Assets/pixeboy_label_settings.tres" id="8_52w1q"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g055h"]
 size = Vector2(48, 16)

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://UI/user_interface.gd" id="1_dqmmd"]
 [ext_resource type="Texture2D" uid="uid://hehbx76cuk70" path="res://Assets/next.png" id="2_ntdfw"]
-[ext_resource type="LabelSettings" path="res://Assets/pixeboy_label_settings.tres" id="2_s82d4"]
+[ext_resource type="LabelSettings" uid="uid://cdo1rbe1us7ji" path="res://Assets/pixeboy_label_settings.tres" id="2_s82d4"]
 [ext_resource type="Texture2D" uid="uid://3shyh2k76cat" path="res://Assets/EndLevelRect.png" id="2_yhl8b"]
 [ext_resource type="Texture2D" uid="uid://cq4p1wwiid4jo" path="res://Assets/next_hover.png" id="3_vbmmo"]
 

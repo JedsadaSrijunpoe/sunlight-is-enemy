@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://t41i00dghuc"]
+[gd_scene load_steps=26 format=3 uid="uid://t41i00dghuc"]
 
 [ext_resource type="PackedScene" uid="uid://b6f48pv75xxoy" path="res://Hazard/circular_time.tscn" id="1_0kasx"]
 [ext_resource type="Script" path="res://Level/level_5.gd" id="1_vrk7i"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://kiu6g4gkywwq" path="res://Player/player.tscn" id="5_82dgq"]
 [ext_resource type="Script" path="res://Hazard/Sword.gd" id="6_l4mwp"]
 [ext_resource type="Texture2D" uid="uid://cf0tcu53o20va" path="res://Hazard/King.png" id="6_nsxan"]
+[ext_resource type="FontFile" uid="uid://bcxwbu1ncu82w" path="res://Assets/pixeloid-font/PixeloidSans-JR6qo.ttf" id="9_4377u"]
 [ext_resource type="Texture2D" uid="uid://cd0fyakmj1tye" path="res://Hazard/VampireSword.png" id="10_taqlh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0e74p"]
@@ -40,6 +41,13 @@ size = Vector2(128, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n3wtx"]
 size = Vector2(64, 16)
+
+[sub_resource type="LabelSettings" id="LabelSettings_r2e2w"]
+font = ExtResource("9_4377u")
+font_size = 19
+font_color = Color(0.733333, 0, 0.0117647, 1)
+outline_size = 2
+outline_color = Color(1, 0, 0.0117647, 1)
 
 [sub_resource type="Animation" id="Animation_etm0u"]
 resource_name = "Final_cutscene"
@@ -390,7 +398,21 @@ shape = SubResource("RectangleShape2D_knu2j")
 position = Vector2(0, -56)
 shape = SubResource("RectangleShape2D_n3wtx")
 
-[node name="FinalSwitchPlatform" type="Node2D" parent="."]
+[node name="Label" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -96.0
+offset_top = -153.0
+offset_right = 101.0
+offset_bottom = -126.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+text = "Press E to end this"
+label_settings = SubResource("LabelSettings_r2e2w")
 
 [node name="King" type="Sprite2D" parent="."]
 position = Vector2(-1, -311)
