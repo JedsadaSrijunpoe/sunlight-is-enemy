@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://t41i00dghuc"]
+[gd_scene load_steps=16 format=3 uid="uid://t41i00dghuc"]
 
 [ext_resource type="PackedScene" uid="uid://b6f48pv75xxoy" path="res://Hazard/circular_time.tscn" id="1_0kasx"]
 [ext_resource type="Script" path="res://Level/level_5.gd" id="1_vrk7i"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://kiu6g4gkywwq" path="res://Player/player.tscn" id="5_82dgq"]
 [ext_resource type="Script" path="res://Hazard/Sword.gd" id="6_l4mwp"]
 [ext_resource type="Texture2D" uid="uid://cf0tcu53o20va" path="res://Hazard/King.png" id="6_nsxan"]
+[ext_resource type="Texture2D" uid="uid://cd0fyakmj1tye" path="res://Hazard/VampireSword.png" id="10_taqlh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0e74p"]
 size = Vector2(32, 8)
@@ -266,6 +267,20 @@ position = Vector2(328, -152)
 shape = SubResource("RectangleShape2D_3qoit")
 
 [node name="FinalSwitchPlatform" type="Node2D" parent="."]
+
+[node name="VampireSword" type="Sprite2D" parent="."]
+position = Vector2(-190, -138)
+rotation = -2.35619
+scale = Vector2(4.26294, 3.87094)
+texture = ExtResource("10_taqlh")
+
+[node name="VampireSword2" type="Sprite2D" parent="."]
+position = Vector2(190, -138)
+rotation = 2.35619
+scale = Vector2(4.26294, 3.87094)
+texture = ExtResource("10_taqlh")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 
 [connection signal="DayChange" from="CircularTime" to="Sword" method="_on_circular_time_day_change"]
 
