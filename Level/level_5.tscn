@@ -1,22 +1,15 @@
-[gd_scene load_steps=26 format=3 uid="uid://t41i00dghuc"]
+[gd_scene load_steps=23 format=3 uid="uid://t41i00dghuc"]
 
 [ext_resource type="PackedScene" uid="uid://b6f48pv75xxoy" path="res://Hazard/circular_time.tscn" id="1_0kasx"]
 [ext_resource type="Script" path="res://Level/level_5.gd" id="1_vrk7i"]
 [ext_resource type="TileSet" uid="uid://c44gq1ueufkne" path="res://TileMap/dungeon_platformer_tile_set.tres" id="1_yd70f"]
 [ext_resource type="PackedScene" uid="uid://dshcq4y4i7jbj" path="res://Camera/camera_with_limit.tscn" id="3_7j0re"]
-[ext_resource type="PackedScene" uid="uid://cl1y4mot5j503" path="res://World/moving_platform.tscn" id="3_8kqfx"]
 [ext_resource type="PackedScene" uid="uid://du8fx58opbcln" path="res://Hazard/king_sword.tscn" id="4_do3xi"]
 [ext_resource type="PackedScene" uid="uid://kiu6g4gkywwq" path="res://Player/player.tscn" id="5_82dgq"]
 [ext_resource type="Script" path="res://Hazard/Sword.gd" id="6_l4mwp"]
 [ext_resource type="Texture2D" uid="uid://cf0tcu53o20va" path="res://Hazard/King.png" id="6_nsxan"]
 [ext_resource type="FontFile" uid="uid://bcxwbu1ncu82w" path="res://Assets/pixeloid-font/PixeloidSans-JR6qo.ttf" id="9_4377u"]
 [ext_resource type="Texture2D" uid="uid://cd0fyakmj1tye" path="res://Hazard/VampireSword.png" id="10_taqlh"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0e74p"]
-size = Vector2(32, 8)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ui8ri"]
-size = Vector2(16, 8)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2t1j4"]
 size = Vector2(672, 16)
@@ -155,87 +148,6 @@ Period = 6.0
 tile_set = ExtResource("1_yd70f")
 format = 2
 layer_0/tile_data = PackedInt32Array(-196609, 65536, 5, -262144, 65536, 5, -262143, 65536, 5, -196610, 65536, 5)
-
-[node name="MovingPlatform" type="Node2D" parent="."]
-position = Vector2(449, 212)
-
-[node name="MovingPlatform" parent="MovingPlatform" instance=ExtResource("3_8kqfx")]
-position = Vector2(-70, -90)
-offset = Vector2(-238, 0)
-duration = 5.5
-
-[node name="Sprite2D" parent="MovingPlatform/MovingPlatform/AnimatableBody2D" index="0"]
-scale = Vector2(0.666667, 1)
-
-[node name="CollisionShape2D" parent="MovingPlatform/MovingPlatform/AnimatableBody2D" index="1"]
-shape = SubResource("RectangleShape2D_0e74p")
-
-[node name="MovingPlatform2" parent="MovingPlatform" instance=ExtResource("3_8kqfx")]
-position = Vector2(-70, -122)
-offset = Vector2(-238, 0)
-duration = 5.0
-
-[node name="Sprite2D" parent="MovingPlatform/MovingPlatform2/AnimatableBody2D" index="0"]
-scale = Vector2(0.666667, 1)
-
-[node name="MovingPlatform3" parent="MovingPlatform" instance=ExtResource("3_8kqfx")]
-position = Vector2(-70, -154)
-offset = Vector2(-238, 0)
-duration = 4.0
-
-[node name="Sprite2D" parent="MovingPlatform/MovingPlatform3/AnimatableBody2D" index="0"]
-scale = Vector2(0.333333, 1)
-
-[node name="CollisionShape2D" parent="MovingPlatform/MovingPlatform3/AnimatableBody2D" index="1"]
-shape = SubResource("RectangleShape2D_ui8ri")
-
-[node name="MovingPlatform4" parent="MovingPlatform" instance=ExtResource("3_8kqfx")]
-position = Vector2(-70, -186)
-offset = Vector2(-238, 0)
-duration = 2.5
-
-[node name="Sprite2D" parent="MovingPlatform/MovingPlatform4/AnimatableBody2D" index="0"]
-scale = Vector2(0.333333, 1)
-
-[node name="CollisionShape2D" parent="MovingPlatform/MovingPlatform4/AnimatableBody2D" index="1"]
-shape = SubResource("RectangleShape2D_ui8ri")
-
-[node name="MovingPlatform5" parent="MovingPlatform" instance=ExtResource("3_8kqfx")]
-position = Vector2(70, -91)
-offset = Vector2(238, 0)
-
-[node name="Sprite2D" parent="MovingPlatform/MovingPlatform5/AnimatableBody2D" index="0"]
-scale = Vector2(0.666667, 1)
-
-[node name="CollisionShape2D" parent="MovingPlatform/MovingPlatform5/AnimatableBody2D" index="1"]
-shape = SubResource("RectangleShape2D_0e74p")
-
-[node name="MovingPlatform6" parent="MovingPlatform" instance=ExtResource("3_8kqfx")]
-position = Vector2(70, -123)
-offset = Vector2(238, 0)
-
-[node name="Sprite2D" parent="MovingPlatform/MovingPlatform6/AnimatableBody2D" index="0"]
-scale = Vector2(0.666667, 1)
-
-[node name="MovingPlatform7" parent="MovingPlatform" instance=ExtResource("3_8kqfx")]
-position = Vector2(70, -155)
-offset = Vector2(238, 0)
-
-[node name="Sprite2D" parent="MovingPlatform/MovingPlatform7/AnimatableBody2D" index="0"]
-scale = Vector2(0.333333, 1)
-
-[node name="CollisionShape2D" parent="MovingPlatform/MovingPlatform7/AnimatableBody2D" index="1"]
-shape = SubResource("RectangleShape2D_ui8ri")
-
-[node name="MovingPlatform8" parent="MovingPlatform" instance=ExtResource("3_8kqfx")]
-position = Vector2(70, -187)
-offset = Vector2(238, 0)
-
-[node name="Sprite2D" parent="MovingPlatform/MovingPlatform8/AnimatableBody2D" index="0"]
-scale = Vector2(0.333333, 1)
-
-[node name="CollisionShape2D" parent="MovingPlatform/MovingPlatform8/AnimatableBody2D" index="1"]
-shape = SubResource("RectangleShape2D_ui8ri")
 
 [node name="Furniture" type="TileMap" parent="."]
 tile_set = ExtResource("1_yd70f")
@@ -471,14 +383,6 @@ libraries = {
 
 [connection signal="DayChange" from="CircularTime" to="Sword" method="_on_circular_time_day_change"]
 
-[editable path="MovingPlatform/MovingPlatform"]
-[editable path="MovingPlatform/MovingPlatform2"]
-[editable path="MovingPlatform/MovingPlatform3"]
-[editable path="MovingPlatform/MovingPlatform4"]
-[editable path="MovingPlatform/MovingPlatform5"]
-[editable path="MovingPlatform/MovingPlatform6"]
-[editable path="MovingPlatform/MovingPlatform7"]
-[editable path="MovingPlatform/MovingPlatform8"]
 [editable path="Camera2D"]
 [editable path="Sword/KingSword33"]
 [editable path="Sword/KingSword33/Hitbox"]
