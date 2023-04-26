@@ -5,7 +5,7 @@
 [ext_resource type="LabelSettings" uid="uid://cdo1rbe1us7ji" path="res://Assets/pixeboy_label_settings.tres" id="2_u1yqs"]
 [ext_resource type="Texture2D" uid="uid://t12fkh77p1vs" path="res://Assets/button.png" id="4_7xvpr"]
 [ext_resource type="Texture2D" uid="uid://qvdw3vs21re" path="res://Assets/button_hover.png" id="5_5krk2"]
-[ext_resource type="LabelSettings" uid="uid://bbaqrhc8xcaqd" path="res://Assets/pixeboy_button_settings.tres" id="6_grxky"]
+[ext_resource type="LabelSettings" path="res://Assets/pixeboy_button_settings.tres" id="6_grxky"]
 
 [node name="StoryScene" type="CanvasLayer"]
 script = ExtResource("1_pgvyj")

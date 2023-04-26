@@ -19,6 +19,6 @@ IS_LIGHT = true
 [node name="CollisionPolygon2D" parent="Hitbox" index="0"]
 position = Vector2(0.0142884, 0)
 scale = Vector2(1.18022, -1.58951)
-polygon = PackedVector2Array(-27, 20, 27, 20, 27, -20, -27, -20)
+polygon = PackedVector2Array(-27.1257, 20.132, 27.1015, 20.132, 27.1015, -20.132, -27.1257, -20.132)
 
 [editable path="Hitbox"]
