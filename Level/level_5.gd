@@ -24,7 +24,7 @@ func _ready():
 func _process(delta):
 	if Input.is_action_just_pressed("interact") and sword_amount == 0:
 		UserInterface.stop_timer()
-		UserInterface.show_timer(false)
+		UserInterface.label_timer.hide()
 		final_cutscene()
 	
 func count_sword():
