@@ -12,6 +12,7 @@ func _ready():
 
 func _on_done_button_pressed():
 	SoundPlayer.play_sound(SoundPlayer.BUTTON_CLICK)
+	get_tree().paused = false
 	hide()
 
 

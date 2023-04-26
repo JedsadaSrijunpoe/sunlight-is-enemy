@@ -5,7 +5,7 @@ func _ready():
 
 func _on_play_pressed():
 	SoundPlayer.play_sound(SoundPlayer.BUTTON_CLICK)
-	get_tree().change_scene_to_file("res://UI/story_scene.tscn")
+	UserInterface.get_node("StoryScene").show()
 
 
 func _on_play_mouse_entered():
@@ -14,4 +14,4 @@ func _on_play_mouse_entered():
 
 func _on_main_menu_button_pressed():
 	SoundPlayer.play_sound(SoundPlayer.BUTTON_CLICK)
-	$Setting.show()
+	UserInterface.get_node("Setting").show()

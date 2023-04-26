@@ -1,10 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://c2wuujfs4la7i"]
+[gd_scene load_steps=9 format=3 uid="uid://c2wuujfs4la7i"]
 
 [ext_resource type="Script" path="res://UI/user_interface.gd" id="1_dqmmd"]
-[ext_resource type="Texture2D" uid="uid://hehbx76cuk70" path="res://Assets/next.png" id="2_ntdfw"]
 [ext_resource type="LabelSettings" uid="uid://cdo1rbe1us7ji" path="res://Assets/pixeboy_label_settings.tres" id="2_s82d4"]
 [ext_resource type="Texture2D" uid="uid://3shyh2k76cat" path="res://Assets/EndLevelRect.png" id="2_yhl8b"]
-[ext_resource type="Texture2D" uid="uid://cq4p1wwiid4jo" path="res://Assets/next_hover.png" id="3_vbmmo"]
+[ext_resource type="Texture2D" uid="uid://t12fkh77p1vs" path="res://Assets/button.png" id="4_j57bh"]
+[ext_resource type="Texture2D" uid="uid://qvdw3vs21re" path="res://Assets/button_hover.png" id="5_4471b"]
+[ext_resource type="LabelSettings" uid="uid://bbaqrhc8xcaqd" path="res://Assets/pixeboy_button_settings.tres" id="6_fq8uk"]
+[ext_resource type="PackedScene" uid="uid://cfknqqnc3u3f8" path="res://UI/setting.tscn" id="6_vhyjn"]
+[ext_resource type="PackedScene" uid="uid://bgfgvrg186irb" path="res://UI/story_scene.tscn" id="8_emdpd"]
 
 [node name="User Interface" type="Control"]
 process_mode = 3
@@ -17,9 +20,10 @@ grow_vertical = 2
 script = ExtResource("1_dqmmd")
 metadata/_edit_horizontal_guides_ = [33.0]
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="Timer" type="CanvasLayer" parent="."]
+visible = false
 
-[node name="LabelTimer" type="Label" parent="CanvasLayer"]
+[node name="LabelTimer" type="Label" parent="Timer"]
 offset_left = 10.0
 offset_right = 91.0
 offset_bottom = 26.0
@@ -27,44 +31,39 @@ text = "0"
 label_settings = ExtResource("2_s82d4")
 vertical_alignment = 1
 
-[node name="EndLevelScreen" type="Control" parent="CanvasLayer"]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 320.0
-offset_bottom = 179.0
+[node name="EndLevelScreen" type="CanvasLayer" parent="."]
+visible = false
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/EndLevelScreen"]
-layout_mode = 1
+[node name="TextureRect" type="TextureRect" parent="EndLevelScreen"]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -75.5
-offset_top = -66.5
+offset_top = -72.5
 offset_right = 75.5
-offset_bottom = 66.5
+offset_bottom = 71.5
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_yhl8b")
 
-[node name="NextLevelButton" type="TextureButton" parent="CanvasLayer/EndLevelScreen"]
-layout_mode = 1
+[node name="NextLevelButton" type="TextureButton" parent="EndLevelScreen"]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -24.0
-offset_top = 13.0
+offset_top = 12.5
 offset_right = 24.0
-offset_bottom = 29.0
+offset_bottom = 28.5
 grow_horizontal = 2
 grow_vertical = 2
-texture_normal = ExtResource("2_ntdfw")
-texture_hover = ExtResource("3_vbmmo")
+texture_normal = ExtResource("4_j57bh")
+texture_hover = ExtResource("5_4471b")
 
-[node name="FinishTime" type="Label" parent="CanvasLayer/EndLevelScreen"]
+[node name="Label" type="Label" parent="EndLevelScreen/NextLevelButton"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -72,9 +71,26 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -20.0
-offset_top = -23.0
+offset_top = -11.5
 offset_right = 20.0
-offset_bottom = 3.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "NEXT"
+label_settings = ExtResource("6_fq8uk")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FinishTime" type="Label" parent="EndLevelScreen"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -23.5
+offset_right = 20.0
+offset_bottom = 2.5
 grow_horizontal = 2
 grow_vertical = 2
 text = "0"
@@ -82,8 +98,7 @@ label_settings = ExtResource("2_s82d4")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="LevelLabel" type="Label" parent="CanvasLayer/EndLevelScreen"]
-layout_mode = 1
+[node name="LevelLabel" type="Label" parent="EndLevelScreen"]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -97,8 +112,7 @@ label_settings = ExtResource("2_s82d4")
 horizontal_alignment = 1
 vertical_alignment = 2
 
-[node name="LevelNumLabel" type="Label" parent="CanvasLayer/EndLevelScreen"]
-layout_mode = 1
+[node name="LevelNumLabel" type="Label" parent="EndLevelScreen"]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -111,5 +125,14 @@ text = "0"
 label_settings = ExtResource("2_s82d4")
 vertical_alignment = 2
 
-[connection signal="mouse_entered" from="CanvasLayer/EndLevelScreen/NextLevelButton" to="." method="_on_next_level_button_mouse_entered"]
-[connection signal="pressed" from="CanvasLayer/EndLevelScreen/NextLevelButton" to="." method="_on_next_level_button_pressed"]
+[node name="StoryScene" parent="." instance=ExtResource("8_emdpd")]
+visible = false
+
+[node name="Setting" parent="." instance=ExtResource("6_vhyjn")]
+visible = false
+
+[connection signal="mouse_entered" from="EndLevelScreen/NextLevelButton" to="." method="_on_next_level_button_mouse_entered"]
+[connection signal="pressed" from="EndLevelScreen/NextLevelButton" to="." method="_on_next_level_button_pressed"]
+[connection signal="pressed" from="Setting/DoneButton" to="." method="_on_done_button_pressed"]
+
+[editable path="Setting"]

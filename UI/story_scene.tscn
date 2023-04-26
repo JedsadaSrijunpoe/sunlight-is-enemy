@@ -1,28 +1,21 @@
-[gd_scene load_steps=6 format=3 uid="uid://bgfgvrg186irb"]
+[gd_scene load_steps=7 format=3 uid="uid://bgfgvrg186irb"]
 
 [ext_resource type="Script" path="res://UI/story_scene.gd" id="1_pgvyj"]
 [ext_resource type="Texture2D" uid="uid://hjg4tyvnmq4q" path="res://Assets/BackgroundStory.png" id="1_wumtk"]
 [ext_resource type="LabelSettings" uid="uid://cdo1rbe1us7ji" path="res://Assets/pixeboy_label_settings.tres" id="2_u1yqs"]
-[ext_resource type="Texture2D" uid="uid://hehbx76cuk70" path="res://Assets/next.png" id="4_u8it8"]
-[ext_resource type="Texture2D" uid="uid://cq4p1wwiid4jo" path="res://Assets/next_hover.png" id="5_cvonr"]
+[ext_resource type="Texture2D" uid="uid://t12fkh77p1vs" path="res://Assets/button.png" id="4_7xvpr"]
+[ext_resource type="Texture2D" uid="uid://qvdw3vs21re" path="res://Assets/button_hover.png" id="5_5krk2"]
+[ext_resource type="LabelSettings" uid="uid://bbaqrhc8xcaqd" path="res://Assets/pixeboy_button_settings.tres" id="6_grxky"]
 
-[node name="StoryScene" type="Control"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="StoryScene" type="CanvasLayer"]
 script = ExtResource("1_pgvyj")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+[node name="TextureRect" type="TextureRect" parent="."]
 offset_right = 320.0
 offset_bottom = 180.0
 texture = ExtResource("1_wumtk")
 
-[node name="Label" type="Label" parent="CanvasLayer"]
+[node name="Label" type="Label" parent="."]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -41,20 +34,38 @@ Never gonna run around and desert you"
 label_settings = ExtResource("2_u1yqs")
 autowrap_mode = 2
 
-[node name="TextureButton" type="TextureButton" parent="CanvasLayer"]
+[node name="NextButton" type="TextureButton" parent="."]
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -24.0
-offset_top = -40.0
+offset_top = -42.0
 offset_right = 24.0
-offset_bottom = -24.0
+offset_bottom = -26.0
 grow_horizontal = 2
 grow_vertical = 0
-texture_normal = ExtResource("4_u8it8")
-texture_hover = ExtResource("5_cvonr")
+texture_normal = ExtResource("4_7xvpr")
+texture_hover = ExtResource("5_5krk2")
 
-[connection signal="mouse_entered" from="CanvasLayer/TextureButton" to="." method="_on_texture_button_mouse_entered"]
-[connection signal="pressed" from="CanvasLayer/TextureButton" to="." method="_on_texture_button_pressed"]
+[node name="Label" type="Label" parent="NextButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "NEXT"
+label_settings = ExtResource("6_grxky")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="mouse_entered" from="NextButton" to="." method="_on_next_button_mouse_entered"]
+[connection signal="pressed" from="NextButton" to="." method="_on_next_button_pressed"]
