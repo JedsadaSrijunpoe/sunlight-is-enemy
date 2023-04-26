@@ -79,6 +79,7 @@ func _on_stuck_area_body_entered(body):
 	if last_shot_state == NIGHT and state == NIGHT:
 		activated = false
 		state = STUCK
+		SoundPlayer.play_sound(SoundPlayer.KING_SWORD_STUCK)
 		if(tween != null):
 			tween.kill()
 
