@@ -14,8 +14,10 @@ func _on_circular_time_day_change():
 		if(sword.state == sword.DAYLIGHT):
 			sword.state = sword.NIGHT 
 		elif sword.state == sword.NIGHT:
+			sword.rotation_direction = true
 			sword.state = sword.DAYLIGHT
 		else:
 			sword.get_node("Hitbox").global_position = sword.global_position
+			sword.rotation_direction = true
 			sword.state = sword.DAYLIGHT
 	
