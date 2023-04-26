@@ -4,7 +4,6 @@ extends Node2D
 @onready var animation = $AnimationPlayer
 
 @export var Period : float = 9
-@export var delay : float = 1
 
 signal DayChange() 
 var IsDay : bool = true

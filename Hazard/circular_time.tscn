@@ -18,9 +18,6 @@ tracks/0/keys = {
 "values": [0.0, 3.14159]
 }
 
-[sub_resource type="Animation" id="Animation_71w7m"]
-length = 0.001
-
 [sub_resource type="Animation" id="Animation_drwf7"]
 resource_name = "NightChange"
 tracks/0/type = "value"
@@ -35,6 +32,9 @@ tracks/0/keys = {
 "update": 0,
 "values": [3.14159, 6.28319]
 }
+
+[sub_resource type="Animation" id="Animation_71w7m"]
+length = 0.001
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_umode"]
 _data = {

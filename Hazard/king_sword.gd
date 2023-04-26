@@ -6,17 +6,19 @@ extends Node2D
 @onready var Hitbox = $Hitbox
 @onready var end_point : Vector2
 
-@export var duration : float = 3
-@export var rotation_speed : float = 0.5
+@export var duration : float = 2
+@export var rotation_speed : float = 0.2
 @export var angle = 60
 
 var tween : Tween
 var activated : bool = false
 var state = DAYLIGHT
+#var state = STUCK
 var last_shot_state = DAYLIGHT
 var rotation_direction : bool = true
 var starting_rotation
 
+var IsGuideUp : bool = true
 signal sword_picked_up
 
 enum{
@@ -30,6 +32,7 @@ func _ready():
 func _physics_process(delta):
 	match state:
 		DAYLIGHT:
+			Hitbox.get_node("GrabAreaGuide").modulate.a = 0
 			PickCollision.disabled = true
 			StuckArea.disabled = true
 			if(not activated):
@@ -49,8 +52,13 @@ func _physics_process(delta):
 				rotation_degrees = starting_rotation
 			initiate_tween()
 		STUCK:
-			pass
-			
+			if(Hitbox.get_node("GrabAreaGuide").modulate.a > 0.25 or Hitbox.get_node("GrabAreaGuide").modulate.a < 0 ):
+				IsGuideUp = not IsGuideUp
+			if(IsGuideUp ):
+				Hitbox.get_node("GrabAreaGuide").modulate.a += delta/5
+			else:
+				Hitbox.get_node("GrabAreaGuide").modulate.a -= delta/5
+			#print(Hitbox.get_node("GrabAreaGuide").modulate.a)
 func initiate_tween():
 	if(raycast.is_colliding() and not activated):
 		activated = true

@@ -32,7 +32,7 @@ metadata/_edit_horizontal_guides_ = []
 
 [node name="CircularTime" parent="." instance=ExtResource("1_0kasx")]
 scale = Vector2(1.5, 1.5)
-Period = 3.0
+Period = 6.0
 
 [node name="SpikeTrap" type="TileMap" parent="."]
 tile_set = ExtResource("1_yd70f")
