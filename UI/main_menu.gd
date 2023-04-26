@@ -5,8 +5,7 @@ func _ready():
 
 func _on_play_pressed():
 	SoundPlayer.play_sound(SoundPlayer.BUTTON_CLICK)
-	get_tree().change_scene_to_file("res://Level/level_0.tscn")
-	UserInterface.start_level()
+	get_tree().change_scene_to_file("res://UI/story_scene.tscn")
 
 
 func _on_play_mouse_entered():

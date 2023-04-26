@@ -1,0 +1,60 @@
+[gd_scene load_steps=6 format=3 uid="uid://bgfgvrg186irb"]
+
+[ext_resource type="Script" path="res://UI/story_scene.gd" id="1_pgvyj"]
+[ext_resource type="Texture2D" uid="uid://hjg4tyvnmq4q" path="res://Assets/BackgroundStory.png" id="1_wumtk"]
+[ext_resource type="LabelSettings" uid="uid://cdo1rbe1us7ji" path="res://Assets/pixeboy_label_settings.tres" id="2_u1yqs"]
+[ext_resource type="Texture2D" uid="uid://hehbx76cuk70" path="res://Assets/next.png" id="4_u8it8"]
+[ext_resource type="Texture2D" uid="uid://cq4p1wwiid4jo" path="res://Assets/next_hover.png" id="5_cvonr"]
+
+[node name="StoryScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_pgvyj")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+offset_right = 320.0
+offset_bottom = 180.0
+texture = ExtResource("1_wumtk")
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -119.0
+offset_top = -55.0
+offset_right = 119.0
+offset_bottom = 55.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Hello world!
+Never gonna give you up.
+Never gonna let you down.
+Never gonna run around and desert you"
+label_settings = ExtResource("2_u1yqs")
+autowrap_mode = 2
+
+[node name="TextureButton" type="TextureButton" parent="CanvasLayer"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -24.0
+offset_top = -40.0
+offset_right = 24.0
+offset_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 0
+texture_normal = ExtResource("4_u8it8")
+texture_hover = ExtResource("5_cvonr")
+
+[connection signal="mouse_entered" from="CanvasLayer/TextureButton" to="." method="_on_texture_button_mouse_entered"]
+[connection signal="pressed" from="CanvasLayer/TextureButton" to="." method="_on_texture_button_pressed"]
