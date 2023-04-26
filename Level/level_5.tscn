@@ -447,7 +447,7 @@ text = "Press E to end this"
 label_settings = SubResource("LabelSettings_r2e2w")
 
 [node name="King" type="Sprite2D" parent="."]
-position = Vector2(-1, -311)
+position = Vector2(0, -311)
 texture = ExtResource("6_nsxan")
 
 [node name="VampireSword" type="Sprite2D" parent="."]
