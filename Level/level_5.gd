@@ -35,3 +35,6 @@ func count_sword():
 func final_cutscene():
 	label.hide()
 	animation_player.play("Final_cutscene")
+	
+func final_cutscene_done():
+	SoundPlayer.stop_bgm()
