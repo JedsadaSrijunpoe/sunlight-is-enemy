@@ -10,3 +10,8 @@ func _on_play_pressed():
 
 func _on_play_mouse_entered():
 	SoundPlayer.play_sound(SoundPlayer.BUTTON_HOVER)
+
+
+func _on_main_menu_button_pressed():
+	SoundPlayer.play_sound(SoundPlayer.BUTTON_CLICK)
+	$Setting.show()

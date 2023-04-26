@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://dr241j1e1xh"]
+[gd_scene load_steps=7 format=3 uid="uid://dr241j1e1xh"]
 
 [ext_resource type="Texture2D" uid="uid://6ytjaan6dbhy" path="res://Assets/play.png" id="1_1a8a7"]
 [ext_resource type="Script" path="res://UI/main_menu.gd" id="1_fh2ph"]
 [ext_resource type="Texture2D" uid="uid://c05g3k57gw6ke" path="res://Assets/LOGO.png" id="2_55ia6"]
 [ext_resource type="Texture2D" uid="uid://buryrrlnpp5qk" path="res://Assets/main_menu_background.png" id="2_k30m1"]
 [ext_resource type="Texture2D" uid="uid://cub5gy0svcqwr" path="res://Assets/play_hover.png" id="3_d6o0y"]
+[ext_resource type="PackedScene" uid="uid://cfknqqnc3u3f8" path="res://UI/setting.tscn" id="6_kuib6"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -60,5 +61,26 @@ grow_vertical = 2
 texture_normal = ExtResource("1_1a8a7")
 texture_hover = ExtResource("3_d6o0y")
 
+[node name="MainMenuButton" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -24.0
+offset_top = 30.0
+offset_right = 24.0
+offset_bottom = 46.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("1_1a8a7")
+texture_hover = ExtResource("3_d6o0y")
+
+[node name="Setting" parent="." instance=ExtResource("6_kuib6")]
+visible = false
+
 [connection signal="mouse_entered" from="Play" to="." method="_on_play_mouse_entered"]
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
+[connection signal="mouse_entered" from="MainMenuButton" to="." method="_on_play_mouse_entered"]
+[connection signal="pressed" from="MainMenuButton" to="." method="_on_main_menu_button_pressed"]

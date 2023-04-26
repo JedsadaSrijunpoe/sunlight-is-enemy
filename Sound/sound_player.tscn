@@ -10,30 +10,42 @@ script = ExtResource("1_emlpj")
 [node name="AudioPlayers" type="Node" parent="."]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="AudioPlayers"]
+bus = &"Effect"
 
 [node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="AudioPlayers"]
+bus = &"Effect"
 
 [node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="AudioPlayers"]
+bus = &"Effect"
 
 [node name="AudioStreamPlayer4" type="AudioStreamPlayer" parent="AudioPlayers"]
+bus = &"Effect"
 
 [node name="AudioStreamPlayer5" type="AudioStreamPlayer" parent="AudioPlayers"]
+bus = &"Effect"
 
 [node name="AudioStreamPlayer6" type="AudioStreamPlayer" parent="AudioPlayers"]
+bus = &"Effect"
 
 [node name="AudioStreamPlayer7" type="AudioStreamPlayer" parent="AudioPlayers"]
+bus = &"Effect"
 
 [node name="AudioStreamPlayer8" type="AudioStreamPlayer" parent="AudioPlayers"]
+bus = &"Effect"
 
 [node name="AudioStreamPlayer9" type="AudioStreamPlayer" parent="AudioPlayers"]
+bus = &"Effect"
 
 [node name="AudioStreamPlayer10" type="AudioStreamPlayer" parent="AudioPlayers"]
+bus = &"Effect"
 
 [node name="LoopingAudioPlayers" type="Node" parent="."]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="LoopingAudioPlayers"]
 stream = ExtResource("2_6r5vo")
+bus = &"Effect"
 
 [node name="BGM" type="Node" parent="."]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="BGM"]
+bus = &"Music"
