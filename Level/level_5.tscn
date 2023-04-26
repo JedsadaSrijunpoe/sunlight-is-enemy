@@ -21,10 +21,10 @@ size = Vector2(16, 8)
 size = Vector2(672, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_88ta8"]
-size = Vector2(16, 336)
+size = Vector2(16, 383)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3qoit"]
-size = Vector2(16, 336)
+size = Vector2(16, 383)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l63dk"]
 size = Vector2(160, 16)
@@ -47,102 +47,54 @@ length = 4.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("VampireSword:modulate")
+tracks/0/path = NodePath("VampireSword:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("VampireSword2:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("VampireSword:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
 "times": PackedFloat32Array(0, 0.8, 2.3, 3, 3.3),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(-190, -138), Vector2(-200, -118), Vector2(-190, -138), Vector2(-200, -118), Vector2(-25, -296)]
 }
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("VampireSword2:position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("VampireSword2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
 "times": PackedFloat32Array(0, 1.2, 1.9, 3, 3.3, 3.6),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(190, -138), Vector2(190, -118), Vector2(190, -138), Vector2(190, -118), Vector2(190, -118), Vector2(16, -293)]
 }
-
-[sub_resource type="Animation" id="Animation_dsbnm"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("VampireSword2:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("VampireSword:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("VampireSword:position")
+tracks/2/path = NodePath("VampireSword:self_modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(-190, -118)]
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("VampireSword2:position")
+tracks/3/path = NodePath("VampireSword2:self_modulate")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(190, -118)]
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
+
+[sub_resource type="Animation" id="Animation_dsbnm"]
+length = 0.001
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ct5ux"]
 _data = {
@@ -403,16 +355,16 @@ collision_layer = 130
 position = Vector2(0, 8)
 shape = SubResource("RectangleShape2D_2t1j4")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(-328, -152)
-shape = SubResource("RectangleShape2D_88ta8")
-
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(0, 8)
+position = Vector2(0, -359)
 shape = SubResource("RectangleShape2D_2t1j4")
 
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-328, -175.5)
+shape = SubResource("RectangleShape2D_88ta8")
+
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(328, -152)
+position = Vector2(328, -175.5)
 shape = SubResource("RectangleShape2D_3qoit")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
@@ -430,10 +382,6 @@ shape = SubResource("RectangleShape2D_gxlhn")
 position = Vector2(192, -104)
 shape = SubResource("RectangleShape2D_5ta4v")
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D2"]
-position = Vector2(328, -152)
-shape = SubResource("RectangleShape2D_3qoit")
-
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D2"]
 position = Vector2(208, -216)
 shape = SubResource("RectangleShape2D_knu2j")
@@ -449,13 +397,15 @@ position = Vector2(-1, -311)
 texture = ExtResource("6_nsxan")
 
 [node name="VampireSword" type="Sprite2D" parent="."]
-position = Vector2(-190, -118)
+self_modulate = Color(1, 1, 1, 0)
+position = Vector2(-190, -138)
 rotation = -2.35619
 scale = Vector2(4.26294, 3.87094)
 texture = ExtResource("10_taqlh")
 
 [node name="VampireSword2" type="Sprite2D" parent="."]
-position = Vector2(190, -118)
+self_modulate = Color(1, 1, 1, 0)
+position = Vector2(190, -138)
 rotation = 2.35619
 scale = Vector2(4.26294, 3.87094)
 texture = ExtResource("10_taqlh")

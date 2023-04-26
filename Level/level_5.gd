@@ -1,6 +1,9 @@
 extends Node2D
 
 @onready var swordgroup = $Sword
+@onready var animation_player = $AnimationPlayer
+@onready var vampire_sword = $VampireSword
+@onready var vampire_sword_2 = $VampireSword2
 
 var sword_amount
 
@@ -24,4 +27,4 @@ func count_sword():
 		reveal_switch()
 	
 func reveal_switch():
-	pass
+	animation_player.play("Final_cutscene")
