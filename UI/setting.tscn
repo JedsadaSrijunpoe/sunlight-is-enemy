@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://3shyh2k76cat" path="res://Assets/EndLevelRect.png" id="3_pxl3u"]
 [ext_resource type="Texture2D" uid="uid://t12fkh77p1vs" path="res://Assets/button.png" id="3_q8p1t"]
 [ext_resource type="Texture2D" uid="uid://qvdw3vs21re" path="res://Assets/button_hover.png" id="4_b453v"]
-[ext_resource type="LabelSettings" uid="uid://bbaqrhc8xcaqd" path="res://Assets/pixeboy_button_settings.tres" id="5_tvdqf"]
+[ext_resource type="LabelSettings" path="res://Assets/pixeboy_button_settings.tres" id="5_tvdqf"]
 [ext_resource type="LabelSettings" uid="uid://cdo1rbe1us7ji" path="res://Assets/pixeboy_label_settings.tres" id="6_vph2u"]
 
 [node name="Setting" type="CanvasLayer"]
@@ -71,7 +71,7 @@ offset_right = 99.0
 offset_bottom = -22.0
 grow_horizontal = 2
 grow_vertical = 2
-min_value = -40.0
+min_value = -45.0
 max_value = 0.0
 
 [node name="MasterVolumeLabel" type="Label" parent="."]
@@ -100,7 +100,7 @@ offset_top = -16.0
 offset_right = 99.0
 grow_horizontal = 2
 grow_vertical = 2
-min_value = -40.0
+min_value = -45.0
 max_value = 0.0
 
 [node name="MusicVolumeLabel" type="Label" parent="."]
@@ -130,7 +130,7 @@ offset_right = 99.0
 offset_bottom = 22.0
 grow_horizontal = 2
 grow_vertical = 2
-min_value = -40.0
+min_value = -45.0
 max_value = 0.0
 
 [node name="EffectVolumeLabel" type="Label" parent="."]

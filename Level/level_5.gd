@@ -31,10 +31,10 @@ func count_sword():
 	#hint_label.hide()
 	sword_amount -= 1
 	if sword_amount == 0:
-		circular_time.get_node("AnimationPlayer").disconnect("animation_finished", circular_time._on_animation_player_animation_finished)
+		circular_time.animation.disconnect("animation_finished", circular_time._on_animation_player_animation_finished)
 		circular_time.get_node("Timer").stop()
-		if circular_time.IsDay:
-			circular_time.get_node("AnimationPlayer").play("DayChange")
+		if circular_time.IsDay and not circular_time.animation.playing:
+			circular_time.animation.play("DayChange")
 		label.show()
 	
 func final_cutscene():
