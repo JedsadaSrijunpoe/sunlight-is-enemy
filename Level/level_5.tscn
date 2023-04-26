@@ -112,6 +112,20 @@ tracks/4/keys = {
 "update": 0,
 "values": [Vector2(0.48, 0.48), Vector2(0.48, 0.48), Vector2(0.6, 0.6), Vector2(0.48, 0.48), Vector2(0.48, 0.48), Vector2(0.6, 0.6), Vector2(0.48, 0.48)]
 }
+tracks/5/type = "method"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(3.7),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"final_cutscene_done"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_dsbnm"]
 length = 0.001
@@ -239,7 +253,7 @@ position = Vector2(333, 7)
 position = Vector2(-333, -367)
 
 [node name="Player" parent="." instance=ExtResource("5_82dgq")]
-position = Vector2(-23, -82)
+position = Vector2(-24, -80)
 
 [node name="Sword" type="Node2D" parent="."]
 script = ExtResource("6_l4mwp")
