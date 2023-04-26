@@ -10,6 +10,8 @@ const LEVER = preload("res://Sound/Lever.wav")
 const NEXT_LEVEL = preload("res://Sound/NextLevel.wav")
 const BUTTON_HOVER = preload("res://Sound/ButtonHover.wav")
 const BUTTON_CLICK = preload("res://Sound/ButtonClick.wav")
+const KING_SWORD_ATTACK = preload("res://Sound/KingswordAttack.wav")
+const KING_SWORD_PICKUP = preload("res://Sound/KingswordPickup.wav")
 
 const LOOP_FLAP = preload("res://Sound/LoopingFlap.wav")
 

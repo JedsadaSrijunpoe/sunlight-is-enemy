@@ -62,6 +62,7 @@ func _physics_process(delta):
 func initiate_tween():
 	if(raycast.is_colliding() and not activated):
 		activated = true
+		SoundPlayer.play_sound(SoundPlayer.KING_SWORD_ATTACK)
 		tween = create_tween().set_process_mode(Tween.TWEEN_PROCESS_PHYSICS)
 		tween.connect("finished",finish)
 		tween.tween_property(Hitbox,"position",end_point,duration)
@@ -82,5 +83,6 @@ func _on_stuck_area_body_entered(body):
 			tween.kill()
 
 func _on_pick_up_body_entered(body):
+	SoundPlayer.play_sound(SoundPlayer.KING_SWORD_PICKUP)
 	emit_signal("sword_picked_up")
 	queue_free()
