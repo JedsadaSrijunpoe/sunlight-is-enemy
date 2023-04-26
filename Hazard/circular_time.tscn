@@ -1,7 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://b6f48pv75xxoy"]
+[gd_scene load_steps=9 format=3 uid="uid://b6f48pv75xxoy"]
 
 [ext_resource type="Script" path="res://Hazard/circular_time.gd" id="1_y0fl6"]
+[ext_resource type="Texture2D" uid="uid://q5w7446kffaw" path="res://Hazard/sun.png" id="2_a8wxf"]
 [ext_resource type="PackedScene" uid="uid://bki1tq2g2gv5o" path="res://Overlap/hitbox.tscn" id="2_tsmq4"]
+[ext_resource type="Texture2D" uid="uid://b6ejufnvo8e74" path="res://Hazard/moon.png" id="4_sn3t3"]
 
 [sub_resource type="Animation" id="Animation_2cp1j"]
 resource_name = "DayChange"
@@ -53,6 +55,11 @@ metadata/_edit_horizontal_guides_ = [-483.0, 465.0]
 [node name="Polygon2D" type="Polygon2D" parent="light"]
 polygon = PackedVector2Array(-400, 0, -400, -483, 415, -483, 415, 0)
 
+[node name="sun" type="Sprite2D" parent="light"]
+position = Vector2(0, -150)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_a8wxf")
+
 [node name="Hitbox" parent="light" instance=ExtResource("2_tsmq4")]
 collision_layer = 4
 IS_LIGHT = true
@@ -67,6 +74,12 @@ polygon = PackedVector2Array(-400, 1, -400, -482, 415, -482, 415, 1)
 position = Vector2(-2, 488)
 color = Color(0, 0, 0, 1)
 polygon = PackedVector2Array(-398, -23, -398, -488, 417, -488, 417, -23)
+
+[node name="moon" type="Sprite2D" parent="night"]
+position = Vector2(0, 150)
+rotation = -3.14159
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_sn3t3")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
