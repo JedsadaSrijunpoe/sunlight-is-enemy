@@ -38,5 +38,12 @@ func final_cutscene():
 	label.hide()
 	animation_player.play("Final_cutscene")
 	
+func cutscene_sword_hit():
+	SoundPlayer.play_sound(SoundPlayer.ENEMY_KILLED)
+	
+func king_dies():
+	cutscene_sword_hit()
+	SoundPlayer.play_sound(SoundPlayer.PLAYER_DEATH)
+	
 func final_cutscene_done():
 	SoundPlayer.stop_bgm()
