@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://b6f48pv75xxoy"]
+[gd_scene load_steps=10 format=3 uid="uid://b6f48pv75xxoy"]
 
 [ext_resource type="Script" path="res://Hazard/circular_time.gd" id="1_y0fl6"]
 [ext_resource type="Texture2D" uid="uid://q5w7446kffaw" path="res://Hazard/sun.png" id="2_a8wxf"]
 [ext_resource type="PackedScene" uid="uid://bki1tq2g2gv5o" path="res://Overlap/hitbox.tscn" id="2_tsmq4"]
+[ext_resource type="Texture2D" uid="uid://ljncxae5pbsj" path="res://Hazard/Clound.png" id="3_y7n15"]
 [ext_resource type="Texture2D" uid="uid://b6ejufnvo8e74" path="res://Hazard/moon.png" id="4_sn3t3"]
 
 [sub_resource type="Animation" id="Animation_2cp1j"]
@@ -59,6 +60,37 @@ polygon = PackedVector2Array(-400, 0, -400, -483, 415, -483, 415, 0)
 position = Vector2(-1, -196)
 scale = Vector2(2, 2)
 texture = ExtResource("2_a8wxf")
+
+[node name="Sprite2D" type="Sprite2D" parent="light"]
+position = Vector2(-92, -173)
+texture = ExtResource("3_y7n15")
+
+[node name="Sprite2D2" type="Sprite2D" parent="light"]
+position = Vector2(92, -158)
+texture = ExtResource("3_y7n15")
+
+[node name="Sprite2D5" type="Sprite2D" parent="light"]
+position = Vector2(-23, -121)
+texture = ExtResource("3_y7n15")
+
+[node name="Sprite2D6" type="Sprite2D" parent="light"]
+position = Vector2(125, -52)
+texture = ExtResource("3_y7n15")
+
+[node name="Sprite2D7" type="Sprite2D" parent="light"]
+position = Vector2(-95, -54)
+texture = ExtResource("3_y7n15")
+flip_h = true
+
+[node name="Sprite2D3" type="Sprite2D" parent="light"]
+position = Vector2(-162, -124)
+texture = ExtResource("3_y7n15")
+flip_h = true
+
+[node name="Sprite2D4" type="Sprite2D" parent="light"]
+position = Vector2(196, -118)
+texture = ExtResource("3_y7n15")
+flip_h = true
 
 [node name="Hitbox" parent="light" instance=ExtResource("2_tsmq4")]
 collision_layer = 4
