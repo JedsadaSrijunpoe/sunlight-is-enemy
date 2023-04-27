@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://bobc700uaiaiy"]
+[gd_scene load_steps=33 format=3 uid="uid://bobc700uaiaiy"]
 
 [ext_resource type="TileSet" uid="uid://c44gq1ueufkne" path="res://TileMap/dungeon_platformer_tile_set.tres" id="1_k4aj4"]
 [ext_resource type="PackedScene" uid="uid://55uh4xtx1ylx" path="res://Hazard/window.tscn" id="2_26ex3"]
@@ -61,6 +61,9 @@ size = Vector2(80, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qsxqj"]
 size = Vector2(64, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k1lki"]
+size = Vector2(270, 72)
 
 [node name="level_3" type="Node2D"]
 metadata/_edit_vertical_guides_ = [-8.0]
@@ -339,6 +342,10 @@ duration = 5.0
 
 [node name="CheckPointArea" parent="." instance=ExtResource("16_g2kdg")]
 position = Vector2(-193, -964)
+
+[node name="CollisionShape2D" parent="CheckPointArea" index="0"]
+position = Vector2(-87, 0)
+shape = SubResource("RectangleShape2D_k1lki")
 
 [node name="CheckPointPosition" parent="CheckPointArea" index="1"]
 position = Vector2(-204, 10)

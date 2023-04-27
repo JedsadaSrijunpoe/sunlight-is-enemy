@@ -277,7 +277,7 @@ next_scene = ExtResource("9_o7kbc")
 position = Vector2(496, -213)
 
 [node name="CollisionShape2D" parent="CheckPointArea" index="0"]
-position = Vector2(0, -15)
+position = Vector2(96, 161)
 
 [node name="CheckPointPosition" parent="CheckPointArea" index="1"]
 position = Vector2(107, 174)
