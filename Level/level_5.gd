@@ -1,5 +1,7 @@
 extends Node2D
 
+var main_menu = load("res://UI/main_menu.tscn")
+
 @onready var swordgroup = $Sword
 @onready var animation_player = $AnimationPlayer
 @onready var vampire_sword = $VampireSword
@@ -33,7 +35,8 @@ func count_sword():
 	if sword_amount == 0:
 		circular_time.animation.disconnect("animation_finished", circular_time._on_animation_player_animation_finished)
 		circular_time.get_node("Timer").stop()
-		if circular_time.IsDay and not circular_time.animation.playing:
+		if circular_time.IsDay and circular_time.animation.is_playing():
+			await circular_time.animation.animation_finished
 			circular_time.animation.play("DayChange")
 		label.show()
 	
@@ -50,3 +53,4 @@ func king_dies():
 	
 func final_cutscene_done():
 	SoundPlayer.stop_bgm()
+	UserInterface.end_level(main_menu)

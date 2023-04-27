@@ -56,8 +56,8 @@ metadata/_edit_horizontal_guides_ = [-483.0, 465.0]
 polygon = PackedVector2Array(-400, 0, -400, -483, 415, -483, 415, 0)
 
 [node name="sun" type="Sprite2D" parent="light"]
-position = Vector2(0, -150)
-scale = Vector2(0.5, 0.5)
+position = Vector2(-1, -196)
+scale = Vector2(2, 2)
 texture = ExtResource("2_a8wxf")
 
 [node name="Hitbox" parent="light" instance=ExtResource("2_tsmq4")]
@@ -76,9 +76,9 @@ color = Color(0, 0, 0, 1)
 polygon = PackedVector2Array(-398, -23, -398, -488, 417, -488, 417, -23)
 
 [node name="moon" type="Sprite2D" parent="night"]
-position = Vector2(0, 150)
+position = Vector2(1, 150)
 rotation = -3.14159
-scale = Vector2(0.5, 0.5)
+scale = Vector2(1.5, 1.5)
 texture = ExtResource("4_sn3t3")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

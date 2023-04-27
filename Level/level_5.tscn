@@ -1,7 +1,7 @@
 [gd_scene load_steps=23 format=3 uid="uid://t41i00dghuc"]
 
 [ext_resource type="PackedScene" uid="uid://b6f48pv75xxoy" path="res://Hazard/circular_time.tscn" id="1_0kasx"]
-[ext_resource type="Script" path="res://Level/level_5.gd" id="1_vrk7i"]
+[ext_resource type="Script" path="res://Level/level_5.gd" id="1_61lv2"]
 [ext_resource type="TileSet" uid="uid://c44gq1ueufkne" path="res://TileMap/dungeon_platformer_tile_set.tres" id="1_yd70f"]
 [ext_resource type="PackedScene" uid="uid://dshcq4y4i7jbj" path="res://Camera/camera_with_limit.tscn" id="3_7j0re"]
 [ext_resource type="PackedScene" uid="uid://du8fx58opbcln" path="res://Hazard/king_sword.tscn" id="4_do3xi"]
@@ -136,9 +136,9 @@ _data = {
 }
 
 [node name="level_5" type="Node2D"]
-script = ExtResource("1_vrk7i")
+script = ExtResource("1_61lv2")
 metadata/_edit_vertical_guides_ = [-309.0]
-metadata/_edit_horizontal_guides_ = []
+metadata/_edit_horizontal_guides_ = [-225.0]
 
 [node name="CircularTime" parent="." instance=ExtResource("1_0kasx")]
 scale = Vector2(1.5, 1.5)

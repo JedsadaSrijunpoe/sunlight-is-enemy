@@ -9,7 +9,6 @@ const BOSS_LEVEL_NUM = 5
 
 var raw_timer = 0
 var timer = 0
-var level = 0
 var is_counting = false
 var next_scene
 
@@ -54,11 +53,15 @@ func end_level(temp: PackedScene):
 
 func _on_next_level_button_pressed():
 	SoundPlayer.play_sound(SoundPlayer.BUTTON_CLICK)
-	if get_current_level_num()+1 == BOSS_LEVEL_NUM:
-		SoundPlayer.play_bgm(SoundPlayer.BOSS_THEME)
-	get_tree().paused = false
-	get_tree().change_scene_to_packed(next_scene)
-	start_level()
+	if get_current_level_num() == BOSS_LEVEL_NUM:
+		get_tree().paused = true
+		story_scene.begin_story(["The king is killed and the night has returned. The people of the Lightania shall now know your pain. \n\nThe End"])
+	else:
+		if get_current_level_num()+1 == BOSS_LEVEL_NUM:
+			SoundPlayer.play_bgm(SoundPlayer.BOSS_THEME)
+		get_tree().paused = false
+		get_tree().change_scene_to_packed(next_scene)
+		start_level()
 
 func _on_next_level_button_mouse_entered():
 	SoundPlayer.play_sound(SoundPlayer.BUTTON_HOVER)
@@ -69,9 +72,10 @@ func toggle_setting_window():
 		setting.hide()
 		start_timer()
 		# Dont unpaused if end level screen still open.
-		if not end_level_screen.visible:
+		if not (end_level_screen.visible or story_scene.visible):
 			get_tree().paused = false
 	else:
+		SoundPlayer.stop_sound_in_loop(SoundPlayer.LOOP_FLAP)
 		setting.show()
 		stop_timer()
 		get_tree().paused = true

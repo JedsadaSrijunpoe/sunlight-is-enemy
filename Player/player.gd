@@ -144,14 +144,12 @@ func humanoid_state(delta):
 
 # How the player react to hurtbox collision in bat form
 func _on_bathurtbox_area_entered(_area):
-	SoundPlayer.kill_all_loop()
 	SoundPlayer.play_sound(SoundPlayer.PLAYER_DEATH)
 	call_deferred("respawn")
 
 # How the player react to hurtbox collision in humanoid form
 func _on_humanhurtbox_area_entered(area):
 	if not area.IS_LIGHT:
-		SoundPlayer.kill_all_loop()
 		SoundPlayer.play_sound(SoundPlayer.PLAYER_DEATH)
 		call_deferred("respawn")
 
@@ -166,6 +164,7 @@ func _on_switchbox_area_exited(switch):
 # Reload the current scene.
 func respawn():
 	get_tree().reload_current_scene()
+	SoundPlayer.kill_all_loop()
 
 func _on_double_tap_timer_timeout():
 	next_jump_is_double_tap = false

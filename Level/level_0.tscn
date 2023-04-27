@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bo6dlrqpt5mk4"]
+[gd_scene load_steps=17 format=3 uid="uid://bo6dlrqpt5mk4"]
 
 [ext_resource type="TileSet" uid="uid://c44gq1ueufkne" path="res://TileMap/dungeon_platformer_tile_set.tres" id="1_x2mkr"]
 [ext_resource type="PackedScene" uid="uid://kiu6g4gkywwq" path="res://Player/player.tscn" id="2_d2qev"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bxh87xberc4bg" path="res://World/next_level_area.tscn" id="6_ks6f4"]
 [ext_resource type="PackedScene" uid="uid://buhroafmnptvy" path="res://Level/level_1.tscn" id="7_0bre3"]
 [ext_resource type="LabelSettings" uid="uid://cdo1rbe1us7ji" path="res://Assets/pixeboy_label_settings.tres" id="8_52w1q"]
+[ext_resource type="FontFile" uid="uid://bcxwbu1ncu82w" path="res://Assets/pixeloid-font/PixeloidSans-JR6qo.ttf" id="9_e16qc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g055h"]
 size = Vector2(48, 16)
@@ -26,6 +27,12 @@ size = Vector2(592, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ns0ss"]
 size = Vector2(224, 16)
+
+[sub_resource type="LabelSettings" id="LabelSettings_2hcw7"]
+font = ExtResource("9_e16qc")
+font_size = 10
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
 
 [node name="level_0" type="Node2D"]
 metadata/_edit_horizontal_guides_ = [8.0, 336.0]
@@ -154,7 +161,7 @@ offset_bottom = 266.0
 text = "Double jump and 
 hold while in bat form
 to fly continuously"
-label_settings = ExtResource("8_52w1q")
+label_settings = SubResource("LabelSettings_2hcw7")
 vertical_alignment = 1
 
 [editable path="Window"]
