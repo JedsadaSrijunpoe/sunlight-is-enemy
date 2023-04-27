@@ -812,7 +812,7 @@ shape = SubResource("RectangleShape2D_5q26e")
 [node name="MovingSpikePlatform" type="Node2D" parent="."]
 
 [node name="MovingSpikePlatform11" parent="MovingSpikePlatform" instance=ExtResource("6_cou26")]
-position = Vector2(143, -33)
+position = Vector2(41, 83)
 duration = 12.0
 
 [node name="Sprite2D" parent="MovingSpikePlatform/MovingSpikePlatform11/AnimatableBody2D" index="0"]
@@ -832,7 +832,7 @@ position = Vector2(-13, 0)
 polygon = PackedVector2Array(17, -4, 20, 0, 17, 4)
 
 [node name="MovingSpikePlatform16" parent="MovingSpikePlatform" instance=ExtResource("6_cou26")]
-position = Vector2(143, -59)
+position = Vector2(41, 57)
 duration = 18.0
 
 [node name="Sprite2D" parent="MovingSpikePlatform/MovingSpikePlatform16/AnimatableBody2D" index="0"]
@@ -852,7 +852,7 @@ position = Vector2(-13, 0)
 polygon = PackedVector2Array(17, -4, 19, 0, 17, 4)
 
 [node name="MovingSpikePlatform12" parent="MovingSpikePlatform" instance=ExtResource("6_cou26")]
-position = Vector2(143, -8)
+position = Vector2(41, 108)
 duration = 6.0
 
 [node name="Sprite2D" parent="MovingSpikePlatform/MovingSpikePlatform12/AnimatableBody2D" index="0"]
@@ -875,11 +875,6 @@ polygon = PackedVector2Array(17, -4, 20, 0, 17, 4)
 
 [node name="SmallMovingSpikePlatform3" parent="MovingSpikePlatform/CrackJump" instance=ExtResource("11_4govv")]
 position = Vector2(702, -177)
-offset = Vector2(74, 0)
-duration = 6.0
-
-[node name="SmallMovingSpikePlatform4" parent="MovingSpikePlatform/CrackJump" instance=ExtResource("11_4govv")]
-position = Vector2(702, -222)
 offset = Vector2(74, 0)
 duration = 6.0
 
@@ -981,11 +976,11 @@ position = Vector2(944, 96)
 position = Vector2(-56, -592)
 
 [node name="SmallMovingSpikePlatform" parent="." instance=ExtResource("11_4govv")]
-position = Vector2(203, -223)
+position = Vector2(203, -196)
 offset = Vector2(257, 0)
 
 [node name="SmallMovingSpikePlatform2" parent="." instance=ExtResource("11_4govv")]
-position = Vector2(203, -199)
+position = Vector2(155, 108)
 offset = Vector2(257, 0)
 
 [node name="SmallMovingSpikePlatform3" parent="." instance=ExtResource("11_4govv")]
