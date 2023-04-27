@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://2sc2qa1lrcxl"]
 
 [ext_resource type="PackedScene" uid="uid://bbbnlvbey444q" path="res://World/moving_spike_platform.tscn" id="1_rlinl"]
-[ext_resource type="Texture2D" uid="uid://b0j8hwpuo2n16" path="res://World/smallspikeplatform.png" id="2_oxfb5"]
+[ext_resource type="Texture2D" uid="uid://bu4415m6wbkn7" path="res://World/moving_spike_platform_red_black.png" id="2_q11sq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oe8yg"]
 size = Vector2(8, 8)
@@ -9,7 +9,7 @@ size = Vector2(8, 8)
 [node name="SmallMovingSpikePlatform" instance=ExtResource("1_rlinl")]
 
 [node name="Sprite2D" parent="AnimatableBody2D" index="0"]
-texture = ExtResource("2_oxfb5")
+texture = ExtResource("2_q11sq")
 
 [node name="CollisionShape2D" parent="AnimatableBody2D" index="1"]
 shape = SubResource("RectangleShape2D_oe8yg")

@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bbbnlvbey444q"]
 
 [ext_resource type="Script" path="res://World/moving_platform.gd" id="1_wot8i"]
-[ext_resource type="Texture2D" uid="uid://bbnv0wc4yttqy" path="res://World/moving_spike_platform.png" id="2_lsvhe"]
+[ext_resource type="Texture2D" uid="uid://bwyk2ukd4n7uj" path="res://World/moving_spike_platform_red_white.png" id="2_0jt0p"]
 [ext_resource type="PackedScene" uid="uid://bki1tq2g2gv5o" path="res://Overlap/hitbox.tscn" id="3_cgq87"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mtlqg"]
@@ -16,7 +16,7 @@ collision_layer = 2
 collision_mask = 33
 
 [node name="Sprite2D" type="Sprite2D" parent="AnimatableBody2D"]
-texture = ExtResource("2_lsvhe")
+texture = ExtResource("2_0jt0p")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D"]
 shape = SubResource("RectangleShape2D_mtlqg")
