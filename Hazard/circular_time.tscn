@@ -70,7 +70,7 @@ position = Vector2(92, -158)
 texture = ExtResource("3_y7n15")
 
 [node name="Sprite2D5" type="Sprite2D" parent="light"]
-position = Vector2(-23, -121)
+position = Vector2(-23, -130)
 texture = ExtResource("3_y7n15")
 
 [node name="Sprite2D6" type="Sprite2D" parent="light"]

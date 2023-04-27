@@ -250,10 +250,12 @@ script = ExtResource("8_e7tmn")
 
 [node name="Switch" parent="." instance=ExtResource("8_y8iui")]
 position = Vector2(-8, -8)
+ONE_SHOT = false
 
 [node name="Switch2" parent="." instance=ExtResource("8_y8iui")]
 position = Vector2(24, -225)
 rotation = -1.57079
+ONE_SHOT = false
 
 [node name="LightPillar2" parent="." instance=ExtResource("7_wf34j")]
 position = Vector2(-8, -296)
