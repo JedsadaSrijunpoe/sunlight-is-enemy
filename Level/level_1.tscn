@@ -25,7 +25,7 @@ size = Vector2(486.137, 16)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_66vce"]
 size = Vector2(399, 16)
 
-[node name="Level1" type="Node2D"]
+[node name="level_1" type="Node2D"]
 metadata/_edit_horizontal_guides_ = [40.0]
 
 [node name="TileMap" type="TileMap" parent="."]

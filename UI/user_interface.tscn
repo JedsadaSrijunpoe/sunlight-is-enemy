@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://3shyh2k76cat" path="res://Assets/EndLevelRect.png" id="2_yhl8b"]
 [ext_resource type="Texture2D" uid="uid://t12fkh77p1vs" path="res://Assets/button.png" id="4_j57bh"]
 [ext_resource type="Texture2D" uid="uid://qvdw3vs21re" path="res://Assets/button_hover.png" id="5_4471b"]
-[ext_resource type="LabelSettings" path="res://Assets/pixeboy_button_settings.tres" id="6_fq8uk"]
+[ext_resource type="LabelSettings" uid="uid://bbaqrhc8xcaqd" path="res://Assets/pixeboy_button_settings.tres" id="6_fq8uk"]
 [ext_resource type="PackedScene" uid="uid://cfknqqnc3u3f8" path="res://UI/setting.tscn" id="6_vhyjn"]
 [ext_resource type="PackedScene" uid="uid://bgfgvrg186irb" path="res://UI/story_scene.tscn" id="8_emdpd"]
 
@@ -133,6 +133,3 @@ visible = false
 
 [connection signal="mouse_entered" from="EndLevelScreen/NextLevelButton" to="." method="_on_next_level_button_mouse_entered"]
 [connection signal="pressed" from="EndLevelScreen/NextLevelButton" to="." method="_on_next_level_button_pressed"]
-[connection signal="pressed" from="Setting/DoneButton" to="." method="_on_done_button_pressed"]
-
-[editable path="Setting"]

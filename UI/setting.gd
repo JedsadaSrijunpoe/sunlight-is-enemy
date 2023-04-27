@@ -4,16 +4,9 @@ extends CanvasLayer
 @onready var music_volume_slider = $MusicVolumeSlider
 @onready var effect_volume_slider = $EffectVolumeSlider
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	master_volume_slider.value = AudioServer.get_bus_volume_db(AudioServer.get_bus_index("Master"))
-	music_volume_slider.value = AudioServer.get_bus_volume_db(AudioServer.get_bus_index("Music"))
-	effect_volume_slider.value = AudioServer.get_bus_volume_db(AudioServer.get_bus_index("Effect"))
-
 func _on_done_button_pressed():
 	SoundPlayer.play_sound(SoundPlayer.BUTTON_CLICK)
-	get_tree().paused = false
-	hide()
+	UserInterface.toggle_setting_window()
 
 
 func _on_done_button_mouse_entered():

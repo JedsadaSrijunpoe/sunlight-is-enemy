@@ -5,6 +5,8 @@ extends Control
 @onready var setting = $Setting
 @onready var story_scene = $StoryScene
 
+const BOSS_LEVEL_NUM = 5
+
 var raw_timer = 0
 var timer = 0
 var level = 0
@@ -18,15 +20,8 @@ func _process(delta):
 		timer = snapped(raw_timer, 0.001)
 		label_timer.get_node("LabelTimer").text = str(timer)
 	
-	if Input.is_action_just_pressed("pause") and not setting.visible:
-		setting.show()
-		get_tree().paused = true
-		stop_timer()
-	elif Input.is_action_just_pressed("pause") and setting.visible:
-		setting.hide()
-		if not end_level_screen.visible:
-			get_tree().paused = false
-		start_timer()
+	if Input.is_action_just_pressed("pause"):
+		toggle_setting_window()
 
 func start_timer():
 	is_counting = true
@@ -52,24 +47,40 @@ func end_level(temp: PackedScene):
 	label_timer.hide()
 	
 	end_level_screen.get_node("FinishTime").text = str(snapped(timer, 0.001)) + " s"
-	end_level_screen.get_node("LevelNumLabel").text = str(level)
+	end_level_screen.get_node("LevelNumLabel").text = str(get_current_level_num())
 	end_level_screen.show()
 	
 	CheckPoint.level_passed()
 
 func _on_next_level_button_pressed():
 	SoundPlayer.play_sound(SoundPlayer.BUTTON_CLICK)
-	level += 1
-	if level == 5:
+	if get_current_level_num()+1 == BOSS_LEVEL_NUM:
 		SoundPlayer.play_bgm(SoundPlayer.BOSS_THEME)
 	get_tree().paused = false
 	get_tree().change_scene_to_packed(next_scene)
 	start_level()
 
-
 func _on_next_level_button_mouse_entered():
 	SoundPlayer.play_sound(SoundPlayer.BUTTON_HOVER)
 
-
-func _on_done_button_pressed():
-	start_timer()
+func toggle_setting_window():
+	# If setting window is open, close it, and vice versa.
+	if setting.visible:
+		setting.hide()
+		start_timer()
+		# Dont unpaused if end level screen still open.
+		if not end_level_screen.visible:
+			get_tree().paused = false
+	else:
+		setting.show()
+		stop_timer()
+		get_tree().paused = true
+		
+func get_current_level_num():
+	var current_scene_name = get_tree().current_scene.name
+	var current_scene_name_split = current_scene_name.split("_")
+	if current_scene_name_split[0] == "level":
+		return int(current_scene_name_split[1])
+	else:
+		return null
+	
