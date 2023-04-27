@@ -19,10 +19,11 @@ var rotation_direction : bool = true
 var starting_rotation
 
 var IsGuideUp : bool = true
+var IsBackForm : bool = false
 signal sword_picked_up
 
 enum{
-	DAYLIGHT , NIGHT , STUCK
+	DAYLIGHT , NIGHT , STUCK 
 }
 
 func _ready():
@@ -45,6 +46,10 @@ func _physics_process(delta):
 					if(rotation_degrees <= starting_rotation - angle):
 						rotation_direction = true
 			initiate_tween()
+				
+			
+
+			
 		NIGHT:
 			PickCollision.disabled = false
 			StuckArea.disabled = false
@@ -59,20 +64,27 @@ func _physics_process(delta):
 			else:
 				Hitbox.get_node("GrabAreaGuide").modulate.a -= delta/5
 			#print(Hitbox.get_node("GrabAreaGuide").modulate.a)
+		
+#func SwordBack_tween():
+	
 func initiate_tween():
+
 	if(raycast.is_colliding() and not activated):
 		activated = true
 		SoundPlayer.play_sound(SoundPlayer.KING_SWORD_ATTACK)
 		tween = create_tween().set_process_mode(Tween.TWEEN_PROCESS_PHYSICS)
+		tween.set_parallel(false)
 		tween.connect("finished",finish)
 		tween.tween_property(Hitbox,"position",end_point,duration)
+		tween.tween_property(Hitbox,"position",to_local(position),duration)
 		last_shot_state = state
+		#print(name,end_point)
+		#print(name,to_local(position))
 		
 func finish():
-	activated = false
-	Hitbox.global_position = global_position
-	#tween.disconnect("finished",finish)
 	tween.kill()
+	activated = false
+	IsBackForm = not IsBackForm
 	rotation_degrees = starting_rotation
 	
 func _on_stuck_area_body_entered(body):

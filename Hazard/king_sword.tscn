@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://du8fx58opbcln"]
+[gd_scene load_steps=7 format=3 uid="uid://du8fx58opbcln"]
 
 [ext_resource type="PackedScene" uid="uid://bki1tq2g2gv5o" path="res://Overlap/hitbox.tscn" id="1_0cadq"]
 [ext_resource type="Script" path="res://Hazard/king_sword.gd" id="1_wcrgg"]
 [ext_resource type="Texture2D" uid="uid://dl2i7t6un0u2e" path="res://Hazard/KingSword.png" id="2_p673g"]
+[ext_resource type="Texture2D" uid="uid://b22si2qsbiw3q" path="res://Hazard/EnergySword.png" id="4_xm3hr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rcmm2"]
 size = Vector2(14, 19)
@@ -36,6 +37,7 @@ collision_layer = 0
 collision_mask = 128
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox/StuckArea"]
+visible = false
 position = Vector2(0, 27)
 shape = SubResource("RectangleShape2D_xhi0t")
 
@@ -43,6 +45,11 @@ shape = SubResource("RectangleShape2D_xhi0t")
 modulate = Color(0.509804, 1, 0.360784, 0)
 color = Color(0.545098, 0.996078, 0.607843, 1)
 polygon = PackedVector2Array(7, 12, -7, 12, -7, -7, 7, -7)
+
+[node name="EnergyForm" type="Sprite2D" parent="Hitbox"]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(0, 17)
+texture = ExtResource("4_xm3hr")
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
 target_position = Vector2(0, 400)

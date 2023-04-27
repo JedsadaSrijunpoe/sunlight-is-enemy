@@ -2,8 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://bmglxkv2erqys" path="res://TileMap/Dungeon Tile Set.png" id="1_d2wau"]
 [ext_resource type="PackedScene" uid="uid://bw878r7c0fvro" path="res://Hazard/spike_trap.tscn" id="2_eqkuk"]
-[ext_resource type="PackedScene" path="res://Hazard/spike_trap_wall_left.tscn" id="3_xymwl"]
-[ext_resource type="PackedScene" path="res://Hazard/spike_trap_wall_down.tscn" id="4_cpp0v"]
+[ext_resource type="PackedScene" uid="uid://07jxicydicfp" path="res://Hazard/spike_trap_wall_left.tscn" id="3_xymwl"]
+[ext_resource type="PackedScene" uid="uid://c3am3e8wn6m2i" path="res://Hazard/spike_trap_wall_down.tscn" id="4_cpp0v"]
 [ext_resource type="PackedScene" uid="uid://jrppygrn8l5b" path="res://Hazard/spike_trap_wall_right.tscn" id="4_nmenr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_oda74"]
