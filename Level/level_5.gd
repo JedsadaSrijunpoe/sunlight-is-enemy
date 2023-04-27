@@ -14,7 +14,7 @@ var sword_amount
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	#hint_label.show()
+	hint_label.show()
 	label.hide()
 	var temp_sword_amount = 0
 	for sword in swordgroup.get_children():
@@ -30,7 +30,7 @@ func _process(delta):
 		final_cutscene()
 	
 func count_sword():
-	#hint_label.hide()
+	hint_label.hide()
 	sword_amount -= 1
 	if sword_amount == 0:
 		circular_time.animation.disconnect("animation_finished", circular_time._on_animation_player_animation_finished)
