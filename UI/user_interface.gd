@@ -46,7 +46,10 @@ func end_level(temp: PackedScene):
 	label_timer.hide()
 	
 	end_level_screen.get_node("FinishTime").text = str(snapped(timer, 0.001)) + " s"
-	end_level_screen.get_node("LevelNumLabel").text = str(get_current_level_num())
+	if get_current_level_num() == 0:
+		end_level_screen.get_node("LevelNumLabel").text = "Tutorial passed!"
+	else:
+		end_level_screen.get_node("LevelNumLabel").text = "Level " + str(get_current_level_num()) + " passed!"
 	end_level_screen.show()
 	
 	CheckPoint.level_passed()
