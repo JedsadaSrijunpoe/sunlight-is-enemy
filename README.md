@@ -12,7 +12,7 @@ This game was created for the [Newbies Game Jam 2023][2] and it's our first game
 - [Ctrl] / [Q] : Transform
 - [E] : Interact
 - [Esc] : Pause
-- 
+
 ## Credits
 - Logo by [Rllynna (@Rainylynn_) / (twitter.com)][3]
 - Font: [Pixeloid Font | GGBotNet | FontSpace][4]
